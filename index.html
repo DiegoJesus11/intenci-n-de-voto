@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observatorio Electoral Perú 2026 | Dashboard de Intención de Voto</title>
+    <meta name="description"
+        content="Dashboard interactivo de intención de voto presidencial Perú 2026. Análisis temporal y demográfico de encuestas Ipsos.">
+    <meta name="author" content="Observatorio Electoral">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Observatorio Electoral Perú 2026">
+    <meta property="og:description" content="Dashboard interactivo de intención de voto presidencial">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="logo-observatorio.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="logo-observatorio.jpg">
+
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Plotly.js CDN -->
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css?v=34">
+</head>
+
+<body>
+    <!-- Premium Header with Glassmorphism -->
+    <header class="header">
+        <div class="header-logo">
+            <img src="logo-observatorio.jpg" alt="Observatorio Electoral"
+                onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Peru.svg'">
+        </div>
+        <div class="header-title">
+            <h1>Observatorio Electoral Perú 2026</h1>
+            <p class="subtitle">Evolución de Intención de Voto • Encuestas Ipsos</p>
+        </div>
+        <div class="header-meta">
+            <span class="update-date" id="update-date">Actualizado: Enero 2026</span>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+        <!-- Main Evolution Chart -->
+        <section class="card main-chart-section">
+            <h2> Carrera Electoral — Evolución Temporal</h2>
+
+            <div class="chart-controls">
+                <div class="control-group">
+                    <label>Mostrar categorías especiales:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" id="show-blanco"> <span>Blanco/viciado</span></label>
+                        <label><input type="checkbox" id="show-otros"> <span>Otros</span></label>
+                        <label><input type="checkbox" id="show-noprecisa"> <span>No precisa</span></label>
+                        <label><input type="checkbox" id="show-excluded"> <span>Fuera de carrera</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart with Legend Layout -->
+            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                <div style="flex: 1; min-width: 0;">
+                    <div id="main-chart" class="chart-container"></div>
+                </div>
+                <div id="legend-container" class="legend-panel" style="width: 200px; display: none;">
+                    <!-- Legend items will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Demographic Section -->
+        <section class="card demographic-section">
+            <h2>🔍 Radiografía del Voto</h2>
+            <div class="note-container"
+                style="background: #fff3cd; color: #856404; padding: 0.75rem; border-radius: 6px; margin-bottom: 1rem; font-size: 0.9rem; border: 1px solid #ffeeba; display: flex; align-items: center; gap: 0.5rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+                </svg>
+                <span><strong>Nota:</strong> Para <strong>Enero (1) 2026</strong>, se dispone exclusivamente de datos
+                    Total y desglose por
+                    Ámbito (Lima/Interior). Las variables demográficas (NSE, Edad, Género) no están disponibles para
+                    este periodo.</span>
+            </div>
+
+            <!-- Controls -->
+            <div class="demographic-controls">
+                <!-- Candidate selector - switches between dropdown and checkboxes -->
+                <div class="control-group" id="candidate-control-group">
+                    <label id="candidate-label">Candidato:</label>
+                    <!-- Profile mode: single dropdown -->
+                    <select id="candidate-select"></select>
+                    <!-- Comparative mode: multi-select checkboxes (hidden by default) -->
+                    <div id="candidates-checkboxes" class="checkbox-group candidates-multi-select"
+                        style="display: none;">
+                        <!-- Candidate checkboxes will be injected here -->
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Modo de Análisis:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="analysis-mode" value="profile" checked> <span>👤 Perfil del
+                                Candidato</span></label>
+                        <label><input type="radio" name="analysis-mode" value="comparative"> <span>🔬 Vista
+                                Comparativa</span></label>
+                    </div>
+                </div>
+
+                <!-- Comparative Mode Controls (hidden by default) -->
+                <div id="comparative-controls" class="control-group" style="display: none;">
+                    <label>Dimensión:</label>
+                    <select id="dimension-select">
+                        <option value="nse">NSE (A, B, C, D, E)</option>
+                        <option value="gender">Género</option>
+                        <option value="age">Edad</option>
+                        <option value="geography" style="display:none">Geografía</option> <!-- Deprecated -->
+                        <option value="ambito">Ámbito (Lima vs Interior)</option>
+                        <option value="interior">Interior (Urbano vs Rural)</option>
+                        <option value="region">Regiones</option>
+                    </select>
+                </div>
+                <div id="segment-controls" class="control-group" style="display: none;">
+                    <label>Segmento:</label>
+                    <select id="segment-select"></select>
+                </div>
+            </div>
+
+            <!-- Profile Mode: 5 demographic charts -->
+            <div id="profile-charts" class="charts-grid">
+                <div id="gender-chart" class="chart-container"></div>
+                <div id="nse-chart" class="chart-container"></div>
+                <div id="age-chart" class="chart-container"></div>
+                <div id="geo-ambito-chart" class="chart-container"></div>
+                <!-- Interior Breakdown -->
+                <div id="geo-interior-chart" class="chart-container"></div>
+                <div id="geo-region-chart" class="chart-container"></div>
+            </div>
+
+
+            <!-- Comparative Mode: Chart with sidebar legend -->
+            <div id="comparative-chart-container" class="comparative-layout" style="display: none;">
+                <div id="comparative-chart" class="chart-container comparative-chart"></div>
+                <div id="comparative-legend" class="comparative-legend">
+                    <div class="legend-header">
+                        <label class="select-all-label">
+                            <input type="checkbox" id="select-all-candidates" checked>
+                            <span>Seleccionar todos</span>
+                        </label>
+                    </div>
+                    <div class="legend-divider"></div>
+                    <div id="candidates-legend-list" class="legend-list">
+                        <!-- Candidate checkboxes will be injected here -->
+                    </div>
+                    <div class="legend-divider"></div>
+                    <div class="legend-section-title">Categorías Especiales</div>
+                    <div class="legend-special-categories">
+                        <label class="legend-item special">
+                            <input type="checkbox" id="compare-blanco" value="Blanco/viciado/ninguno">
+                            <span class="legend-color" style="background: #95a5a6;"></span>
+                            <span class="legend-name">Blanco/viciado</span>
+                        </label>
+                        <label class="legend-item special">
+                            <input type="checkbox" id="compare-otros" value="Otros">
+                            <span class="legend-color" style="background: #8B4513;"></span>
+                            <span class="legend-name">Otros</span>
+                        </label>
+                        <label class="legend-item special">
+                            <input type="checkbox" id="compare-noprecisa" value="No precisa">
+                            <span class="legend-color" style="background: #6c5ce7;"></span>
+                            <span class="legend-name">No precisa</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Footer -->
+        <footer class="footer">
+            <p>📊 Datos: Encuestas Ipsos Perú • Análisis: Observatorio Electoral</p>
+            <p class="footer-text">
+                Dashboard interactivo desarrollado por <a href="https://www.linkedin.com/in/diego-jesus-data/"
+                    target="_blank" style="font-weight: bold; color: inherit; text-decoration: none;">Diego Jesus</a>
+            </p>
+            <a href="#" class="footer-brand">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+                Observatorio Electoral 2026
+            </a>
+        </footer>
+    </main>
+
+    <!-- Custom Script -->
+    <script src="script.js?v=37"></script>
+</body>
+
+</html>
