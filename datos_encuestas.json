@@ -1,0 +1,3452 @@
+{
+  "Julio 2025": {
+    "candidates": [
+      {
+        "name": "Blanco/viciado/ninguno",
+        "total": 32.0,
+        "geography": {
+          "Lima": 25.0,
+          "Interior": 36.0,
+          "Interior Urbano": 36.0,
+          "Interior Rural": 37.0,
+          "Norte": 28.0,
+          "Centro": 35.0,
+          "Sur": 50.0,
+          "Oriente": 36.0
+        },
+        "nse": {
+          "A": 17.0,
+          "B": 25.0,
+          "C": 26.0,
+          "D": 41.0,
+          "E": 37.0
+        },
+        "gender": {
+          "Masculino": 30.0,
+          "Femenino": 35.0
+        },
+        "age": {
+          "18-25": 30.0,
+          "26-42": 30.0,
+          "43+": 36.0
+        }
+      },
+      {
+        "name": "Otros",
+        "total": 15.0,
+        "geography": {
+          "Lima": 15.0,
+          "Interior": 15.0,
+          "Interior Urbano": 13.0,
+          "Interior Rural": 20.0,
+          "Norte": 20.0,
+          "Centro": 17.0,
+          "Sur": 8.0,
+          "Oriente": 13.0
+        },
+        "nse": {
+          "A": 21.0,
+          "B": 13.0,
+          "C": 15.0,
+          "D": 10.0,
+          "E": 20.0
+        },
+        "gender": {
+          "Masculino": 14.0,
+          "Femenino": 16.0
+        },
+        "age": {
+          "18-25": 17.0,
+          "26-42": 16.0,
+          "43+": 14.0
+        }
+      },
+      {
+        "name": "No precisa",
+        "total": 12.0,
+        "geography": {
+          "Lima": 12.0,
+          "Interior": 12.0,
+          "Interior Urbano": 13.0,
+          "Interior Rural": 8.0,
+          "Norte": 13.0,
+          "Centro": 6.0,
+          "Sur": 12.0,
+          "Oriente": 13.0
+        },
+        "nse": {
+          "A": 6.0,
+          "B": 9.0,
+          "C": 13.0,
+          "D": 14.0,
+          "E": 10.0
+        },
+        "gender": {
+          "Masculino": 11.0,
+          "Femenino": 13.0
+        },
+        "age": {
+          "18-25": 9.0,
+          "26-42": 11.0,
+          "43+": 14.0
+        }
+      },
+      {
+        "name": "Keiko Fujimori",
+        "total": 9.0,
+        "geography": {
+          "Lima": 11.0,
+          "Interior": 8.0,
+          "Interior Urbano": 9.0,
+          "Interior Rural": 5.0,
+          "Norte": 6.0,
+          "Centro": 13.0,
+          "Sur": 3.0,
+          "Oriente": 12.0
+        },
+        "nse": {
+          "A": 6.0,
+          "B": 7.0,
+          "C": 10.0,
+          "D": 11.0,
+          "E": 7.0
+        },
+        "gender": {
+          "Masculino": 6.0,
+          "Femenino": 12.0
+        },
+        "age": {
+          "18-25": 14.0,
+          "26-42": 9.0,
+          "43+": 6.0
+        }
+      },
+      {
+        "name": "Rafael López Aliaga",
+        "total": 8.0,
+        "geography": {
+          "Lima": 13.0,
+          "Interior": 5.0,
+          "Interior Urbano": 7.0,
+          "Interior Rural": 1.0,
+          "Norte": 3.0,
+          "Centro": 6.0,
+          "Sur": 8.0,
+          "Oriente": 6.0
+        },
+        "nse": {
+          "A": 29.0,
+          "B": 19.0,
+          "C": 9.0,
+          "D": 6.0,
+          "E": 2.0
+        },
+        "gender": {
+          "Masculino": 11.0,
+          "Femenino": 5.0
+        },
+        "age": {
+          "18-25": 8.0,
+          "26-42": 8.0,
+          "43+": 7.0
+        }
+      },
+      {
+        "name": "Carlos Álvarez",
+        "total": 6.0,
+        "geography": {
+          "Lima": 7.0,
+          "Interior": 6.0,
+          "Interior Urbano": 6.0,
+          "Interior Rural": 5.0,
+          "Norte": 8.0,
+          "Centro": 8.0,
+          "Sur": 5.0,
+          "Oriente": 3.0
+        },
+        "nse": {
+          "A": 6.0,
+          "B": 7.0,
+          "C": 8.0,
+          "D": 8.0,
+          "E": 4.0
+        },
+        "gender": {
+          "Masculino": 9.0,
+          "Femenino": 4.0
+        },
+        "age": {
+          "18-25": 4.0,
+          "26-42": 7.0,
+          "43+": 7.0
+        }
+      },
+      {
+        "name": "César Acuña",
+        "total": 2.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 3.0,
+          "Interior Urbano": 3.0,
+          "Interior Rural": 2.0,
+          "Norte": 3.0,
+          "Centro": 2.0,
+          "Sur": 2.0,
+          "Oriente": 3.0
+        },
+        "nse": {
+          "A": 6.0,
+          "B": 0.0,
+          "C": 4.0,
+          "D": 1.0,
+          "E": 2.0
+        },
+        "gender": {
+          "Masculino": 1.0,
+          "Femenino": 3.0
+        },
+        "age": {
+          "18-25": 3.0,
+          "26-42": 4.0,
+          "43+": 1.0
+        }
+      },
+      {
+        "name": "Mario Vizcarra",
+        "total": 2.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 3.0,
+          "Interior Urbano": 3.0,
+          "Interior Rural": 3.0,
+          "Norte": 4.0,
+          "Centro": 1.0,
+          "Sur": 3.0,
+          "Oriente": 2.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 1.0,
+          "C": 2.0,
+          "D": 3.0,
+          "E": 3.0
+        },
+        "gender": {
+          "Masculino": 1.0,
+          "Femenino": 4.0
+        },
+        "age": {
+          "18-25": 3.0,
+          "26-42": 3.0,
+          "43+": 2.0
+        }
+      },
+      {
+        "name": "Phillip Butters",
+        "total": 2.0,
+        "geography": {
+          "Lima": 4.0,
+          "Interior": 1.0,
+          "Interior Urbano": 1.0,
+          "Interior Rural": 1.0,
+          "Norte": 0.0,
+          "Centro": 3.0,
+          "Sur": 1.0,
+          "Oriente": 0.0
+        },
+        "nse": {
+          "A": 6.0,
+          "B": 6.0,
+          "C": 3.0,
+          "D": 0.0,
+          "E": 1.0
+        },
+        "gender": {
+          "Masculino": 3.0,
+          "Femenino": 1.0
+        },
+        "age": {
+          "18-25": 2.0,
+          "26-42": 3.0,
+          "43+": 1.0
+        }
+      },
+      {
+        "name": "Vladimir Cerrón",
+        "total": 2.0,
+        "geography": {
+          "Lima": 1.0,
+          "Interior": 3.0,
+          "Interior Urbano": 1.0,
+          "Interior Rural": 8.0,
+          "Norte": 5.0,
+          "Centro": 4.0,
+          "Sur": 1.0,
+          "Oriente": 0.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 0.0,
+          "C": 1.0,
+          "D": 1.0,
+          "E": 5.0
+        },
+        "gender": {
+          "Masculino": 3.0,
+          "Femenino": 1.0
+        },
+        "age": {
+          "18-25": 2.0,
+          "26-42": 2.0,
+          "43+": 2.0
+        }
+      },
+      {
+        "name": "Alfonso López Chau",
+        "total": 2.0,
+        "geography": {
+          "Lima": 1.0,
+          "Interior": 2.0,
+          "Interior Urbano": 1.0,
+          "Interior Rural": 5.0,
+          "Norte": 2.0,
+          "Centro": 2.0,
+          "Sur": 4.0,
+          "Oriente": 1.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 2.0,
+          "C": 2.0,
+          "D": 1.0,
+          "E": 3.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 2.0
+        },
+        "age": {
+          "18-25": 1.0,
+          "26-42": 2.0,
+          "43+": 3.0
+        }
+      },
+      {
+        "name": "Ricardo Belmont",
+        "total": 2.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 2.0,
+          "Interior Urbano": 1.0,
+          "Interior Rural": 4.0,
+          "Norte": 1.0,
+          "Centro": 2.0,
+          "Sur": 2.0,
+          "Oriente": 3.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 1.0,
+          "C": 2.0,
+          "D": 1.0,
+          "E": 3.0
+        },
+        "gender": {
+          "Masculino": 3.0,
+          "Femenino": 0.0
+        },
+        "age": {
+          "18-25": 0.0,
+          "26-42": 2.0,
+          "43+": 2.0
+        }
+      },
+      {
+        "name": "George Forsyth",
+        "total": 2.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 1.0,
+          "Interior Urbano": 2.0,
+          "Interior Rural": 0.0,
+          "Norte": 2.0,
+          "Centro": 0.0,
+          "Sur": 0.0,
+          "Oriente": 3.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 5.0,
+          "C": 2.0,
+          "D": 1.0,
+          "E": 1.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 2.0
+        },
+        "age": {
+          "18-25": 3.0,
+          "26-42": 2.0,
+          "43+": 1.0
+        }
+      },
+      {
+        "name": "Victor Andrés García Belaunde",
+        "total": 2.0,
+        "nse": {
+          "A": 0.0,
+          "B": 3.0,
+          "C": 2.0,
+          "D": 1.0,
+          "E": 0.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 1.0
+        },
+        "age": {
+          "18-25": 2.0,
+          "26-42": 1.0,
+          "43+": 2.0
+        }
+      },
+      {
+        "name": "Jorge del Castillo",
+        "total": 2.0,
+        "geography": {
+          "Lima": 1.0,
+          "Interior": 2.0,
+          "Interior Urbano": 2.0,
+          "Interior Rural": 1.0,
+          "Norte": 3.0,
+          "Centro": 1.0,
+          "Sur": 0.0,
+          "Oriente": 4.0
+        },
+        "nse": {
+          "A": 3.0,
+          "B": 2.0,
+          "C": 1.0,
+          "D": 1.0,
+          "E": 2.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 1.0
+        },
+        "age": {
+          "18-25": 2.0,
+          "26-42": 0.0,
+          "43+": 2.0
+        }
+      }
+    ]
+  },
+  "Agosto 2025": {
+    "candidates": [
+      {
+        "name": "Blanco/viciado/ninguno",
+        "total": 38.0,
+        "geography": {
+          "Lima": 28.0,
+          "Interior": 44.0,
+          "Interior Urbano": 40.0,
+          "Interior Rural": 52.0,
+          "Norte": 42.0,
+          "Centro": 43.0,
+          "Sur": 48.0,
+          "Oriente": 43.0
+        },
+        "nse": {
+          "A": 11.0,
+          "B": 24.0,
+          "C": 31.0,
+          "D": 42.0,
+          "E": 52.0
+        },
+        "gender": {
+          "Masculino": 34.0,
+          "Femenino": 43.0
+        },
+        "age": {
+          "18-25": 20.0,
+          "26-42": 39.0,
+          "43+": 47.0
+        }
+      },
+      {
+        "name": "Otros",
+        "total": 17.0,
+        "geography": {
+          "Lima": 14.0,
+          "Interior": 18.0,
+          "Interior Urbano": 18.0,
+          "Interior Rural": 17.0,
+          "Norte": 19.0,
+          "Centro": 19.0,
+          "Sur": 15.0,
+          "Oriente": 19.0
+        },
+        "nse": {
+          "A": 23.0,
+          "B": 20.0,
+          "C": 19.0,
+          "D": 12.0,
+          "E": 16.0
+        },
+        "gender": {
+          "Masculino": 18.0,
+          "Femenino": 15.0
+        },
+        "age": {
+          "18-25": 22.0,
+          "26-42": 17.0,
+          "43+": 13.0
+        }
+      },
+      {
+        "name": "Rafael López Aliaga",
+        "total": 11.0,
+        "geography": {
+          "Lima": 21.0,
+          "Interior": 5.0,
+          "Interior Urbano": 7.0,
+          "Interior Rural": 2.0,
+          "Norte": 6.0,
+          "Centro": 5.0,
+          "Sur": 6.0,
+          "Oriente": 3.0
+        },
+        "nse": {
+          "A": 30.0,
+          "B": 27.0,
+          "C": 11.0,
+          "D": 10.0,
+          "E": 4.0
+        },
+        "gender": {
+          "Masculino": 12.0,
+          "Femenino": 10.0
+        },
+        "age": {
+          "18-25": 15.0,
+          "26-42": 11.0,
+          "43+": 9.0
+        }
+      },
+      {
+        "name": "No precisa",
+        "total": 10.0,
+        "geography": {
+          "Lima": 11.0,
+          "Interior": 10.0,
+          "Interior Urbano": 8.0,
+          "Interior Rural": 15.0,
+          "Norte": 10.0,
+          "Centro": 3.0,
+          "Sur": 17.0,
+          "Oriente": 10.0
+        },
+        "nse": {
+          "A": 3.0,
+          "B": 7.0,
+          "C": 10.0,
+          "D": 11.0,
+          "E": 12.0
+        },
+        "gender": {
+          "Masculino": 10.0,
+          "Femenino": 11.0
+        },
+        "age": {
+          "18-25": 11.0,
+          "26-42": 9.0,
+          "43+": 12.0
+        }
+      },
+      {
+        "name": "Keiko Fujimori",
+        "total": 7.0,
+        "geography": {
+          "Lima": 8.0,
+          "Interior": 6.0,
+          "Interior Urbano": 8.0,
+          "Interior Rural": 4.0,
+          "Norte": 7.0,
+          "Centro": 7.0,
+          "Sur": 2.0,
+          "Oriente": 11.0
+        },
+        "nse": {
+          "A": 11.0,
+          "B": 5.0,
+          "C": 8.0,
+          "D": 8.0,
+          "E": 6.0
+        },
+        "gender": {
+          "Masculino": 8.0,
+          "Femenino": 6.0
+        },
+        "age": {
+          "18-25": 11.0,
+          "26-42": 7.0,
+          "43+": 5.0
+        }
+      },
+      {
+        "name": "Carlos Álvarez",
+        "total": 5.0,
+        "geography": {
+          "Lima": 6.0,
+          "Interior": 4.0,
+          "Interior Urbano": 5.0,
+          "Interior Rural": 1.0,
+          "Norte": 2.0,
+          "Centro": 8.0,
+          "Sur": 4.0,
+          "Oriente": 3.0
+        },
+        "nse": {
+          "A": 14.0,
+          "B": 5.0,
+          "C": 6.0,
+          "D": 5.0,
+          "E": 1.0
+        },
+        "gender": {
+          "Masculino": 5.0,
+          "Femenino": 4.0
+        },
+        "age": {
+          "18-25": 3.0,
+          "26-42": 6.0,
+          "43+": 4.0
+        }
+      },
+      {
+        "name": "Mario Vizcarra",
+        "total": 3.0,
+        "geography": {
+          "Lima": 3.0,
+          "Interior": 3.0,
+          "Interior Urbano": 3.0,
+          "Interior Rural": 3.0,
+          "Norte": 1.0,
+          "Centro": 7.0,
+          "Sur": 2.0,
+          "Oriente": 4.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 2.0,
+          "C": 4.0,
+          "D": 4.0,
+          "E": 2.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 4.0
+        },
+        "age": {
+          "18-25": 5.0,
+          "26-42": 2.0,
+          "43+": 3.0
+        }
+      },
+      {
+        "name": "Alfonso López Chau",
+        "total": 3.0,
+        "geography": {
+          "Lima": 3.0,
+          "Interior": 3.0,
+          "Interior Urbano": 4.0,
+          "Interior Rural": 1.0,
+          "Norte": 2.0,
+          "Centro": 4.0,
+          "Sur": 4.0,
+          "Oriente": 1.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 4.0,
+          "C": 4.0,
+          "D": 3.0,
+          "E": 1.0
+        },
+        "gender": {
+          "Masculino": 5.0,
+          "Femenino": 1.0
+        },
+        "age": {
+          "18-25": 5.0,
+          "26-42": 2.0,
+          "43+": 3.0
+        }
+      },
+      {
+        "name": "Arturo Fernández",
+        "total": 2.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 3.0,
+          "Interior Urbano": 3.0,
+          "Interior Rural": 2.0,
+          "Norte": 5.0,
+          "Centro": 3.0,
+          "Sur": 0.0,
+          "Oriente": 0.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 1.0,
+          "C": 3.0,
+          "D": 2.0,
+          "E": 2.0
+        },
+        "gender": {
+          "Masculino": 3.0,
+          "Femenino": 2.0
+        },
+        "age": {
+          "18-25": 1.0,
+          "26-42": 3.0,
+          "43+": 2.0
+        }
+      },
+      {
+        "name": "César Acuña",
+        "total": 2.0,
+        "geography": {
+          "Lima": 1.0,
+          "Interior": 3.0,
+          "Interior Urbano": 3.0,
+          "Interior Rural": 2.0,
+          "Norte": 4.0,
+          "Centro": 0.0,
+          "Sur": 2.0,
+          "Oriente": 6.0
+        },
+        "nse": {
+          "A": 3.0,
+          "B": 2.0,
+          "C": 2.0,
+          "D": 2.0,
+          "E": 3.0
+        },
+        "gender": {
+          "Masculino": 1.0,
+          "Femenino": 3.0
+        },
+        "age": {
+          "18-25": 5.0,
+          "26-42": 2.0,
+          "43+": 1.0
+        }
+      },
+      {
+        "name": "Phillip Butters",
+        "total": 2.0,
+        "geography": {
+          "Lima": 3.0,
+          "Interior": 1.0,
+          "Interior Urbano": 1.0,
+          "Interior Rural": 1.0,
+          "Norte": 2.0,
+          "Centro": 1.0,
+          "Sur": 0.0,
+          "Oriente": 0.0
+        },
+        "nse": {
+          "A": 5.0,
+          "B": 3.0,
+          "C": 2.0,
+          "D": 1.0,
+          "E": 1.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 1.0
+        },
+        "age": {
+          "18-25": 2.0,
+          "26-42": 2.0,
+          "43+": 1.0
+        }
+      }
+    ]
+  },
+  "Setiembre 2025": {
+    "candidates": [
+      {
+        "name": "Blanco/viciado/ninguno",
+        "total": 37.0,
+        "geography": {
+          "Lima": 28.0,
+          "Interior": 42.0,
+          "Interior Urbano": 44.0,
+          "Interior Rural": 39.0,
+          "Norte": 40.0,
+          "Centro": 42.0,
+          "Sur": 47.0,
+          "Oriente": 39.0
+        },
+        "nse": {
+          "A": 26.0,
+          "B": 29.0,
+          "C": 35.0,
+          "D": 38.0,
+          "E": 44.0
+        },
+        "gender": {
+          "Masculino": 33.0,
+          "Femenino": 42.0
+        },
+        "age": {
+          "18-25": 36.0,
+          "26-42": 36.0,
+          "43+": 39.0
+        }
+      },
+      {
+        "name": "Otros",
+        "total": 12.0,
+        "geography": {
+          "Lima": 13.0,
+          "Interior": 11.0,
+          "Interior Urbano": 12.0,
+          "Interior Rural": 9.0,
+          "Norte": 10.0,
+          "Centro": 14.0,
+          "Sur": 10.0,
+          "Oriente": 12.0
+        },
+        "nse": {
+          "A": 18.0,
+          "B": 13.0,
+          "C": 14.0,
+          "D": 14.0,
+          "E": 7.0
+        },
+        "gender": {
+          "Masculino": 12.0,
+          "Femenino": 12.0
+        },
+        "age": {
+          "18-25": 12.0,
+          "26-42": 13.0,
+          "43+": 11.0
+        }
+      },
+      {
+        "name": "No precisa",
+        "total": 12.0,
+        "geography": {
+          "Lima": 13.0,
+          "Interior": 12.0,
+          "Interior Urbano": 11.0,
+          "Interior Rural": 15.0,
+          "Norte": 14.0,
+          "Centro": 4.0,
+          "Sur": 18.0,
+          "Oriente": 7.0
+        },
+        "nse": {
+          "A": 6.0,
+          "B": 8.0,
+          "C": 12.0,
+          "D": 13.0,
+          "E": 13.0
+        },
+        "gender": {
+          "Masculino": 12.0,
+          "Femenino": 13.0
+        },
+        "age": {
+          "18-25": 14.0,
+          "26-42": 12.0,
+          "43+": 12.0
+        }
+      },
+      {
+        "name": "Rafael López Aliaga",
+        "total": 10.0,
+        "geography": {
+          "Lima": 18.0,
+          "Interior": 6.0,
+          "Interior Urbano": 6.0,
+          "Interior Rural": 5.0,
+          "Norte": 7.0,
+          "Centro": 11.0,
+          "Sur": 4.0,
+          "Oriente": 1.0
+        },
+        "nse": {
+          "A": 17.0,
+          "B": 18.0,
+          "C": 13.0,
+          "D": 8.0,
+          "E": 4.0
+        },
+        "gender": {
+          "Masculino": 13.0,
+          "Femenino": 7.0
+        },
+        "age": {
+          "18-25": 12.0,
+          "26-42": 8.0,
+          "43+": 10.0
+        }
+      },
+      {
+        "name": "Keiko Fujimori",
+        "total": 7.0,
+        "geography": {
+          "Lima": 8.0,
+          "Interior": 7.0,
+          "Interior Urbano": 7.0,
+          "Interior Rural": 8.0,
+          "Norte": 9.0,
+          "Centro": 6.0,
+          "Sur": 3.0,
+          "Oriente": 11.0
+        },
+        "nse": {
+          "A": 9.0,
+          "B": 9.0,
+          "C": 8.0,
+          "D": 6.0,
+          "E": 8.0
+        },
+        "gender": {
+          "Masculino": 8.0,
+          "Femenino": 7.0
+        },
+        "age": {
+          "18-25": 9.0,
+          "26-42": 8.0,
+          "43+": 7.0
+        }
+      },
+      {
+        "name": "Mario Vizcarra",
+        "total": 7.0,
+        "geography": {
+          "Lima": 4.0,
+          "Interior": 9.0,
+          "Interior Urbano": 8.0,
+          "Interior Rural": 11.0,
+          "Norte": 8.0,
+          "Centro": 8.0,
+          "Sur": 4.0,
+          "Oriente": 18.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 5.0,
+          "C": 5.0,
+          "D": 9.0,
+          "E": 10.0
+        },
+        "gender": {
+          "Masculino": 6.0,
+          "Femenino": 8.0
+        },
+        "age": {
+          "18-25": 9.0,
+          "26-42": 6.0,
+          "43+": 7.0
+        }
+      },
+      {
+        "name": "Carlos Álvarez",
+        "total": 4.0,
+        "geography": {
+          "Lima": 4.0,
+          "Interior": 3.0,
+          "Interior Urbano": 4.0,
+          "Interior Rural": 1.0,
+          "Norte": 2.0,
+          "Centro": 6.0,
+          "Sur": 1.0,
+          "Oriente": 5.0
+        },
+        "nse": {
+          "A": 12.0,
+          "B": 4.0,
+          "C": 4.0,
+          "D": 3.0,
+          "E": 3.0
+        },
+        "gender": {
+          "Masculino": 5.0,
+          "Femenino": 3.0
+        },
+        "age": {
+          "18-25": 1.0,
+          "26-42": 4.0,
+          "43+": 4.0
+        }
+      },
+      {
+        "name": "Phillip Butters",
+        "total": 3.0,
+        "geography": {
+          "Lima": 4.0,
+          "Interior": 2.0,
+          "Interior Urbano": 1.0,
+          "Interior Rural": 3.0,
+          "Norte": 2.0,
+          "Centro": 2.0,
+          "Sur": 2.0,
+          "Oriente": 0.0
+        },
+        "nse": {
+          "A": 8.0,
+          "B": 6.0,
+          "C": 2.0,
+          "D": 2.0,
+          "E": 2.0
+        },
+        "gender": {
+          "Masculino": 3.0,
+          "Femenino": 2.0
+        },
+        "age": {
+          "18-25": 2.0,
+          "26-42": 4.0,
+          "43+": 2.0
+        }
+      },
+      {
+        "name": "César Acuña",
+        "total": 2.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 3.0,
+          "Interior Urbano": 4.0,
+          "Interior Rural": 1.0,
+          "Norte": 3.0,
+          "Centro": 3.0,
+          "Sur": 2.0,
+          "Oriente": 3.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 1.0,
+          "C": 3.0,
+          "D": 3.0,
+          "E": 2.0
+        },
+        "gender": {
+          "Masculino": 3.0,
+          "Femenino": 2.0
+        },
+        "age": {
+          "18-25": 3.0,
+          "26-42": 3.0,
+          "43+": 2.0
+        }
+      },
+      {
+        "name": "Rafael Belaunde",
+        "total": 2.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 2.0,
+          "Interior Urbano": 2.0,
+          "Interior Rural": 1.0,
+          "Norte": 3.0,
+          "Centro": 1.0,
+          "Sur": 1.0,
+          "Oriente": 0.0
+        },
+        "nse": {
+          "A": 3.0,
+          "B": 2.0,
+          "C": 2.0,
+          "D": 2.0,
+          "E": 1.0
+        },
+        "gender": {
+          "Masculino": 1.0,
+          "Femenino": 2.0
+        },
+        "age": {
+          "18-25": 0.0,
+          "26-42": 2.0,
+          "43+": 2.0
+        }
+      }
+    ]
+  },
+  "Octubre 2025": {
+    "candidates": [
+      {
+        "name": "Blanco/viciado/ninguno",
+        "total": 39.0,
+        "geography": {
+          "Lima": 21.0,
+          "Interior": 49.0,
+          "Interior Urbano": 48.0,
+          "Interior Rural": 51.0,
+          "Norte": 48.0,
+          "Centro": 44.0,
+          "Sur": 54.0,
+          "Oriente": 48.0
+        },
+        "nse": {
+          "A": 21.0,
+          "B": 23.0,
+          "C": 30.0,
+          "D": 49.0,
+          "E": 50.0
+        },
+        "gender": {
+          "Masculino": 41.0,
+          "Femenino": 38.0
+        },
+        "age": {
+          "18-25": 32.0,
+          "26-42": 38.0,
+          "43+": 45.0
+        }
+      },
+      {
+        "name": "Otros",
+        "total": 12.0,
+        "geography": {
+          "Lima": 14.0,
+          "Interior": 11.0,
+          "Interior Urbano": 14.0,
+          "Interior Rural": 4.0,
+          "Norte": 7.0,
+          "Centro": 19.0,
+          "Sur": 14.0,
+          "Oriente": 5.0
+        },
+        "nse": {
+          "A": 13.0,
+          "B": 12.0,
+          "C": 17.0,
+          "D": 11.0,
+          "E": 5.0
+        },
+        "gender": {
+          "Masculino": 12.0,
+          "Femenino": 12.0
+        },
+        "age": {
+          "18-25": 15.0,
+          "26-42": 10.0,
+          "43+": 12.0
+        }
+      },
+      {
+        "name": "No precisa",
+        "total": 11.0,
+        "geography": {
+          "Lima": 13.0,
+          "Interior": 10.0,
+          "Interior Urbano": 8.0,
+          "Interior Rural": 15.0,
+          "Norte": 8.0,
+          "Centro": 6.0,
+          "Sur": 14.0,
+          "Oriente": 14.0
+        },
+        "nse": {
+          "A": 1.0,
+          "B": 6.0,
+          "C": 11.0,
+          "D": 11.0,
+          "E": 15.0
+        },
+        "gender": {
+          "Masculino": 10.0,
+          "Femenino": 13.0
+        },
+        "age": {
+          "18-25": 10.0,
+          "26-42": 10.0,
+          "43+": 13.0
+        }
+      },
+      {
+        "name": "Rafael López Aliaga",
+        "total": 10.0,
+        "geography": {
+          "Lima": 21.0,
+          "Interior": 4.0,
+          "Interior Urbano": 5.0,
+          "Interior Rural": 1.0,
+          "Norte": 7.0,
+          "Centro": 3.0,
+          "Sur": 1.0,
+          "Oriente": 5.0
+        },
+        "nse": {
+          "A": 37.0,
+          "B": 23.0,
+          "C": 12.0,
+          "D": 7.0,
+          "E": 3.0
+        },
+        "gender": {
+          "Masculino": 12.0,
+          "Femenino": 8.0
+        },
+        "age": {
+          "18-25": 13.0,
+          "26-42": 11.0,
+          "43+": 8.0
+        }
+      },
+      {
+        "name": "Mario Vizcarra",
+        "total": 8.0,
+        "geography": {
+          "Lima": 5.0,
+          "Interior": 10.0,
+          "Interior Urbano": 6.0,
+          "Interior Rural": 19.0,
+          "Norte": 8.0,
+          "Centro": 11.0,
+          "Sur": 8.0,
+          "Oriente": 13.0
+        },
+        "nse": {
+          "A": 2.0,
+          "B": 5.0,
+          "C": 7.0,
+          "D": 5.0,
+          "E": 14.0
+        },
+        "gender": {
+          "Masculino": 8.0,
+          "Femenino": 8.0
+        },
+        "age": {
+          "18-25": 11.0,
+          "26-42": 8.0,
+          "43+": 6.0
+        }
+      },
+      {
+        "name": "Keiko Fujimori",
+        "total": 6.0,
+        "geography": {
+          "Lima": 9.0,
+          "Interior": 5.0,
+          "Interior Urbano": 6.0,
+          "Interior Rural": 2.0,
+          "Norte": 5.0,
+          "Centro": 4.0,
+          "Sur": 2.0,
+          "Oriente": 7.0
+        },
+        "nse": {
+          "A": 7.0,
+          "B": 9.0,
+          "C": 6.0,
+          "D": 8.0,
+          "E": 3.0
+        },
+        "gender": {
+          "Masculino": 5.0,
+          "Femenino": 7.0
+        },
+        "age": {
+          "18-25": 8.0,
+          "26-42": 6.0,
+          "43+": 5.0
+        }
+      },
+      {
+        "name": "Carlos Álvarez",
+        "total": 5.0,
+        "geography": {
+          "Lima": 7.0,
+          "Interior": 4.0,
+          "Interior Urbano": 5.0,
+          "Interior Rural": 2.0,
+          "Norte": 7.0,
+          "Centro": 3.0,
+          "Sur": 3.0,
+          "Oriente": 3.0
+        },
+        "nse": {
+          "A": 7.0,
+          "B": 8.0,
+          "C": 7.0,
+          "D": 4.0,
+          "E": 3.0
+        },
+        "gender": {
+          "Masculino": 5.0,
+          "Femenino": 5.0
+        },
+        "age": {
+          "18-25": 3.0,
+          "26-42": 7.0,
+          "43+": 4.0
+        }
+      },
+      {
+        "name": "César Acuña",
+        "total": 3.0,
+        "geography": {
+          "Lima": 1.0,
+          "Interior": 4.0,
+          "Interior Urbano": 4.0,
+          "Interior Rural": 3.0,
+          "Norte": 7.0,
+          "Centro": 2.0,
+          "Sur": 0.0,
+          "Oriente": 4.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 2.0,
+          "C": 2.0,
+          "D": 3.0,
+          "E": 5.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 4.0
+        },
+        "age": {
+          "18-25": 2.0,
+          "26-42": 4.0,
+          "43+": 2.0
+        }
+      },
+      {
+        "name": "Phillip Butters",
+        "total": 2.0,
+        "geography": {
+          "Lima": 3.0,
+          "Interior": 1.0,
+          "Interior Urbano": 1.0,
+          "Interior Rural": 2.0,
+          "Norte": 1.0,
+          "Centro": 2.0,
+          "Sur": 1.0,
+          "Oriente": 1.0
+        },
+        "nse": {
+          "A": 2.0,
+          "B": 5.0,
+          "C": 3.0,
+          "D": 0.0,
+          "E": 1.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 2.0
+        },
+        "age": {
+          "18-25": 3.0,
+          "26-42": 2.0,
+          "43+": 2.0
+        }
+      },
+      {
+        "name": "Alfonso López Chau",
+        "total": 2.0,
+        "geography": {
+          "Lima": 3.0,
+          "Interior": 1.0,
+          "Interior Urbano": 2.0,
+          "Interior Rural": 0.0,
+          "Norte": 1.0,
+          "Centro": 4.0,
+          "Sur": 2.0,
+          "Oriente": 0.0
+        },
+        "nse": {
+          "A": 5.0,
+          "B": 4.0,
+          "C": 3.0,
+          "D": 1.0,
+          "E": 0.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 1.0
+        },
+        "age": {
+          "18-25": 2.0,
+          "26-42": 2.0,
+          "43+": 1.0
+        }
+      },
+      {
+        "name": "Rafael Belaunde",
+        "total": 2.0,
+        "geography": {
+          "Lima": 3.0,
+          "Interior": 1.0,
+          "Interior Urbano": 1.0,
+          "Interior Rural": 1.0,
+          "Norte": 1.0,
+          "Centro": 2.0,
+          "Sur": 1.0,
+          "Oriente": 0.0
+        },
+        "nse": {
+          "A": 5.0,
+          "B": 3.0,
+          "C": 2.0,
+          "D": 1.0,
+          "E": 1.0
+        },
+        "gender": {
+          "Masculino": 1.0,
+          "Femenino": 2.0
+        },
+        "age": {
+          "18-25": 1.0,
+          "26-42": 2.0,
+          "43+": 2.0
+        }
+      }
+    ]
+  },
+  "Octubre (2) 2025": {
+    "candidates": [
+      {
+        "name": "Blanco/viciado/ninguno",
+        "total": 37.0,
+        "geography": {
+          "Lima": 23.0,
+          "Interior": 45.0,
+          "Interior Urbano": 42.0,
+          "Interior Rural": 50.0,
+          "Norte": 40.0,
+          "Centro": 39.0,
+          "Sur": 53.0,
+          "Oriente": 47.0
+        },
+        "nse": {
+          "A": 8.0,
+          "B": 10.0,
+          "C": 29.0,
+          "D": 44.0,
+          "E": 55.0
+        },
+        "gender": {
+          "Masculino": 35.0,
+          "Femenino": 39.0
+        },
+        "age": {
+          "18-25": 28.0,
+          "26-42": 35.0,
+          "43+": 44.0
+        }
+      },
+      {
+        "name": "No precisa",
+        "total": 12.0,
+        "geography": {
+          "Lima": 17.0,
+          "Interior": 10.0,
+          "Interior Urbano": 8.0,
+          "Interior Rural": 15.0,
+          "Norte": 10.0,
+          "Centro": 11.0,
+          "Sur": 14.0,
+          "Oriente": 4.0
+        },
+        "nse": {
+          "A": 8.0,
+          "B": 6.0,
+          "C": 12.0,
+          "D": 15.0,
+          "E": 13.0
+        },
+        "gender": {
+          "Masculino": 11.0,
+          "Femenino": 14.0
+        },
+        "age": {
+          "18-25": 14.0,
+          "26-42": 11.0,
+          "43+": 12.0
+        }
+      },
+      {
+        "name": "Otros",
+        "total": 10.0,
+        "geography": {
+          "Lima": 9.0,
+          "Interior": 10.0,
+          "Interior Urbano": 11.0,
+          "Interior Rural": 10.0,
+          "Norte": 11.0,
+          "Centro": 12.0,
+          "Sur": 10.0,
+          "Oriente": 9.0
+        },
+        "nse": {
+          "A": 22.0,
+          "B": 10.0,
+          "C": 10.0,
+          "D": 9.0,
+          "E": 10.0
+        },
+        "gender": {
+          "Masculino": 11.0,
+          "Femenino": 9.0
+        },
+        "age": {
+          "18-25": 11.0,
+          "26-42": 11.0,
+          "43+": 8.0
+        }
+      },
+      {
+        "name": "Rafael López Aliaga",
+        "total": 9.0,
+        "geography": {
+          "Lima": 18.0,
+          "Interior": 5.0,
+          "Interior Urbano": 6.0,
+          "Interior Rural": 4.0,
+          "Norte": 4.0,
+          "Centro": 8.0,
+          "Sur": 4.0,
+          "Oriente": 6.0
+        },
+        "nse": {
+          "A": 36.0,
+          "B": 23.0,
+          "C": 13.0,
+          "D": 3.0,
+          "E": 4.0
+        },
+        "gender": {
+          "Masculino": 12.0,
+          "Femenino": 7.0
+        },
+        "age": {
+          "18-25": 14.0,
+          "26-42": 8.0,
+          "43+": 8.0
+        }
+      },
+      {
+        "name": "Keiko Fujimori",
+        "total": 7.0,
+        "geography": {
+          "Lima": 11.0,
+          "Interior": 6.0,
+          "Interior Urbano": 7.0,
+          "Interior Rural": 4.0,
+          "Norte": 5.0,
+          "Centro": 7.0,
+          "Sur": 1.0,
+          "Oriente": 13.0
+        },
+        "nse": {
+          "A": 7.0,
+          "B": 9.0,
+          "C": 9.0,
+          "D": 8.0,
+          "E": 5.0
+        },
+        "gender": {
+          "Masculino": 7.0,
+          "Femenino": 9.0
+        },
+        "age": {
+          "18-25": 7.0,
+          "26-42": 9.0,
+          "43+": 7.0
+        }
+      },
+      {
+        "name": "Mario Vizcarra",
+        "total": 7.0,
+        "geography": {
+          "Lima": 7.0,
+          "Interior": 7.0,
+          "Interior Urbano": 7.0,
+          "Interior Rural": 6.0,
+          "Norte": 10.0,
+          "Centro": 2.0,
+          "Sur": 5.0,
+          "Oriente": 10.0
+        },
+        "nse": {
+          "A": 3.0,
+          "B": 10.0,
+          "C": 8.0,
+          "D": 7.0,
+          "E": 4.0
+        },
+        "gender": {
+          "Masculino": 5.0,
+          "Femenino": 9.0
+        },
+        "age": {
+          "18-25": 10.0,
+          "26-42": 8.0,
+          "43+": 4.0
+        }
+      },
+      {
+        "name": "Carlos Álvarez",
+        "total": 4.0,
+        "geography": {
+          "Lima": 4.0,
+          "Interior": 4.0,
+          "Interior Urbano": 4.0,
+          "Interior Rural": 3.0,
+          "Norte": 6.0,
+          "Centro": 9.0,
+          "Sur": 1.0,
+          "Oriente": 1.0
+        },
+        "nse": {
+          "A": 3.0,
+          "B": 7.0,
+          "C": 6.0,
+          "D": 3.0,
+          "E": 3.0
+        },
+        "gender": {
+          "Masculino": 5.0,
+          "Femenino": 3.0
+        },
+        "age": {
+          "18-25": 5.0,
+          "26-42": 4.0,
+          "43+": 4.0
+        }
+      },
+      {
+        "name": "Alfonso López Chau",
+        "total": 2.0,
+        "geography": {
+          "Lima": 1.0,
+          "Interior": 3.0,
+          "Interior Urbano": 2.0,
+          "Interior Rural": 3.0,
+          "Norte": 2.0,
+          "Centro": 4.0,
+          "Sur": 2.0,
+          "Oriente": 3.0
+        },
+        "nse": {
+          "A": 1.0,
+          "B": 5.0,
+          "C": 2.0,
+          "D": 1.0,
+          "E": 2.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 2.0
+        },
+        "age": {
+          "18-25": 1.0,
+          "26-42": 3.0,
+          "43+": 2.0
+        }
+      },
+      {
+        "name": "Carlos Espá",
+        "total": 2.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 2.0,
+          "Interior Urbano": 3.0,
+          "Interior Rural": 0.0,
+          "Norte": 2.0,
+          "Centro": 1.0,
+          "Sur": 3.0,
+          "Oriente": 1.0
+        },
+        "nse": {
+          "A": 1.0,
+          "B": 4.0,
+          "C": 1.0,
+          "D": 3.0,
+          "E": 0.0
+        },
+        "gender": {
+          "Masculino": 3.0,
+          "Femenino": 1.0
+        },
+        "age": {
+          "18-25": 4.0,
+          "26-42": 2.0,
+          "43+": 1.0
+        }
+      },
+      {
+        "name": "César Acuña",
+        "total": 2.0,
+        "geography": {
+          "Lima": 1.0,
+          "Interior": 2.0,
+          "Interior Urbano": 2.0,
+          "Interior Rural": 3.0,
+          "Norte": 3.0,
+          "Centro": 2.0,
+          "Sur": 0.0,
+          "Oriente": 4.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 2.0,
+          "C": 2.0,
+          "D": 1.0,
+          "E": 2.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 2.0
+        },
+        "age": {
+          "18-25": 3.0,
+          "26-42": 2.0,
+          "43+": 1.0
+        }
+      },
+      {
+        "name": "Phillip Butters",
+        "total": 2.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 1.0,
+          "Interior Urbano": 2.0,
+          "Interior Rural": 1.0,
+          "Norte": 2.0,
+          "Centro": 1.0,
+          "Sur": 2.0,
+          "Oriente": 0.0
+        },
+        "nse": {
+          "A": 2.0,
+          "B": 4.0,
+          "C": 2.0,
+          "D": 1.0,
+          "E": 1.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 1.0
+        },
+        "age": {
+          "18-25": 0.0,
+          "26-42": 2.0,
+          "43+": 2.0
+        }
+      },
+      {
+        "name": "Rafael Belaunde",
+        "total": 2.0,
+        "geography": {
+          "Lima": 3.0,
+          "Interior": 1.0,
+          "Interior Urbano": 1.0,
+          "Interior Rural": 0.0,
+          "Norte": 1.0,
+          "Centro": 0.0,
+          "Sur": 0.0,
+          "Oriente": 0.0
+        },
+        "nse": {
+          "A": 5.0,
+          "B": 4.0,
+          "C": 2.0,
+          "D": 1.0,
+          "E": 0.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 1.0
+        },
+        "age": {
+          "18-25": 2.0,
+          "26-42": 2.0,
+          "43+": 1.0
+        }
+      }
+    ]
+  },
+  "Noviembre (1) 2025": {
+    "candidates": [
+      {
+        "name": "Blanco/viciado/ninguno",
+        "total": 30.0,
+        "geography": {
+          "Lima": 20.0,
+          "Interior": 36.0,
+          "Interior Urbano": 35.0,
+          "Interior Rural": 38.0,
+          "Norte": 33.0,
+          "Centro": 45.0,
+          "Sur": 34.0,
+          "Oriente": 39.0
+        },
+        "nse": {
+          "A": 11.0,
+          "B": 20.0,
+          "C": 23.0,
+          "D": 35.0,
+          "E": 41.0
+        },
+        "gender": {
+          "Masculino": 26.0,
+          "Femenino": 35.0
+        },
+        "age": {
+          "18-25": 23.0,
+          "26-42": 29.0,
+          "43+": 36.0
+        }
+      },
+      {
+        "name": "Otros",
+        "total": 12.0,
+        "geography": {
+          "Lima": 11.0,
+          "Interior": 13.0,
+          "Interior Urbano": 13.0,
+          "Interior Rural": 12.0,
+          "Norte": 11.0,
+          "Centro": 11.0,
+          "Sur": 17.0,
+          "Oriente": 13.0
+        },
+        "nse": {
+          "A": 18.0,
+          "B": 17.0,
+          "C": 12.0,
+          "D": 10.0,
+          "E": 11.0
+        },
+        "gender": {
+          "Masculino": 14.0,
+          "Femenino": 10.0
+        },
+        "age": {
+          "18-25": 13.0,
+          "26-42": 13.0,
+          "43+": 11.0
+        }
+      },
+      {
+        "name": "No precisa",
+        "total": 12.0,
+        "geography": {
+          "Lima": 15.0,
+          "Interior": 11.0,
+          "Interior Urbano": 12.0,
+          "Interior Rural": 10.0,
+          "Norte": 13.0,
+          "Centro": 9.0,
+          "Sur": 15.0,
+          "Oriente": 5.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 11.0,
+          "C": 14.0,
+          "D": 12.0,
+          "E": 14.0
+        },
+        "gender": {
+          "Masculino": 12.0,
+          "Femenino": 14.0
+        },
+        "age": {
+          "18-25": 12.0,
+          "26-42": 11.0,
+          "43+": 14.0
+        }
+      },
+      {
+        "name": "Rafael López Aliaga",
+        "total": 9.0,
+        "geography": {
+          "Lima": 16.0,
+          "Interior": 5.0,
+          "Interior Urbano": 6.0,
+          "Interior Rural": 4.0,
+          "Norte": 8.0,
+          "Centro": 3.0,
+          "Sur": 6.0,
+          "Oriente": 2.0
+        },
+        "nse": {
+          "A": 32.0,
+          "B": 12.0,
+          "C": 13.0,
+          "D": 8.0,
+          "E": 3.0
+        },
+        "gender": {
+          "Masculino": 11.0,
+          "Femenino": 7.0
+        },
+        "age": {
+          "18-25": 10.0,
+          "26-42": 9.0,
+          "43+": 9.0
+        }
+      },
+      {
+        "name": "Keiko Fujimori",
+        "total": 8.0,
+        "geography": {
+          "Lima": 10.0,
+          "Interior": 6.0,
+          "Interior Urbano": 6.0,
+          "Interior Rural": 7.0,
+          "Norte": 7.0,
+          "Centro": 5.0,
+          "Sur": 4.0,
+          "Oriente": 9.0
+        },
+        "nse": {
+          "A": 9.0,
+          "B": 7.0,
+          "C": 9.0,
+          "D": 7.0,
+          "E": 6.0
+        },
+        "gender": {
+          "Masculino": 7.0,
+          "Femenino": 9.0
+        },
+        "age": {
+          "18-25": 7.0,
+          "26-42": 9.0,
+          "43+": 7.0
+        }
+      },
+      {
+        "name": "Mario Vizcarra",
+        "total": 7.0,
+        "geography": {
+          "Lima": 5.0,
+          "Interior": 8.0,
+          "Interior Urbano": 7.0,
+          "Interior Rural": 9.0,
+          "Norte": 8.0,
+          "Centro": 10.0,
+          "Sur": 5.0,
+          "Oriente": 9.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 6.0,
+          "C": 5.0,
+          "D": 9.0,
+          "E": 7.0
+        },
+        "gender": {
+          "Masculino": 6.0,
+          "Femenino": 7.0
+        },
+        "age": {
+          "18-25": 11.0,
+          "26-42": 6.0,
+          "43+": 5.0
+        }
+      },
+      {
+        "name": "Carlos Álvarez",
+        "total": 4.0,
+        "geography": {
+          "Lima": 4.0,
+          "Interior": 4.0,
+          "Interior Urbano": 4.0,
+          "Interior Rural": 5.0,
+          "Norte": 3.0,
+          "Centro": 4.0,
+          "Sur": 6.0,
+          "Oriente": 5.0
+        },
+        "nse": {
+          "A": 1.0,
+          "B": 7.0,
+          "C": 4.0,
+          "D": 4.0,
+          "E": 5.0
+        },
+        "gender": {
+          "Masculino": 5.0,
+          "Femenino": 4.0
+        },
+        "age": {
+          "18-25": 5.0,
+          "26-42": 5.0,
+          "43+": 4.0
+        }
+      },
+      {
+        "name": "César Acuña",
+        "total": 3.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 4.0,
+          "Interior Urbano": 3.0,
+          "Interior Rural": 7.0,
+          "Norte": 4.0,
+          "Centro": 1.0,
+          "Sur": 3.0,
+          "Oriente": 7.0
+        },
+        "nse": {
+          "A": 3.0,
+          "B": 1.0,
+          "C": 2.0,
+          "D": 3.0,
+          "E": 6.0
+        },
+        "gender": {
+          "Masculino": 3.0,
+          "Femenino": 4.0
+        },
+        "age": {
+          "18-25": 5.0,
+          "26-42": 4.0,
+          "43+": 2.0
+        }
+      },
+      {
+        "name": "Alfonso López Chau",
+        "total": 3.0,
+        "geography": {
+          "Lima": 1.0,
+          "Interior": 4.0,
+          "Interior Urbano": 4.0,
+          "Interior Rural": 3.0,
+          "Norte": 3.0,
+          "Centro": 9.0,
+          "Sur": 3.0,
+          "Oriente": 1.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 3.0,
+          "C": 4.0,
+          "D": 2.0,
+          "E": 2.0
+        },
+        "gender": {
+          "Masculino": 4.0,
+          "Femenino": 2.0
+        },
+        "age": {
+          "18-25": 3.0,
+          "26-42": 3.0,
+          "43+": 2.0
+        }
+      },
+      {
+        "name": "George Forsyth",
+        "total": 2.0,
+        "geography": {
+          "Lima": 3.0,
+          "Interior": 1.0,
+          "Interior Urbano": 1.0,
+          "Interior Rural": 1.0,
+          "Norte": 1.0,
+          "Centro": 1.0,
+          "Sur": 0.0,
+          "Oriente": 3.0
+        },
+        "nse": {
+          "A": 3.0,
+          "B": 4.0,
+          "C": 2.0,
+          "D": 2.0,
+          "E": 1.0
+        },
+        "gender": {
+          "Masculino": 3.0,
+          "Femenino": 1.0
+        },
+        "age": {
+          "18-25": 1.0,
+          "26-42": 3.0,
+          "43+": 1.0
+        }
+      },
+      {
+        "name": "Carlos Espá",
+        "total": 2.0,
+        "geography": {
+          "Lima": 3.0,
+          "Interior": 1.0,
+          "Interior Urbano": 2.0,
+          "Interior Rural": 0.0,
+          "Norte": 1.0,
+          "Centro": 0.0,
+          "Sur": 2.0,
+          "Oriente": 2.0
+        },
+        "nse": {
+          "A": 3.0,
+          "B": 1.0,
+          "C": 3.0,
+          "D": 2.0,
+          "E": 0.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 1.0
+        },
+        "age": {
+          "18-25": 4.0,
+          "26-42": 2.0,
+          "43+": 1.0
+        }
+      },
+      {
+        "name": "Alfredo Barnechea",
+        "total": 2.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 2.0,
+          "Interior Urbano": 2.0,
+          "Interior Rural": 2.0,
+          "Norte": 1.0,
+          "Centro": 2.0,
+          "Sur": 2.0,
+          "Oriente": 2.0
+        },
+        "nse": {
+          "A": 6.0,
+          "B": 1.0,
+          "C": 2.0,
+          "D": 2.0,
+          "E": 1.0
+        },
+        "gender": {
+          "Masculino": 1.0,
+          "Femenino": 3.0
+        },
+        "age": {
+          "18-25": 2.0,
+          "26-42": 1.0,
+          "43+": 2.0
+        }
+      },
+      {
+        "name": "Phillip Butters",
+        "total": 2.0,
+        "geography": {
+          "Lima": 4.0,
+          "Interior": 1.0,
+          "Interior Urbano": 1.0,
+          "Interior Rural": 1.0,
+          "Norte": 2.0,
+          "Centro": 0.0,
+          "Sur": 0.0,
+          "Oriente": 0.0
+        },
+        "nse": {
+          "A": 3.0,
+          "B": 4.0,
+          "C": 3.0,
+          "D": 1.0,
+          "E": 0.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 1.0
+        },
+        "age": {
+          "18-25": 1.0,
+          "26-42": 2.0,
+          "43+": 2.0
+        }
+      },
+      {
+        "name": "Rafael Belaunde",
+        "total": 2.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 2.0,
+          "Interior Urbano": 2.0,
+          "Interior Rural": 0.0,
+          "Norte": 2.0,
+          "Centro": 0.0,
+          "Sur": 2.0,
+          "Oriente": 1.0
+        },
+        "nse": {
+          "A": 6.0,
+          "B": 4.0,
+          "C": 3.0,
+          "D": 1.0,
+          "E": 0.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 1.0
+        },
+        "age": {
+          "18-25": 1.0,
+          "26-42": 2.0,
+          "43+": 2.0
+        }
+      }
+    ]
+  },
+  "Noviembre (2) 2025": {
+    "candidates": [
+      {
+        "name": "Blanco/viciado/ninguno",
+        "total": 33.0,
+        "geography": {
+          "Lima": 23.0,
+          "Interior": 38.0,
+          "Interior Urbano": 39.0,
+          "Interior Rural": 36.0,
+          "Norte": 38.0,
+          "Centro": 41.0,
+          "Sur": 39.0,
+          "Oriente": 35.0
+        },
+        "nse": {
+          "A": 6.0,
+          "B": 20.0,
+          "C": 31.0,
+          "D": 39.0,
+          "E": 38.0
+        },
+        "gender": {
+          "Masculino": 30.0,
+          "Femenino": 36.0
+        },
+        "age": {
+          "18-25": 28.0,
+          "26-42": 33.0,
+          "43+": 35.0
+        }
+      },
+      {
+        "name": "No precisa",
+        "total": 15.0,
+        "geography": {
+          "Lima": 13.0,
+          "Interior": 17.0,
+          "Interior Urbano": 15.0,
+          "Interior Rural": 21.0,
+          "Norte": 20.0,
+          "Centro": 4.0,
+          "Sur": 21.0,
+          "Oriente": 19.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 9.0,
+          "C": 17.0,
+          "D": 14.0,
+          "E": 19.0
+        },
+        "gender": {
+          "Masculino": 16.0,
+          "Femenino": 16.0
+        },
+        "age": {
+          "18-25": 16.0,
+          "26-42": 12.0,
+          "43+": 19.0
+        }
+      },
+      {
+        "name": "Otros",
+        "total": 10.0,
+        "geography": {
+          "Lima": 10.0,
+          "Interior": 11.0,
+          "Interior Urbano": 12.0,
+          "Interior Rural": 8.0,
+          "Norte": 11.0,
+          "Centro": 14.0,
+          "Sur": 11.0,
+          "Oriente": 8.0
+        },
+        "nse": {
+          "A": 14.0,
+          "B": 17.0,
+          "C": 9.0,
+          "D": 10.0,
+          "E": 10.0
+        },
+        "gender": {
+          "Masculino": 10.0,
+          "Femenino": 11.0
+        },
+        "age": {
+          "18-25": 13.0,
+          "26-42": 10.0,
+          "43+": 10.0
+        }
+      },
+      {
+        "name": "Rafael López Aliaga",
+        "total": 9.0,
+        "geography": {
+          "Lima": 19.0,
+          "Interior": 4.0,
+          "Interior Urbano": 5.0,
+          "Interior Rural": 4.0,
+          "Norte": 4.0,
+          "Centro": 3.0,
+          "Sur": 5.0,
+          "Oriente": 6.0
+        },
+        "nse": {
+          "A": 36.0,
+          "B": 22.0,
+          "C": 11.0,
+          "D": 5.0,
+          "E": 4.0
+        },
+        "gender": {
+          "Masculino": 13.0,
+          "Femenino": 6.0
+        },
+        "age": {
+          "18-25": 11.0,
+          "26-42": 9.0,
+          "43+": 8.0
+        }
+      },
+      {
+        "name": "Keiko Fujimori",
+        "total": 7.0,
+        "geography": {
+          "Lima": 10.0,
+          "Interior": 5.0,
+          "Interior Urbano": 6.0,
+          "Interior Rural": 4.0,
+          "Norte": 5.0,
+          "Centro": 7.0,
+          "Sur": 3.0,
+          "Oriente": 8.0
+        },
+        "nse": {
+          "A": 9.0,
+          "B": 5.0,
+          "C": 9.0,
+          "D": 8.0,
+          "E": 4.0
+        },
+        "gender": {
+          "Masculino": 6.0,
+          "Femenino": 7.0
+        },
+        "age": {
+          "18-25": 4.0,
+          "26-42": 7.0,
+          "43+": 8.0
+        }
+      },
+      {
+        "name": "Mario Vizcarra",
+        "total": 7.0,
+        "geography": {
+          "Lima": 5.0,
+          "Interior": 8.0,
+          "Interior Urbano": 8.0,
+          "Interior Rural": 6.0,
+          "Norte": 6.0,
+          "Centro": 8.0,
+          "Sur": 6.0,
+          "Oriente": 12.0
+        },
+        "nse": {
+          "A": 3.0,
+          "B": 6.0,
+          "C": 6.0,
+          "D": 10.0,
+          "E": 5.0
+        },
+        "gender": {
+          "Masculino": 6.0,
+          "Femenino": 8.0
+        },
+        "age": {
+          "18-25": 10.0,
+          "26-42": 8.0,
+          "43+": 4.0
+        }
+      },
+      {
+        "name": "Carlos Álvarez",
+        "total": 5.0,
+        "geography": {
+          "Lima": 6.0,
+          "Interior": 4.0,
+          "Interior Urbano": 4.0,
+          "Interior Rural": 5.0,
+          "Norte": 3.0,
+          "Centro": 12.0,
+          "Sur": 1.0,
+          "Oriente": 3.0
+        },
+        "nse": {
+          "A": 5.0,
+          "B": 6.0,
+          "C": 4.0,
+          "D": 3.0,
+          "E": 6.0
+        },
+        "gender": {
+          "Masculino": 6.0,
+          "Femenino": 4.0
+        },
+        "age": {
+          "18-25": 3.0,
+          "26-42": 5.0,
+          "43+": 6.0
+        }
+      },
+      {
+        "name": "Alfonso López Chau",
+        "total": 2.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 3.0,
+          "Interior Urbano": 2.0,
+          "Interior Rural": 5.0,
+          "Norte": 1.0,
+          "Centro": 4.0,
+          "Sur": 3.0,
+          "Oriente": 3.0
+        },
+        "nse": {
+          "A": 8.0,
+          "B": 1.0,
+          "C": 1.0,
+          "D": 3.0,
+          "E": 3.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 3.0
+        },
+        "age": {
+          "18-25": 2.0,
+          "26-42": 3.0,
+          "43+": 2.0
+        }
+      },
+      {
+        "name": "César Acuña",
+        "total": 2.0,
+        "geography": {
+          "Lima": 1.0,
+          "Interior": 2.0,
+          "Interior Urbano": 2.0,
+          "Interior Rural": 3.0,
+          "Norte": 3.0,
+          "Centro": 3.0,
+          "Sur": 0.0,
+          "Oriente": 2.0
+        },
+        "nse": {
+          "A": 5.0,
+          "B": 1.0,
+          "C": 3.0,
+          "D": 1.0,
+          "E": 2.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 2.0
+        },
+        "age": {
+          "18-25": 3.0,
+          "26-42": 2.0,
+          "43+": 1.0
+        }
+      },
+      {
+        "name": "Carlos Espá",
+        "total": 2.0,
+        "geography": {
+          "Lima": 1.0,
+          "Interior": 2.0,
+          "Interior Urbano": 2.0,
+          "Interior Rural": 2.0,
+          "Norte": 2.0,
+          "Centro": 1.0,
+          "Sur": 4.0,
+          "Oriente": 0.0
+        },
+        "nse": {
+          "A": 7.0,
+          "B": 2.0,
+          "C": 1.0,
+          "D": 3.0,
+          "E": 1.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 1.0
+        },
+        "age": {
+          "18-25": 1.0,
+          "26-42": 3.0,
+          "43+": 1.0
+        }
+      },
+      {
+        "name": "George Forsyth",
+        "total": 2.0,
+        "geography": {
+          "Lima": 3.0,
+          "Interior": 1.0,
+          "Interior Urbano": 1.0,
+          "Interior Rural": 1.0,
+          "Norte": 2.0,
+          "Centro": 1.0,
+          "Sur": 0.0,
+          "Oriente": 1.0
+        },
+        "nse": {
+          "A": 3.0,
+          "B": 3.0,
+          "C": 2.0,
+          "D": 1.0,
+          "E": 2.0
+        },
+        "gender": {
+          "Masculino": 1.0,
+          "Femenino": 2.0
+        },
+        "age": {
+          "18-25": 2.0,
+          "26-42": 3.0,
+          "43+": 1.0
+        }
+      },
+      {
+        "name": "Phillip Butters",
+        "total": 2.0,
+        "geography": {
+          "Lima": 4.0,
+          "Interior": 1.0,
+          "Interior Urbano": 1.0,
+          "Interior Rural": 0.0,
+          "Norte": 1.0,
+          "Centro": 1.0,
+          "Sur": 0.0,
+          "Oriente": 0.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 4.0,
+          "C": 3.0,
+          "D": 1.0,
+          "E": 1.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 1.0
+        },
+        "age": {
+          "18-25": 3.0,
+          "26-42": 2.0,
+          "43+": 1.0
+        }
+      },
+      {
+        "name": "Rafael Belaunde",
+        "total": 2.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 1.0,
+          "Interior Urbano": 1.0,
+          "Interior Rural": 1.0,
+          "Norte": 2.0,
+          "Centro": 0.0,
+          "Sur": 1.0,
+          "Oriente": 3.0
+        },
+        "nse": {
+          "A": 4.0,
+          "B": 1.0,
+          "C": 1.0,
+          "D": 1.0,
+          "E": 2.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 1.0
+        },
+        "age": {
+          "18-25": 2.0,
+          "26-42": 2.0,
+          "43+": 1.0
+        }
+      }
+    ]
+  },
+  "Diciembre 2025 (1)": {
+    "candidates": [
+      {
+        "name": "Blanco/viciado/ninguno",
+        "total": 29.0,
+        "geography": {
+          "Lima": 20.0,
+          "Interior": 34.0,
+          "Interior Urbano": 33.0,
+          "Interior Rural": 37.0,
+          "Norte": 31.0,
+          "Centro": 43.0,
+          "Sur": 37.0,
+          "Oriente": 28.0
+        },
+        "nse": {
+          "A": 8.0,
+          "B": 17.0,
+          "C": 26.0,
+          "D": 33.0,
+          "E": 36.0
+        },
+        "gender": {
+          "Masculino": 27.0,
+          "Femenino": 32.0
+        },
+        "age": {
+          "18-25": 24.0,
+          "26-42": 32.0,
+          "43+": 30.0
+        }
+      },
+      {
+        "name": "No precisa",
+        "total": 16.0,
+        "geography": {
+          "Lima": 20.0,
+          "Interior": 15.0,
+          "Interior Urbano": 15.0,
+          "Interior Rural": 15.0,
+          "Norte": 14.0,
+          "Centro": 10.0,
+          "Sur": 19.0,
+          "Oriente": 13.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 13.0,
+          "C": 18.0,
+          "D": 20.0,
+          "E": 14.0
+        },
+        "gender": {
+          "Masculino": 13.0,
+          "Femenino": 20.0
+        },
+        "age": {
+          "18-25": 18.0,
+          "26-42": 14.0,
+          "43+": 18.0
+        }
+      },
+      {
+        "name": "Otros",
+        "total": 12.0,
+        "geography": {
+          "Lima": 11.0,
+          "Interior": 12.0,
+          "Interior Urbano": 12.0,
+          "Interior Rural": 13.0,
+          "Norte": 15.0,
+          "Centro": 8.0,
+          "Sur": 13.0,
+          "Oriente": 11.0
+        },
+        "nse": {
+          "A": 29.0,
+          "B": 17.0,
+          "C": 10.0,
+          "D": 9.0,
+          "E": 13.0
+        },
+        "gender": {
+          "Masculino": 14.0,
+          "Femenino": 10.0
+        },
+        "age": {
+          "18-25": 15.0,
+          "26-42": 11.0,
+          "43+": 11.0
+        }
+      },
+      {
+        "name": "Rafael López Aliaga",
+        "total": 10.0,
+        "geography": {
+          "Lima": 16.0,
+          "Interior": 7.0,
+          "Interior Urbano": 8.0,
+          "Interior Rural": 5.0,
+          "Norte": 6.0,
+          "Centro": 8.0,
+          "Sur": 7.0,
+          "Oriente": 9.0
+        },
+        "nse": {
+          "A": 37.0,
+          "B": 18.0,
+          "C": 11.0,
+          "D": 8.0,
+          "E": 6.0
+        },
+        "gender": {
+          "Masculino": 12.0,
+          "Femenino": 8.0
+        },
+        "age": {
+          "18-25": 10.0,
+          "26-42": 10.0,
+          "43+": 11.0
+        }
+      },
+      {
+        "name": "Keiko Fujimori",
+        "total": 8.0,
+        "geography": {
+          "Lima": 10.0,
+          "Interior": 7.0,
+          "Interior Urbano": 7.0,
+          "Interior Rural": 7.0,
+          "Norte": 7.0,
+          "Centro": 8.0,
+          "Sur": 2.0,
+          "Oriente": 13.0
+        },
+        "nse": {
+          "A": 8.0,
+          "B": 6.0,
+          "C": 11.0,
+          "D": 7.0,
+          "E": 7.0
+        },
+        "gender": {
+          "Masculino": 8.0,
+          "Femenino": 9.0
+        },
+        "age": {
+          "18-25": 6.0,
+          "26-42": 9.0,
+          "43+": 9.0
+        }
+      },
+      {
+        "name": "Mario Vizcarra",
+        "total": 7.0,
+        "geography": {
+          "Lima": 5.0,
+          "Interior": 8.0,
+          "Interior Urbano": 8.0,
+          "Interior Rural": 8.0,
+          "Norte": 10.0,
+          "Centro": 6.0,
+          "Sur": 6.0,
+          "Oriente": 7.0
+        },
+        "nse": {
+          "A": 2.0,
+          "B": 8.0,
+          "C": 6.0,
+          "D": 9.0,
+          "E": 6.0
+        },
+        "gender": {
+          "Masculino": 7.0,
+          "Femenino": 7.0
+        },
+        "age": {
+          "18-25": 13.0,
+          "26-42": 6.0,
+          "43+": 5.0
+        }
+      },
+      {
+        "name": "Carlos Álvarez",
+        "total": 4.0,
+        "geography": {
+          "Lima": 6.0,
+          "Interior": 3.0,
+          "Interior Urbano": 4.0,
+          "Interior Rural": 1.0,
+          "Norte": 2.0,
+          "Centro": 6.0,
+          "Sur": 2.0,
+          "Oriente": 3.0
+        },
+        "nse": {
+          "A": 3.0,
+          "B": 6.0,
+          "C": 4.0,
+          "D": 4.0,
+          "E": 3.0
+        },
+        "gender": {
+          "Masculino": 4.0,
+          "Femenino": 3.0
+        },
+        "age": {
+          "18-25": 3.0,
+          "26-42": 5.0,
+          "43+": 3.0
+        }
+      },
+      {
+        "name": "César Acuña",
+        "total": 3.0,
+        "geography": {
+          "Lima": 1.0,
+          "Interior": 4.0,
+          "Interior Urbano": 2.0,
+          "Interior Rural": 9.0,
+          "Norte": 7.0,
+          "Centro": 2.0,
+          "Sur": 2.0,
+          "Oriente": 5.0
+        },
+        "nse": {
+          "A": 1.0,
+          "B": 3.0,
+          "C": 2.0,
+          "D": 1.0,
+          "E": 7.0
+        },
+        "gender": {
+          "Masculino": 4.0,
+          "Femenino": 3.0
+        },
+        "age": {
+          "18-25": 4.0,
+          "26-42": 2.0,
+          "43+": 4.0
+        }
+      },
+      {
+        "name": "Alfonso López Chau",
+        "total": 3.0,
+        "geography": {
+          "Lima": 3.0,
+          "Interior": 3.0,
+          "Interior Urbano": 3.0,
+          "Interior Rural": 1.0,
+          "Norte": 2.0,
+          "Centro": 3.0,
+          "Sur": 4.0,
+          "Oriente": 3.0
+        },
+        "nse": {
+          "A": 3.0,
+          "B": 4.0,
+          "C": 2.0,
+          "D": 5.0,
+          "E": 1.0
+        },
+        "gender": {
+          "Masculino": 3.0,
+          "Femenino": 2.0
+        },
+        "age": {
+          "18-25": 1.0,
+          "26-42": 3.0,
+          "43+": 3.0
+        }
+      },
+      {
+        "name": "Carlos Espá",
+        "total": 2.0,
+        "geography": {
+          "Lima": 3.0,
+          "Interior": 2.0,
+          "Interior Urbano": 1.0,
+          "Interior Rural": 3.0,
+          "Norte": 2.0,
+          "Centro": 1.0,
+          "Sur": 2.0,
+          "Oriente": 1.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 2.0,
+          "C": 3.0,
+          "D": 1.0,
+          "E": 2.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 2.0
+        },
+        "age": {
+          "18-25": 2.0,
+          "26-42": 3.0,
+          "43+": 1.0
+        }
+      },
+      {
+        "name": "Rafael Belaunde",
+        "total": 2.0,
+        "geography": {
+          "Lima": 1.0,
+          "Interior": 2.0,
+          "Interior Urbano": 3.0,
+          "Interior Rural": 0.0,
+          "Norte": 1.0,
+          "Centro": 1.0,
+          "Sur": 3.0,
+          "Oriente": 3.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 2.0,
+          "C": 2.0,
+          "D": 2.0,
+          "E": 2.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 1.0
+        },
+        "age": {
+          "18-25": 1.0,
+          "26-42": 2.0,
+          "43+": 2.0
+        }
+      },
+      {
+        "name": "Phillip Butters",
+        "total": 2.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 1.0,
+          "Interior Urbano": 2.0,
+          "Interior Rural": 0.0,
+          "Norte": 2.0,
+          "Centro": 2.0,
+          "Sur": 0.0,
+          "Oriente": 3.0
+        },
+        "nse": {
+          "A": 2.0,
+          "B": 2.0,
+          "C": 3.0,
+          "D": 1.0,
+          "E": 1.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 2.0
+        },
+        "age": {
+          "18-25": 2.0,
+          "26-42": 1.0,
+          "43+": 2.0
+        }
+      }
+    ]
+  },
+  "Diciembre 2025 (2)": {
+    "candidates": [
+      {
+        "name": "Blanco/viciado/ninguno",
+        "total": 28.0,
+        "geography": {
+          "Lima": 22.0,
+          "Interior": 32.0,
+          "Interior Urbano": 30.0,
+          "Interior Rural": 36.0,
+          "Norte": 31.0,
+          "Centro": 27.0,
+          "Sur": 34.0,
+          "Oriente": 34.0
+        },
+        "nse": {
+          "A": 6.0,
+          "B": 19.0,
+          "C": 28.0,
+          "D": 31.0,
+          "E": 33.0
+        },
+        "gender": {
+          "Masculino": 26.0,
+          "Femenino": 31.0
+        },
+        "age": {
+          "18-25": 16.0,
+          "26-42": 31.0,
+          "43+": 32.0
+        }
+      },
+      {
+        "name": "No precisa",
+        "total": 20.0,
+        "geography": {
+          "Lima": 19.0,
+          "Interior": 21.0,
+          "Interior Urbano": 22.0,
+          "Interior Rural": 20.0,
+          "Norte": 17.0,
+          "Centro": 17.0,
+          "Sur": 31.0,
+          "Oriente": 18.0
+        },
+        "nse": {
+          "A": 7.0,
+          "B": 13.0,
+          "C": 20.0,
+          "D": 24.0,
+          "E": 23.0
+        },
+        "gender": {
+          "Masculino": 20.0,
+          "Femenino": 21.0
+        },
+        "age": {
+          "18-25": 23.0,
+          "26-42": 14.0,
+          "43+": 25.0
+        }
+      },
+      {
+        "name": "Otros",
+        "total": 12.0,
+        "geography": {
+          "Lima": 12.0,
+          "Interior": 13.0,
+          "Interior Urbano": 11.0,
+          "Interior Rural": 16.0,
+          "Norte": 12.0,
+          "Centro": 20.0,
+          "Sur": 13.0,
+          "Oriente": 8.0
+        },
+        "nse": {
+          "A": 20.0,
+          "B": 16.0,
+          "C": 12.0,
+          "D": 12.0,
+          "E": 12.0
+        },
+        "gender": {
+          "Masculino": 12.0,
+          "Femenino": 12.0
+        },
+        "age": {
+          "18-25": 20.0,
+          "26-42": 12.0,
+          "43+": 10.0
+        }
+      },
+      {
+        "name": "Rafael López Aliaga",
+        "total": 10.0,
+        "geography": {
+          "Lima": 18.0,
+          "Interior": 6.0,
+          "Interior Urbano": 7.0,
+          "Interior Rural": 2.0,
+          "Norte": 8.0,
+          "Centro": 3.0,
+          "Sur": 5.0,
+          "Oriente": 7.0
+        },
+        "nse": {
+          "A": 37.0,
+          "B": 23.0,
+          "C": 12.0,
+          "D": 6.0,
+          "E": 4.0
+        },
+        "gender": {
+          "Masculino": 13.0,
+          "Femenino": 7.0
+        },
+        "age": {
+          "18-25": 9.0,
+          "26-42": 9.0,
+          "43+": 11.0
+        }
+      },
+      {
+        "name": "Keiko Fujimori",
+        "total": 7.0,
+        "geography": {
+          "Lima": 9.0,
+          "Interior": 7.0,
+          "Interior Urbano": 7.0,
+          "Interior Rural": 5.0,
+          "Norte": 7.0,
+          "Centro": 7.0,
+          "Sur": 3.0,
+          "Oriente": 10.0
+        },
+        "nse": {
+          "A": 9.0,
+          "B": 7.0,
+          "C": 8.0,
+          "D": 6.0,
+          "E": 7.0
+        },
+        "gender": {
+          "Masculino": 7.0,
+          "Femenino": 8.0
+        },
+        "age": {
+          "18-25": 5.0,
+          "26-42": 9.0,
+          "43+": 7.0
+        }
+      },
+      {
+        "name": "Mario Vizcarra",
+        "total": 5.0,
+        "geography": {
+          "Lima": 4.0,
+          "Interior": 5.0,
+          "Interior Urbano": 6.0,
+          "Interior Rural": 4.0,
+          "Norte": 5.0,
+          "Centro": 4.0,
+          "Sur": 3.0,
+          "Oriente": 9.0
+        },
+        "nse": {
+          "A": 3.0,
+          "B": 8.0,
+          "C": 4.0,
+          "D": 4.0,
+          "E": 6.0
+        },
+        "gender": {
+          "Masculino": 3.0,
+          "Femenino": 6.0
+        },
+        "age": {
+          "18-25": 10.0,
+          "26-42": 5.0,
+          "43+": 2.0
+        }
+      },
+      {
+        "name": "Carlos Álvarez",
+        "total": 4.0,
+        "geography": {
+          "Lima": 4.0,
+          "Interior": 4.0,
+          "Interior Urbano": 4.0,
+          "Interior Rural": 4.0,
+          "Norte": 5.0,
+          "Centro": 10.0,
+          "Sur": 1.0,
+          "Oriente": 1.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 4.0,
+          "C": 4.0,
+          "D": 4.0,
+          "E": 4.0
+        },
+        "gender": {
+          "Masculino": 5.0,
+          "Femenino": 3.0
+        },
+        "age": {
+          "18-25": 4.0,
+          "26-42": 4.0,
+          "43+": 3.0
+        }
+      },
+      {
+        "name": "César Acuña",
+        "total": 3.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 3.0,
+          "Interior Urbano": 2.0,
+          "Interior Rural": 5.0,
+          "Norte": 5.0,
+          "Centro": 1.0,
+          "Sur": 1.0,
+          "Oriente": 3.0
+        },
+        "nse": {
+          "A": 1.0,
+          "B": 1.0,
+          "C": 2.0,
+          "D": 3.0,
+          "E": 4.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 4.0
+        },
+        "age": {
+          "18-25": 3.0,
+          "26-42": 4.0,
+          "43+": 1.0
+        }
+      },
+      {
+        "name": "Alfonso López Chau",
+        "total": 3.0,
+        "geography": {
+          "Lima": 3.0,
+          "Interior": 2.0,
+          "Interior Urbano": 3.0,
+          "Interior Rural": 3.0,
+          "Norte": 3.0,
+          "Centro": 3.0,
+          "Sur": 3.0,
+          "Oriente": 1.0
+        },
+        "nse": {
+          "A": 3.0,
+          "B": 2.0,
+          "C": 4.0,
+          "D": 1.0,
+          "E": 2.0
+        },
+        "gender": {
+          "Masculino": 4.0,
+          "Femenino": 1.0
+        },
+        "age": {
+          "18-25": 2.0,
+          "26-42": 3.0,
+          "43+": 2.0
+        }
+      },
+      {
+        "name": "Carlos Espá",
+        "total": 2.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 2.0,
+          "Interior Urbano": 2.0,
+          "Interior Rural": 1.0,
+          "Norte": 1.0,
+          "Centro": 4.0,
+          "Sur": 1.0,
+          "Oriente": 2.0
+        },
+        "nse": {
+          "A": 11.0,
+          "B": 3.0,
+          "C": 2.0,
+          "D": 1.0,
+          "E": 1.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 2.0
+        },
+        "age": {
+          "18-25": 4.0,
+          "26-42": 2.0,
+          "43+": 1.0
+        }
+      },
+      {
+        "name": "José Luna Gálvez",
+        "total": 2.0,
+        "geography": {
+          "Lima": 1.0,
+          "Interior": 2.0,
+          "Interior Urbano": 2.0,
+          "Interior Rural": 2.0,
+          "Norte": 3.0,
+          "Centro": 1.0,
+          "Sur": 1.0,
+          "Oriente": 3.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 1.0,
+          "C": 1.0,
+          "D": 3.0,
+          "E": 2.0
+        },
+        "gender": {
+          "Masculino": 3.0,
+          "Femenino": 1.0
+        },
+        "age": {
+          "18-25": 2.0,
+          "26-42": 2.0,
+          "43+": 2.0
+        }
+      },
+      {
+        "name": "Rafael Belaunde",
+        "total": 2.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 1.0,
+          "Interior Urbano": 2.0,
+          "Interior Rural": 0.0,
+          "Norte": 1.0,
+          "Centro": 0.0,
+          "Sur": 1.0,
+          "Oriente": 4.0
+        },
+        "nse": {
+          "A": 3.0,
+          "B": 2.0,
+          "C": 1.0,
+          "D": 3.0,
+          "E": 0.0
+        },
+        "gender": {
+          "Masculino": 1.0,
+          "Femenino": 2.0
+        },
+        "age": {
+          "18-25": 1.0,
+          "26-42": 2.0,
+          "43+": 2.0
+        }
+      }
+    ]
+  },
+  "Enero 2026": {
+    "candidates": [
+      {
+        "name": "Rafael López Aliaga",
+        "total": 10.0,
+        "geography": {
+          "Lima": 17.0,
+          "Interior": 6.0
+        }
+      },
+      {
+        "name": "Keiko Fujimori",
+        "total": 7.0,
+        "geography": {
+          "Lima": 9.0,
+          "Interior": 6.0
+        }
+      },
+      {
+        "name": "Carlos Álvarez",
+        "total": 4.0,
+        "geography": {
+          "Lima": 4.0,
+          "Interior": 4.0
+        }
+      },
+      {
+        "name": "Alfonso López Chau",
+        "total": 3.0,
+        "geography": {
+          "Lima": 3.0,
+          "Interior": 3.0
+        }
+      },
+      {
+        "name": "George Forsyth",
+        "total": 3.0,
+        "geography": {
+          "Lima": 3.0,
+          "Interior": 3.0
+        }
+      },
+      {
+        "name": "Mario Vizcarra",
+        "total": 3.0,
+        "geography": {
+          "Lima": 3.0,
+          "Interior": 3.0
+        }
+      },
+      {
+        "name": "José Luna Gálvez",
+        "total": 2.0,
+        "geography": {
+          "Lima": 3.0,
+          "Interior": 2.0
+        }
+      },
+      {
+        "name": "César Acuña",
+        "total": 2.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 2.0
+        }
+      },
+      {
+        "name": "Vladimir Cerrón",
+        "total": 2.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 2.0
+        }
+      },
+      {
+        "name": "Roberto Sánchez",
+        "total": 2.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 2.0
+        }
+      },
+      {
+        "name": "José Williams",
+        "total": 2.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 2.0
+        }
+      },
+      {
+        "name": "Fernando Olivera",
+        "total": 2.0,
+        "geography": {
+          "Lima": 1.0,
+          "Interior": 2.0
+        }
+      },
+      {
+        "name": "Otros",
+        "total": 11.0,
+        "geography": {
+          "Lima": 9.0,
+          "Interior": 13.0
+        }
+      },
+      {
+        "name": "Blanco/viciado/ninguno",
+        "total": 29.0,
+        "geography": {
+          "Lima": 20.0,
+          "Interior": 34.0
+        }
+      },
+      {
+        "name": "No precisa",
+        "total": 18.0,
+        "geography": {
+          "Lima": 20.0,
+          "Interior": 16.0
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+# Archives
+_legacy_archive/
+cleanup.ps1
+subir_repositorio.ps1
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+
+# System
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
