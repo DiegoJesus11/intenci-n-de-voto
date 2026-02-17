@@ -57,6 +57,20 @@ const MONTH_DISPLAY_LABELS = {
     'Enero 2026': 'Ene 26'
 };
 
+// Mobile labels (No '25' year suffix, except for 2026 change)
+const MONTH_LABELS_MOBILE = {
+    'Julio 2025': 'Jul',
+    'Agosto 2025': 'Ago',
+    'Setiembre 2025': 'Set',
+    'Octubre 2025': 'Oct',
+    'Octubre (2) 2025': 'Oct (2)',
+    'Noviembre (1) 2025': 'Nov (1)',
+    'Noviembre (2) 2025': 'Nov (2)',
+    'Diciembre 2025 (1)': 'Dic (1)',
+    'Diciembre 2025 (2)': 'Dic (2)',
+    'Enero 2026': 'Ene 26'
+};
+
 // Extended color palette (15+ candidates)
 // Specific colors for candidates (2026)
 const CANDIDATE_COLORS = {
@@ -612,7 +626,7 @@ function renderMainChart() {
             categoryorder: 'array',
             categoryarray: monthOrder,
             tickvals: monthOrder,
-            ticktext: monthOrder.map(m => MONTH_DISPLAY_LABELS[m] || m),
+            ticktext: monthOrder.map(m => (isMobile ? MONTH_LABELS_MOBILE[m] : MONTH_DISPLAY_LABELS[m]) || m),
             tickfont: { size: isMobile ? 9 : 11 },
             gridcolor: 'rgba(0,0,0,0.03)',
             // Spikeline configuration
@@ -793,12 +807,16 @@ function renderProfileChart(containerId, candidateName, demoType, title, layout,
         margin: isMobile ? { l: 30, r: 10, t: 30, b: 30 } : { l: 40, r: 20, t: 40, b: 40 },
         height: isMobile ? 250 : 320,
         hovermode: 'x',
-        font: { family: 'Inter, sans-serif' }
+        font: { family: 'Inter, sans-serif' },
+        xaxis: {
+            ticktext: monthOrder.map(m => (isMobile ? MONTH_LABELS_MOBILE[m] : MONTH_DISPLAY_LABELS[m]) || m),
+            tickvals: monthOrder,
+            fixedrange: isMobile ? true : false
+        }
     };
 
     // Disable zoom/pan on mobile
     if (isMobile) {
-        profileLayout.xaxis.fixedrange = true;
         profileLayout.yaxis.fixedrange = true;
         profileLayout.dragmode = false;
     }
@@ -915,8 +933,8 @@ function renderComparativeMode() {
             categoryorder: 'array',
             categoryarray: monthOrder,
             tickvals: monthOrder,
-            ticktext: monthOrder.map(m => MONTH_DISPLAY_LABELS[m] || m),
-            tickfont: { size: isMobile ? 9 : 11 },
+            ticktext: monthOrder.map(m => (isMobile ? MONTH_LABELS_MOBILE[m] : MONTH_DISPLAY_LABELS[m]) || m),
+            tickfont: { size: isMobile ? 10 : 12 },
             gridcolor: 'rgba(0,0,0,0.04)',
             showspikes: true,
             spikemode: 'across',
