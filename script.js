@@ -43,17 +43,18 @@ const MONTH_ORDER_DEFINED = [
 ];
 
 // Display labels for X-axis (without 2025)
+// Display labels for X-axis (Abbreviated Mmm YY)
 const MONTH_DISPLAY_LABELS = {
-    'Julio 2025': 'Julio',
-    'Agosto 2025': 'Agosto',
-    'Setiembre 2025': 'Setiembre',
-    'Octubre 2025': 'Octubre',
-    'Octubre (2) 2025': 'Octubre (2)',
-    'Noviembre (1) 2025': 'Noviembre (1)',
-    'Noviembre (2) 2025': 'Noviembre (2)',
-    'Diciembre 2025 (1)': 'Diciembre (1)',
-    'Diciembre 2025 (2)': 'Diciembre (2)',
-    'Enero 2026': 'Enero 2026'
+    'Julio 2025': 'Jul 25',
+    'Agosto 2025': 'Ago 25',
+    'Setiembre 2025': 'Set 25',
+    'Octubre 2025': 'Oct 25',
+    'Octubre (2) 2025': 'Oct (2) 25',
+    'Noviembre (1) 2025': 'Nov (1) 25',
+    'Noviembre (2) 2025': 'Nov (2) 25',
+    'Diciembre 2025 (1)': 'Dic (1) 25',
+    'Diciembre 2025 (2)': 'Dic (2) 25',
+    'Enero 2026': 'Ene 26'
 };
 
 // Extended color palette (15+ candidates)
