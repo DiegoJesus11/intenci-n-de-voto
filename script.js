@@ -544,7 +544,7 @@ function renderMainChart() {
 
         if (focusedCandidates.length > 0) {
             if (focusedCandidates.includes(candidateName)) {
-                lineWidth = style.width + (isMobile ? 1 : 2); // Less bold on mobile
+                lineWidth = style.width + 2; // Bold focus (same as desktop)
                 // Keep original color for focused candidate
                 tooltipBgColor = color;
                 tooltipFontColor = '#ffffff';
@@ -555,10 +555,8 @@ function renderMainChart() {
                 tooltipBgColor = '#e0e0e0';
                 tooltipFontColor = '#333333';
             }
-        } else if (isMobile) {
-            // Ultra-compact mobile reduction
-            lineWidth = 1.5; // Very thin
         }
+        // Removed explicit mobile reduction to match desktop thickness as requested
 
         traces.push({
             x: xValues,
@@ -575,7 +573,7 @@ function renderMainChart() {
             },
             marker: {
                 size: isMobile
-                    ? (dataPoints <= 2 ? 8 : 4) // Tiny markers (4px)
+                    ? (dataPoints <= 2 ? 10 : (type === 'complete' ? 8 : 6)) // Slightly larger than "ultra-compact" but still mobile-optimized
                     : (dataPoints <= 2 ? 16 : (type === 'complete' ? 12 : 10)), // Standard desktop
                 symbol: type === 'excluded' ? 'x' : (dataPoints <= 2 ? 'star' : marker),
                 color: lineColor,
