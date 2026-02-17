@@ -544,7 +544,7 @@ function renderMainChart() {
 
         if (focusedCandidates.length > 0) {
             if (focusedCandidates.includes(candidateName)) {
-                lineWidth = style.width + 2;
+                lineWidth = style.width + (isMobile ? 1 : 2); // Less bold on mobile
                 // Keep original color for focused candidate
                 tooltipBgColor = color;
                 tooltipFontColor = '#ffffff';
@@ -555,6 +555,9 @@ function renderMainChart() {
                 tooltipBgColor = '#e0e0e0';
                 tooltipFontColor = '#333333';
             }
+        } else if (isMobile) {
+            // General mobile reduction
+            lineWidth = Math.max(1, lineWidth - 1);
         }
 
         traces.push({
@@ -571,10 +574,12 @@ function renderMainChart() {
                 smoothing: 1.1
             },
             marker: {
-                size: dataPoints <= 2 ? 16 : (type === 'complete' ? 12 : 10),
+                size: isMobile
+                    ? (dataPoints <= 2 ? 10 : (type === 'complete' ? 7 : 6)) // Smaller on mobile
+                    : (dataPoints <= 2 ? 16 : (type === 'complete' ? 12 : 10)), // Standard desktop
                 symbol: type === 'excluded' ? 'x' : (dataPoints <= 2 ? 'star' : marker),
                 color: lineColor,
-                line: { width: 2, color: '#fff' }
+                line: { width: isMobile ? 1 : 2, color: '#fff' }
             },
             opacity: opacity,
             connectgaps: true,
