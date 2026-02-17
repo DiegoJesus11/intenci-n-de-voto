@@ -192,6 +192,40 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 // =============================================
+// Window Resize Handling
+// =============================================
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        const charts = [
+            'main-chart',
+            'gender-chart',
+            'nse-chart',
+            'age-chart',
+            'geo-ambito-chart',
+            'geo-interior-chart',
+            'geo-region-chart',
+            'comparative-chart'
+        ];
+
+        const isMobile = window.innerWidth <= 768;
+
+        charts.forEach(id => {
+            const el = document.getElementById(id);
+            if (el && el.data && el.data.length > 0) { // Check if chart exists and has data
+                Plotly.relayout(id, {
+                    'xaxis.tickfont.size': isMobile ? 9 : 11,
+                    'margin': isMobile ? { l: 30, r: 10, t: 30, b: 60 } : (id === 'main-chart' ? { l: 60, r: 20, t: 20, b: 80 } : { l: 40, r: 20, t: 40, b: 40 }),
+                    'height': isMobile ? (id.includes('geo-') || id.includes('gender') || id.includes('nse') || id.includes('age') ? 250 : 350) : (id === 'main-chart' ? 520 : (id === 'comparative-chart' ? 500 : 320))
+                });
+                Plotly.Plots.resize(el);
+            }
+        });
+    }, 200);
+});
+
+// =============================================
 // Data Processing with Trajectory Categorization
 // =============================================
 function processData() {
