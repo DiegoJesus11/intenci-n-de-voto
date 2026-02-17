@@ -858,20 +858,37 @@ input[type="radio"]:checked+span {
 
     .comparative-legend {
         width: 100%;
-        max-height: 250px;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: flex-start;
+        max-height: none;
+        /* Let it grow naturally */
+        overflow-y: visible;
+        /* No internal scroll on mobile, use page scroll */
+        padding: 0;
+        background: transparent;
+        border: none;
+    }
+
+    .legend-header {
+        background: var(--bg-card);
+        padding: 1rem;
+        border-radius: var(--radius-md);
+        margin-bottom: 1rem;
+        border: 1px solid rgba(0, 0, 0, 0.05);
     }
 
     .legend-list {
-        flex-direction: row;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        /* Auto-grid */
+        gap: 0.75rem;
+        padding-right: 0;
     }
 
     .legend-item {
-        width: auto;
-        min-width: 140px;
+        background: white;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        padding: 0.5rem;
+        width: 100%;
+        /* Fill grid cell */
     }
 }
 
