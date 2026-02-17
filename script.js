@@ -644,8 +644,16 @@ function renderMainChart() {
 
     const config = {
         responsive: true,
-        displayModeBar: false
+        displayModeBar: false,
+        staticPlot: isMobile ? false : false // Keep tooltips, but disable interaction via layout
     };
+
+    // Disable zoom/pan on mobile to prevent scroll hijacking
+    if (isMobile) {
+        layout.xaxis.fixedrange = true;
+        layout.yaxis.fixedrange = true;
+        layout.dragmode = false; // Disable box zoom/pan interactions
+    }
 
     Plotly.newPlot('main-chart', traces, layout, config);
 }
@@ -787,6 +795,13 @@ function renderProfileChart(containerId, candidateName, demoType, title, layout,
         font: { family: 'Inter, sans-serif' }
     };
 
+    // Disable zoom/pan on mobile
+    if (isMobile) {
+        profileLayout.xaxis.fixedrange = true;
+        profileLayout.yaxis.fixedrange = true;
+        profileLayout.dragmode = false;
+    }
+
     Plotly.newPlot(containerId, traces, profileLayout, { responsive: true, displayModeBar: false });
 }
 
@@ -914,6 +929,13 @@ function renderComparativeMode() {
         paper_bgcolor: 'rgba(0,0,0,0)',
         font: { family: 'Inter, sans-serif' }
     };
+
+    // Disable zoom/pan on mobile
+    if (isMobile) {
+        layout.xaxis.fixedrange = true;
+        layout.yaxis.fixedrange = true;
+        layout.dragmode = false;
+    }
 
     Plotly.newPlot('comparative-chart', traces, layout, { responsive: true, displayModeBar: false });
 }
