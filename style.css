@@ -981,8 +981,53 @@ input[type="radio"]:checked+span {
         gap: 0.75rem;
     }
 
+    /* Force specific chart height for small screens */
+    .chart-container {
+        min-height: 300px;
+    }
+
+    /* Better checkbox stacking */
+    .checkbox-group {
+        gap: 0.75rem;
+    }
+
     .checkbox-group label {
         font-size: 0.8rem;
         padding: 0.4rem 0.5rem;
+    }
+}
+
+/* =============================================
+   NEW CHART LAYOUT CLASSES (Replacing Inline)
+============================================= */
+.chart-with-sidebar {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.chart-main-content {
+    flex: 1;
+    min-width: 0;
+    /* Critical for flexbox text truncation/chart sizing */
+}
+
+.sidebar-legend {
+    width: 200px;
+    flex-shrink: 0;
+}
+
+/* Responsive adjustment for the new classes */
+@media (max-width: 1024px) {
+    .chart-with-sidebar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .sidebar-legend {
+        width: 100%;
+        margin-top: 1rem;
+        max-height: 250px;
+        /* Prevent infinite height */
     }
 }
