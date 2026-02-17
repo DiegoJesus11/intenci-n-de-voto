@@ -597,31 +597,15 @@ function renderMainChart() {
         });
     });
 
-    // Dynamic Y-axis: 3 levels based on checkboxes
-    // Only Blanco/viciado goes to 50% (requested limit), Otros and No precisa go to 20%
-    const needsFullExpansion = showBlanco;
-    const needsMediumExpansion = (showOtros || showNoPrecisa) && !needsFullExpansion;
-
+    // Dynamic Y-axis: Auto-scaling (like Comparative Chart)
+    // We let Plotly handle the range automatically based on visible data
     let yAxisConfig = {
         title: { text: 'Intención de Voto', font: { size: 12 } },
+        rangemode: 'tozero', // Ensure it always starts at 0
         gridcolor: 'rgba(0,0,0,0.06)',
-        tickmode: 'array',
+        zerolinecolor: 'rgba(0,0,0,0.1)',
         ticksuffix: '%'
     };
-
-    if (needsFullExpansion) {
-        // Expand Y-axis when Blanco/viciado is shown (limited to 50% per user request)
-        yAxisConfig.range = [0, 50];
-        yAxisConfig.tickvals = [0, 10, 20, 30, 40, 50];
-    } else if (needsMediumExpansion) {
-        // Medium expansion for Otros or No precisa (up to 20%)
-        yAxisConfig.range = [0, 20];
-        yAxisConfig.tickvals = [0, 5, 10, 15, 20];
-    } else {
-        // Zoom in for better candidate visibility (0-15%)
-        yAxisConfig.range = [0, 15];
-        yAxisConfig.tickvals = [0, 2, 5, 8, 10, 12, 15];
-    }
 
     // Layout configuration
     const layout = {
@@ -633,7 +617,7 @@ function renderMainChart() {
             categoryarray: monthOrder,
             tickvals: monthOrder,
             ticktext: monthOrder.map(m => (isMobile ? MONTH_LABELS_MOBILE[m] : MONTH_DISPLAY_LABELS[m]) || m),
-            tickfont: { size: isMobile ? 8 : 11 }, // Reduced from 9 to 8 for mobile
+            tickfont: { size: isMobile ? 10 : 11 }, // Restored to 10 (Comparative style)
             gridcolor: 'rgba(0,0,0,0.03)',
             // Spikeline configuration
             showspikes: true,
@@ -651,13 +635,13 @@ function renderMainChart() {
         hoverlabel: {
             bgcolor: 'rgba(255,255,255,0.95)',
             bordercolor: 'rgba(0,0,0,0.1)',
-            font: { size: isMobile ? 10 : 11, family: 'Inter, sans-serif' }, // Reduced to 10
+            font: { size: isMobile ? 10 : 11, family: 'Inter, sans-serif' },
             align: 'left',
             namelength: 20
         },
         showlegend: false, // Using custom legend
-        margin: isMobile ? { l: 30, r: 5, t: 20, b: 50 } : { l: 60, r: 20, t: 20, b: 80 }, // Tighter margins
-        height: isMobile ? 320 : 520, // Slightly shorter to fit better
+        margin: isMobile ? { l: 40, r: 5, t: 20, b: 50 } : { l: 60, r: 20, t: 20, b: 80 }, // Comparative margin (40px)
+        height: isMobile ? 320 : 520,
         plot_bgcolor: 'rgba(0,0,0,0)',
         paper_bgcolor: 'rgba(0,0,0,0)',
         font: { family: 'Inter, sans-serif' }
