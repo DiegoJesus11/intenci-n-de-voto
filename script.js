@@ -483,6 +483,7 @@ function toggleCandidateFocus(candidateName) {
 // Main Evolution Chart
 // =============================================
 function renderMainChart() {
+    const isMobile = window.innerWidth <= 768;
     const showBlanco = document.getElementById('show-blanco').checked;
     const showOtros = document.getElementById('show-otros').checked;
     const showNoPrecisa = document.getElementById('show-noprecisa').checked;
@@ -617,7 +618,7 @@ function renderMainChart() {
         yAxisConfig.tickvals = [0, 2, 5, 8, 10, 12, 15];
     }
 
-    const isMobile = window.innerWidth <= 768;
+    // Layout configuration
     const layout = {
         title: '',
         xaxis: {
