@@ -583,7 +583,7 @@ function renderMainChart() {
             },
             opacity: opacity,
             connectgaps: true,
-            hovertemplate: '<b>%{fullData.name}</b><br>%{y:.1f}%<extra></extra>',
+            hovertemplate: '<b>%{fullData.name}</b>: %{y:.1f}%<extra></extra>',
             hoverlabel: {
                 bgcolor: tooltipBgColor,
                 bordercolor: tooltipBgColor,
