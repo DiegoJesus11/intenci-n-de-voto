@@ -556,8 +556,8 @@ function renderMainChart() {
                 tooltipFontColor = '#333333';
             }
         } else if (isMobile) {
-            // General mobile reduction
-            lineWidth = Math.max(1, lineWidth - 1);
+            // Ultra-compact mobile reduction
+            lineWidth = 1.5; // Very thin
         }
 
         traces.push({
@@ -575,7 +575,7 @@ function renderMainChart() {
             },
             marker: {
                 size: isMobile
-                    ? (dataPoints <= 2 ? 10 : (type === 'complete' ? 7 : 6)) // Smaller on mobile
+                    ? (dataPoints <= 2 ? 8 : 4) // Tiny markers (4px)
                     : (dataPoints <= 2 ? 16 : (type === 'complete' ? 12 : 10)), // Standard desktop
                 symbol: type === 'excluded' ? 'x' : (dataPoints <= 2 ? 'star' : marker),
                 color: lineColor,
@@ -589,7 +589,7 @@ function renderMainChart() {
                 bordercolor: tooltipBgColor,
                 font: {
                     color: tooltipFontColor,
-                    size: 10,
+                    size: isMobile ? 10 : 10, // Force small hover font here too
                     family: 'Inter, sans-serif'
                 },
                 namelength: 18
@@ -633,7 +633,7 @@ function renderMainChart() {
             categoryarray: monthOrder,
             tickvals: monthOrder,
             ticktext: monthOrder.map(m => (isMobile ? MONTH_LABELS_MOBILE[m] : MONTH_DISPLAY_LABELS[m]) || m),
-            tickfont: { size: isMobile ? 9 : 11 },
+            tickfont: { size: isMobile ? 8 : 11 }, // Reduced from 9 to 8 for mobile
             gridcolor: 'rgba(0,0,0,0.03)',
             // Spikeline configuration
             showspikes: true,
@@ -651,17 +651,19 @@ function renderMainChart() {
         hoverlabel: {
             bgcolor: 'rgba(255,255,255,0.95)',
             bordercolor: 'rgba(0,0,0,0.1)',
-            font: { size: 11, family: 'Inter, sans-serif' },
+            font: { size: isMobile ? 10 : 11, family: 'Inter, sans-serif' }, // Reduced to 10
             align: 'left',
             namelength: 20
         },
         showlegend: false, // Using custom legend
-        margin: isMobile ? { l: 40, r: 10, t: 20, b: 60 } : { l: 60, r: 20, t: 20, b: 80 },
-        height: isMobile ? 350 : 520,
+        margin: isMobile ? { l: 30, r: 5, t: 20, b: 50 } : { l: 60, r: 20, t: 20, b: 80 }, // Tighter margins
+        height: isMobile ? 320 : 520, // Slightly shorter to fit better
         plot_bgcolor: 'rgba(0,0,0,0)',
         paper_bgcolor: 'rgba(0,0,0,0)',
         font: { family: 'Inter, sans-serif' }
     };
+
+
 
     const config = {
         responsive: true,
