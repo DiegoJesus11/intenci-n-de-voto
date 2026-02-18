@@ -219,33 +219,35 @@ let resizeTimeout;
 window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
-        const charts = [
-            'main-chart',
-            'gender-chart',
-            'nse-chart',
-            'age-chart',
-            'geo-ambito-chart',
-            'geo-interior-chart',
-            'geo-region-chart',
+        const isMobile = window.innerWidth <= 768;
+
+        // Main chart: fully re-render so all mobile settings (height, fonts, margins) are correct
+        const mainEl = document.getElementById('main-chart');
+        if (mainEl && mainEl.data && mainEl.data.length > 0) {
+            renderMainChart();
+        }
+
+        // Other charts: just relayout with correct mobile values
+        const otherCharts = [
+            'gender-chart', 'nse-chart', 'age-chart',
+            'geo-ambito-chart', 'geo-interior-chart', 'geo-region-chart',
             'comparative-chart'
         ];
 
-        const isMobile = window.innerWidth <= 768;
-
-        charts.forEach(id => {
+        otherCharts.forEach(id => {
             const el = document.getElementById(id);
-            if (el && el.data && el.data.length > 0) { // Check if chart exists and has data
+            if (el && el.data && el.data.length > 0) {
                 Plotly.relayout(id, {
-                    'xaxis.tickfont.size': isMobile ? 10 : 11,
-                    // Optimized margins for mobile to minimize whitespace
-                    'margin': isMobile ? { l: 25, r: 10, t: 10, b: 30 } : (id === 'main-chart' ? { l: 60, r: 20, t: 20, b: 80 } : { l: 40, r: 20, t: 40, b: 40 }),
-                    'height': isMobile ? (id === 'main-chart' ? 320 : (id.includes('geo-') || id.includes('gender') || id.includes('nse') || id.includes('age') ? 220 : 380)) : (id === 'main-chart' ? 520 : (id === 'comparative-chart' ? 500 : 320))
+                    'xaxis.tickfont.size': isMobile ? 8 : 11,
+                    'margin': isMobile ? { l: 25, r: 10, t: 10, b: 30 } : { l: 40, r: 20, t: 40, b: 40 },
+                    'height': isMobile ? (id.includes('geo-') || id.includes('gender') || id.includes('nse') || id.includes('age') ? 220 : 380) : (id === 'comparative-chart' ? 500 : 320)
                 });
                 Plotly.Plots.resize(el);
             }
         });
     }, 200);
 });
+
 
 // =============================================
 // Data Processing with Trajectory Categorization
@@ -565,6 +567,14 @@ function renderMainChart() {
         }
         // Removed explicit mobile reduction to match desktop thickness as requested
 
+        // For single/double-point candidates: always use original color + full opacity
+        // so they are always visible and tappable regardless of focus state
+        const markerColor = dataPoints <= 2 ? color : lineColor;
+        const traceOpacity = dataPoints <= 2 ? 1 : opacity;
+        const markerSize = isMobile
+            ? (dataPoints <= 2 ? 14 : (type === 'complete' ? 8 : 6))
+            : (dataPoints <= 2 ? 16 : (type === 'complete' ? 12 : 10));
+
         traces.push({
             x: xValues,
             y: yValues,
@@ -579,15 +589,12 @@ function renderMainChart() {
                 smoothing: 1.1
             },
             marker: {
-                size: isMobile
-                    ? (dataPoints <= 2 ? 10 : (type === 'complete' ? 8 : 6)) // Slightly larger than "ultra-compact" but still mobile-optimized
-                    : (dataPoints <= 2 ? 16 : (type === 'complete' ? 12 : 10)), // Standard desktop
+                size: markerSize,
                 symbol: type === 'excluded' ? 'x' : (dataPoints <= 2 ? 'star' : marker),
-                color: lineColor,
+                color: markerColor,
                 line: { width: isMobile ? 1 : 2, color: '#fff' }
             },
-            // Fix: single/double-point markers always fully opaque so they are tappable
-            opacity: dataPoints <= 2 ? 1 : opacity,
+            opacity: traceOpacity,
             connectgaps: true,
             hovertemplate: '<b>%{fullData.name}</b>: %{y:.1f}%<extra></extra>',
             hoverlabel: {
@@ -595,7 +602,7 @@ function renderMainChart() {
                 bordercolor: tooltipBgColor,
                 font: {
                     color: tooltipFontColor,
-                    size: isMobile ? 10 : 10, // Force small hover font here too
+                    size: isMobile ? 10 : 10,
                     family: 'Inter, sans-serif'
                 },
                 namelength: 18
