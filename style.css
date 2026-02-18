@@ -833,22 +833,50 @@ input[type="radio"]:checked+span {
 /* Tablet & Mobile (max-width: 1024px) */
 @media (max-width: 1024px) {
     .container {
-        padding: 1.5rem;
+        padding: 1rem;
     }
 
     .header {
-        flex-direction: column;
-        gap: 1.5rem;
-        text-align: center;
-        padding: 1.5rem;
+        /* CHANGED: Keep row layout but compact it */
+        flex-direction: row;
+        gap: 1rem;
+        padding: 1rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-logo img {
+        height: 50px;
+        /* Smaller logo */
+    }
+
+    .header-title {
+        text-align: left;
+        /* Align text to left next to logo */
     }
 
     .header-title h1 {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
+        /* Smaller title */
+        margin-bottom: 0;
+    }
+
+    .header-title .subtitle {
+        font-size: 0.8rem;
+        display: none;
+        /* Hide subtitle on mobile to save space if needed, or keep small */
+    }
+
+    /* If screen is very narrow, maybe hide subtitle */
+    @media (max-width: 480px) {
+        .header-title .subtitle {
+            display: none;
+        }
     }
 
     .header-meta {
-        align-items: center;
+        display: none;
+        /* Hide date on mobile header to save space */
     }
 
     /* Comparative chart: Move legend to bottom */
@@ -859,9 +887,7 @@ input[type="radio"]:checked+span {
     .comparative-legend {
         width: 100%;
         max-height: none;
-        /* Let it grow naturally */
         overflow-y: visible;
-        /* No internal scroll on mobile, use page scroll */
         padding: 0;
         background: transparent;
         border: none;
@@ -869,148 +895,127 @@ input[type="radio"]:checked+span {
 
     .legend-header {
         background: var(--bg-card);
-        padding: 1rem;
+        padding: 0.75rem;
         border-radius: var(--radius-md);
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
         border: 1px solid rgba(0, 0, 0, 0.05);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .legend-list {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-        /* Auto-grid */
-        gap: 0.75rem;
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        /* Compact grid */
+        gap: 0.5rem;
         padding-right: 0;
     }
 
     .legend-item {
         background: white;
         border: 1px solid rgba(0, 0, 0, 0.05);
-        padding: 0.5rem;
+        padding: 0.4rem;
         width: 100%;
-        /* Fill grid cell */
+        font-size: 0.75rem;
+        /* Smaller text */
+    }
+
+    .legend-photo {
+        width: 24px;
+        height: 24px;
+    }
+
+    .legend-icon {
+        width: 20px;
+        height: 20px;
     }
 }
 
 /* Mobile (max-width: 768px) */
 @media (max-width: 768px) {
     .container {
-        padding: 1rem;
+        padding: 0.75rem;
+        /* Minimal padding */
     }
 
     .card {
-        padding: 1.25rem;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
     }
 
     /* Stack Charts in 1 column */
     .charts-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1rem;
     }
 
-    /* Adjust controls */
+    /* Adjust controls - Keep them side-by-side if possible */
     .chart-controls,
     .demographic-controls {
         flex-direction: column;
-        align-items: stretch;
-        gap: 1rem;
-        padding: 1rem;
+        gap: 0.75rem;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
     }
 
-    .chart-controls .control-group,
-    .demographic-controls .control-group {
-        width: 100%;
+    /* Force Checkboxes to Flow Row-wise */
+    .checkbox-group {
+        display: flex;
+        flex-direction: row;
+        /* FORCE ROW */
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: flex-start;
     }
 
-    .control-group select {
-        width: 100%;
-        min-width: unset;
-    }
-
-    /* Demographic controls row stacking */
-    .demographic-controls .control-group {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-    }
-
-    .demographic-controls .control-group>label {
-        margin-bottom: 0.5rem !important;
-    }
-
-    #candidate-control-group {
-        flex-direction: column !important;
-        align-items: flex-start !important;
+    .checkbox-group label {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+        background: white;
+        border: 1px solid #e2e8f0;
     }
 
     /* Reduce chart height on mobile */
     .chart-container,
     .comparative-chart,
     .main-chart-section .chart-container {
-        min-height: 350px;
-    }
-
-    /* Ensure images don't overflow */
-    img {
-        max-width: 100%;
-        height: auto;
+        min-height: 380px;
+        /* Slightly taller to fit legends if needed */
     }
 
     /* Footer */
     .footer {
         padding: 1.5rem;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
 }
 
 /* Small Mobile (max-width: 480px) */
 @media (max-width: 480px) {
     .header {
-        padding: 1rem;
+        padding: 0.75rem;
     }
 
     .header-logo img {
-        height: 50px;
+        height: 40px;
+        /* Even smaller */
     }
 
     .header-title h1 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
-    .header-title .subtitle {
-        font-size: 0.85rem;
-    }
-
-    .card {
-        padding: 1rem;
-    }
-
-    .container {
+    /* Ensure controls don't overflow */
+    .chart-controls,
+    .demographic-controls {
         padding: 0.5rem;
     }
 
-    /* Force specific chart height for small screens */
-    .chart-container {
-        min-height: 300px;
-    }
-
-    /* Better checkbox stacking */
-    .checkbox-group {
-        gap: 0.75rem;
-    }
-
-    /* Force specific chart height for small screens */
-    .chart-container {
-        min-height: 300px;
-    }
-
-    /* Better checkbox stacking */
-    .checkbox-group {
-        gap: 0.75rem;
-    }
-
-    .checkbox-group label {
-        font-size: 0.8rem;
-        padding: 0.4rem 0.5rem;
+    /* Make selects full width for ease of tap */
+    .control-group select {
+        width: 100%;
+        font-size: 0.9rem;
     }
 }
 
