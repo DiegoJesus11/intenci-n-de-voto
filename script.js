@@ -622,7 +622,7 @@ function renderMainChart() {
             categoryarray: monthOrder,
             tickvals: monthOrder,
             ticktext: monthOrder.map(m => (isMobile ? MONTH_LABELS_MOBILE[m] : MONTH_DISPLAY_LABELS[m]) || m),
-            tickfont: { size: isMobile ? 10 : 11 }, // Restored to 10 (Comparative style)
+            tickfont: { size: isMobile ? 8 : 11 }, // Smaller labels on mobile
             gridcolor: 'rgba(0,0,0,0.03)',
             // Spikeline configuration
             showspikes: true,
@@ -646,9 +646,9 @@ function renderMainChart() {
             namelength: 25
         },
         showlegend: false, // Using custom legend
-        // Mobile: tighter margins + 300px height = good horizontal ratio
-        margin: isMobile ? { l: 35, r: 5, t: 5, b: 20 } : { l: 60, r: 20, t: 20, b: 80 },
-        height: isMobile ? 300 : 520,
+        // Mobile: tighter margins + 320px height = good horizontal ratio
+        margin: isMobile ? { l: 30, r: 5, t: 5, b: 20 } : { l: 60, r: 20, t: 20, b: 80 },
+        height: isMobile ? 320 : 520,
         plot_bgcolor: 'rgba(0,0,0,0)',
         paper_bgcolor: 'rgba(0,0,0,0)',
         font: { family: 'Inter, sans-serif' }
@@ -1274,13 +1274,16 @@ function renderGeoRegionChart(candidatesToShow, layout) {
 // Event Listeners
 // =============================================
 function setupEventListeners() {
-    // Main chart controls
+    // Main chart controls (guarded: checkboxes may not exist in DOM)
     ['show-blanco', 'show-otros', 'show-noprecisa', 'show-excluded'].forEach(id => {
-        document.getElementById(id).addEventListener('change', () => {
-            focusedCandidates = []; // Reset focus on category change
-            renderMainChart();
-            renderCustomLegend();
-        });
+        const el = document.getElementById(id);
+        if (el) {
+            el.addEventListener('change', () => {
+                focusedCandidates = []; // Reset focus on category change
+                renderMainChart();
+                renderCustomLegend();
+            });
+        }
     });
 
     // Demographic chart controls
@@ -1342,8 +1345,12 @@ function setupEventListeners() {
     });
 
     // Click outside legend to reset focus (main chart)
+    // On mobile: do NOT reset on chart click — user taps to see tooltip, not to reset focus.
+    // On desktop: clicking the chart area resets focus.
     document.getElementById('main-chart').addEventListener('click', (e) => {
         if (e.target.closest('.legend-item')) return;
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) return; // On mobile, only legend clicks change focus
         if (focusedCandidates.length > 0) {
             focusedCandidates = [];
             renderMainChart();
