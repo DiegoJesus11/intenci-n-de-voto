@@ -230,9 +230,10 @@ window.addEventListener('resize', () => {
             const el = document.getElementById(id);
             if (el && el.data && el.data.length > 0) { // Check if chart exists and has data
                 Plotly.relayout(id, {
-                    'xaxis.tickfont.size': isMobile ? 9 : 11,
-                    'margin': isMobile ? { l: 30, r: 10, t: 30, b: 60 } : (id === 'main-chart' ? { l: 60, r: 20, t: 20, b: 80 } : { l: 40, r: 20, t: 40, b: 40 }),
-                    'height': isMobile ? (id.includes('geo-') || id.includes('gender') || id.includes('nse') || id.includes('age') ? 250 : 350) : (id === 'main-chart' ? 520 : (id === 'comparative-chart' ? 500 : 320))
+                    'xaxis.tickfont.size': isMobile ? 10 : 11,
+                    // Optimized margins for mobile to minimize whitespace
+                    'margin': isMobile ? { l: 25, r: 10, t: 10, b: 30 } : (id === 'main-chart' ? { l: 60, r: 20, t: 20, b: 80 } : { l: 40, r: 20, t: 40, b: 40 }),
+                    'height': isMobile ? (id.includes('geo-') || id.includes('gender') || id.includes('nse') || id.includes('age') ? 220 : 380) : (id === 'main-chart' ? 520 : (id === 'comparative-chart' ? 500 : 320))
                 });
                 Plotly.Plots.resize(el);
             }
@@ -638,8 +639,9 @@ function renderMainChart() {
             namelength: 20
         },
         showlegend: false, // Using custom legend
-        margin: isMobile ? { l: 40, r: 5, t: 20, b: 50 } : { l: 60, r: 20, t: 20, b: 80 }, // Comparative margin (40px)
-        height: isMobile ? 320 : 520,
+        // Reduced margins for mobile to utilize width
+        margin: isMobile ? { l: 35, r: 5, t: 10, b: 40 } : { l: 60, r: 20, t: 20, b: 80 },
+        height: isMobile ? 380 : 520,
         plot_bgcolor: 'rgba(0,0,0,0)',
         paper_bgcolor: 'rgba(0,0,0,0)',
         font: { family: 'Inter, sans-serif' }
