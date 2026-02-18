@@ -709,7 +709,7 @@ const SPECIAL_COLORS_COMPARATIVE = {
 };
 
 function renderDemographicCharts() {
-    const analysisMode = document.querySelector('input[name="analysis-mode"]:checked').value;
+    const analysisMode = document.querySelector('input[name="analysis-mode"]:checked')?.value ?? 'profile';
 
     if (analysisMode === 'profile') {
         renderProfileMode();
