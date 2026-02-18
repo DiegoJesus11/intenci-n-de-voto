@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     } catch (error) {
         console.error('Error loading data:', error);
         document.getElementById('main-chart').innerHTML =
-            '<div class="loading" style="color: #e74c3c;"><span>Error cargando datos. Verifica que datos_encuestas.json esté en la carpeta.</span></div>';
+            `<div class="loading" style="color: #e74c3c;"><span>Error: ${error.message}</span></div>`;
     }
 });
 
