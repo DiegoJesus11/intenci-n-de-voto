@@ -53,17 +53,21 @@
         <section class="card main-chart-section">
             <h2> Carrera Electoral — Evolución Temporal</h2>
 
-            <div class="chart-controls">
-                <div class="control-group">
-                    <label>Mostrar categorías especiales:</label>
-                    <div class="checkbox-group">
-                        <label><input type="checkbox" id="show-blanco"> <span>Blanco/viciado</span></label>
-                        <label><input type="checkbox" id="show-otros"> <span>Otros</span></label>
-                        <label><input type="checkbox" id="show-noprecisa"> <span>No precisa</span></label>
-                        <label><input type="checkbox" id="show-excluded"> <span>Fuera de carrera</span></label>
+            <details class="chart-controls-wrapper" id="chart-controls-toggle">
+                <summary class="controls-toggle-btn">⚙️ Opciones de visualización</summary>
+                <div class="chart-controls">
+                    <div class="control-group">
+                        <label>Mostrar categorías especiales:</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" id="show-blanco"> <span>Blanco/viciado</span></label>
+                            <label><input type="checkbox" id="show-otros"> <span>Otros</span></label>
+                            <label><input type="checkbox" id="show-noprecisa"> <span>No precisa</span></label>
+                            <label><input type="checkbox" id="show-excluded"> <span>Fuera de carrera</span></label>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </details>
+
 
             <!-- Chart with Legend Layout -->
             <div class="chart-with-sidebar">

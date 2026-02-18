@@ -186,6 +186,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         updateDateDisplay();
         populateCandidateDropdown();
 
+        // On desktop: auto-open the controls accordion (it starts closed by default for mobile)
+        const controlsToggle = document.getElementById('chart-controls-toggle');
+        if (controlsToggle && window.innerWidth > 768) {
+            controlsToggle.setAttribute('open', '');
+        }
+
         // Show legend container BEFORE rendering chart to get correct dimensions
         document.getElementById('legend-container').style.display = 'block';
 
@@ -640,9 +646,9 @@ function renderMainChart() {
             namelength: 25
         },
         showlegend: false, // Using custom legend
-        // Mobile: shorter height = more horizontal/landscape feel
-        margin: isMobile ? { l: 35, r: 5, t: 10, b: 40 } : { l: 60, r: 20, t: 20, b: 80 },
-        height: isMobile ? 260 : 520,
+        // Mobile: tighter margins + 300px height = good horizontal ratio
+        margin: isMobile ? { l: 35, r: 5, t: 5, b: 20 } : { l: 60, r: 20, t: 20, b: 80 },
+        height: isMobile ? 300 : 520,
         plot_bgcolor: 'rgba(0,0,0,0)',
         paper_bgcolor: 'rgba(0,0,0,0)',
         font: { family: 'Inter, sans-serif' }

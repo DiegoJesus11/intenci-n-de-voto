@@ -932,6 +932,22 @@ input[type="radio"]:checked+span {
     }
 }
 
+/* ===== Collapsible Controls (Details/Summary) ===== */
+.chart-controls-wrapper {
+    margin-bottom: 1rem;
+}
+
+/* Hide the default arrow on desktop */
+.controls-toggle-btn {
+    display: none;
+    /* Hidden on desktop — controls always visible */
+}
+
+/* On desktop, always show the inner controls */
+.chart-controls-wrapper>.chart-controls {
+    display: flex;
+}
+
 /* Mobile (max-width: 768px) */
 @media (max-width: 768px) {
     .container {
@@ -942,6 +958,55 @@ input[type="radio"]:checked+span {
     .card {
         padding: 1rem;
         margin-bottom: 1.5rem;
+    }
+
+    /* Fix 1: Compact title to 1 line */
+    .card h2 {
+        font-size: 1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+
+    /* Fix 2: Show the toggle button on mobile */
+    .controls-toggle-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--text-secondary);
+        cursor: pointer;
+        padding: 0.5rem 0.75rem;
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        border-radius: var(--radius-sm);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        list-style: none;
+        /* Remove default marker */
+        user-select: none;
+    }
+
+    /* Remove default details marker */
+    .controls-toggle-btn::-webkit-details-marker {
+        display: none;
+    }
+
+    /* Add a custom arrow */
+    .controls-toggle-btn::after {
+        content: '▾';
+        margin-left: auto;
+        transition: transform 0.2s;
+    }
+
+    .chart-controls-wrapper[open] .controls-toggle-btn::after {
+        transform: rotate(-180deg);
+    }
+
+    /* Animate the inner controls opening */
+    .chart-controls-wrapper>.chart-controls {
+        margin-top: 0.5rem;
     }
 
     /* Stack Charts in 1 column */
