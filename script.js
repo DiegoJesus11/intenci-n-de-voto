@@ -491,10 +491,10 @@ function toggleCandidateFocus(candidateName) {
 // =============================================
 function renderMainChart() {
     const isMobile = window.innerWidth <= 768;
-    const showBlanco = document.getElementById('show-blanco').checked;
-    const showOtros = document.getElementById('show-otros').checked;
-    const showNoPrecisa = document.getElementById('show-noprecisa').checked;
-    const showExcluded = document.getElementById('show-excluded').checked;
+    const showBlanco = document.getElementById('show-blanco')?.checked ?? false;
+    const showOtros = document.getElementById('show-otros')?.checked ?? false;
+    const showNoPrecisa = document.getElementById('show-noprecisa')?.checked ?? false;
+    const showExcluded = document.getElementById('show-excluded')?.checked ?? false;
 
     // Build candidate list in order
     let candidatesToShow = [
