@@ -233,7 +233,7 @@ window.addEventListener('resize', () => {
                     'xaxis.tickfont.size': isMobile ? 10 : 11,
                     // Optimized margins for mobile to minimize whitespace
                     'margin': isMobile ? { l: 25, r: 10, t: 10, b: 30 } : (id === 'main-chart' ? { l: 60, r: 20, t: 20, b: 80 } : { l: 40, r: 20, t: 40, b: 40 }),
-                    'height': isMobile ? (id.includes('geo-') || id.includes('gender') || id.includes('nse') || id.includes('age') ? 220 : 380) : (id === 'main-chart' ? 520 : (id === 'comparative-chart' ? 500 : 320))
+                    'height': isMobile ? (id === 'main-chart' ? 260 : (id.includes('geo-') || id.includes('gender') || id.includes('nse') || id.includes('age') ? 220 : 380)) : (id === 'main-chart' ? 520 : (id === 'comparative-chart' ? 500 : 320))
                 });
                 Plotly.Plots.resize(el);
             }
@@ -627,21 +627,22 @@ function renderMainChart() {
             spikedash: 'dot'
         },
         yaxis: yAxisConfig,
-        // Tooltip configuration - closest mode with spike
-        hovermode: 'x',
-        hoverdistance: 50,
+        // On mobile: 'closest' so tapping a point shows only that candidate's value.
+        // On desktop: 'x' shows all candidates at the same X position (unified tooltip).
+        hovermode: isMobile ? 'closest' : 'x',
+        hoverdistance: isMobile ? 30 : 50,
         // Compact hover label styling
         hoverlabel: {
             bgcolor: 'rgba(255,255,255,0.95)',
             bordercolor: 'rgba(0,0,0,0.1)',
-            font: { size: isMobile ? 10 : 11, family: 'Inter, sans-serif' },
+            font: { size: isMobile ? 11 : 11, family: 'Inter, sans-serif' },
             align: 'left',
-            namelength: 20
+            namelength: 25
         },
         showlegend: false, // Using custom legend
-        // Reduced margins for mobile to utilize width
+        // Mobile: shorter height = more horizontal/landscape feel
         margin: isMobile ? { l: 35, r: 5, t: 10, b: 40 } : { l: 60, r: 20, t: 20, b: 80 },
-        height: isMobile ? 380 : 520,
+        height: isMobile ? 260 : 520,
         plot_bgcolor: 'rgba(0,0,0,0)',
         paper_bgcolor: 'rgba(0,0,0,0)',
         font: { family: 'Inter, sans-serif' }
