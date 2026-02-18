@@ -239,7 +239,7 @@ window.addEventListener('resize', () => {
                     'xaxis.tickfont.size': isMobile ? 10 : 11,
                     // Optimized margins for mobile to minimize whitespace
                     'margin': isMobile ? { l: 25, r: 10, t: 10, b: 30 } : (id === 'main-chart' ? { l: 60, r: 20, t: 20, b: 80 } : { l: 40, r: 20, t: 40, b: 40 }),
-                    'height': isMobile ? (id === 'main-chart' ? 260 : (id.includes('geo-') || id.includes('gender') || id.includes('nse') || id.includes('age') ? 220 : 380)) : (id === 'main-chart' ? 520 : (id === 'comparative-chart' ? 500 : 320))
+                    'height': isMobile ? (id === 'main-chart' ? 320 : (id.includes('geo-') || id.includes('gender') || id.includes('nse') || id.includes('age') ? 220 : 380)) : (id === 'main-chart' ? 520 : (id === 'comparative-chart' ? 500 : 320))
                 });
                 Plotly.Plots.resize(el);
             }
@@ -586,7 +586,8 @@ function renderMainChart() {
                 color: lineColor,
                 line: { width: isMobile ? 1 : 2, color: '#fff' }
             },
-            opacity: opacity,
+            // Fix: single/double-point markers always fully opaque so they are tappable
+            opacity: dataPoints <= 2 ? 1 : opacity,
             connectgaps: true,
             hovertemplate: '<b>%{fullData.name}</b>: %{y:.1f}%<extra></extra>',
             hoverlabel: {
@@ -605,11 +606,12 @@ function renderMainChart() {
     // Dynamic Y-axis: Auto-scaling (like Comparative Chart)
     // We let Plotly handle the range automatically based on visible data
     let yAxisConfig = {
-        title: { text: 'Intención de Voto', font: { size: 12 } },
-        rangemode: 'tozero', // Ensure it always starts at 0
+        title: { text: 'Intención de Voto', font: { size: isMobile ? 9 : 12 } },
+        rangemode: 'tozero',
         gridcolor: 'rgba(0,0,0,0.06)',
         zerolinecolor: 'rgba(0,0,0,0.1)',
-        ticksuffix: '%'
+        ticksuffix: '%',
+        tickfont: { size: isMobile ? 9 : 11 }
     };
 
     // Layout configuration
