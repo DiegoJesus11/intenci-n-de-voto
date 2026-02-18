@@ -438,6 +438,29 @@ function renderCustomLegend() {
             container.appendChild(item);
         });
     });
+    // Add special category toggle checkboxes at the bottom of the legend
+    const specialSection = document.createElement('div');
+    specialSection.className = 'legend-special-toggles';
+    specialSection.innerHTML = `
+        <div class="legend-category" style="margin-top:8px">Mostrar en gráfico</div>
+        <label class="legend-toggle-item"><input type="checkbox" id="show-excluded" ${document.getElementById('show-excluded')?.checked ? 'checked' : ''}> Fuera de carrera</label>
+        <label class="legend-toggle-item"><input type="checkbox" id="show-blanco" ${document.getElementById('show-blanco')?.checked ? 'checked' : ''}> Blanco/viciado</label>
+        <label class="legend-toggle-item"><input type="checkbox" id="show-otros" ${document.getElementById('show-otros')?.checked ? 'checked' : ''}> Otros</label>
+        <label class="legend-toggle-item"><input type="checkbox" id="show-noprecisa" ${document.getElementById('show-noprecisa')?.checked ? 'checked' : ''}> No precisa</label>
+    `;
+    container.appendChild(specialSection);
+
+    // Wire up the newly injected checkboxes
+    ['show-excluded', 'show-blanco', 'show-otros', 'show-noprecisa'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.addEventListener('change', () => {
+                focusedCandidates = [];
+                renderMainChart();
+                renderCustomLegend();
+            });
+        }
+    });
 }
 
 function createLegendIcon(type, color) {
@@ -567,13 +590,16 @@ function renderMainChart() {
         }
         // Removed explicit mobile reduction to match desktop thickness as requested
 
-        // For single/double-point candidates: always use original color + full opacity
-        // so they are always visible and tappable regardless of focus state
+        // For single/double-point candidates: always use original color
+        // Ghosting is done via marker.opacity, not trace opacity, so hit area stays full-size
         const markerColor = dataPoints <= 2 ? color : lineColor;
-        const traceOpacity = dataPoints <= 2 ? 1 : opacity;
+        const markerOpacity = dataPoints <= 2
+            ? (focusedCandidates.length > 0 && !focusedCandidates.includes(candidateName) ? 0.35 : 1)
+            : 1; // line traces use trace-level opacity instead
+        const traceOpacity = dataPoints <= 2 ? 1 : opacity; // keep trace fully opaque for isolated points
         const markerSize = isMobile
-            ? (dataPoints <= 2 ? 14 : (type === 'complete' ? 8 : 6))
-            : (dataPoints <= 2 ? 16 : (type === 'complete' ? 12 : 10));
+            ? (dataPoints <= 2 ? 16 : (type === 'complete' ? 8 : 6))
+            : (dataPoints <= 2 ? 18 : (type === 'complete' ? 12 : 10));
 
         traces.push({
             x: xValues,
@@ -592,6 +618,7 @@ function renderMainChart() {
                 size: markerSize,
                 symbol: type === 'excluded' ? 'x' : (dataPoints <= 2 ? 'star' : marker),
                 color: markerColor,
+                opacity: markerOpacity,
                 line: { width: isMobile ? 1 : 2, color: '#fff' }
             },
             opacity: traceOpacity,
@@ -645,7 +672,7 @@ function renderMainChart() {
         // On mobile: 'closest' so tapping a point shows only that candidate's value.
         // On desktop: 'x' shows all candidates at the same X position (unified tooltip).
         hovermode: isMobile ? 'closest' : 'x',
-        hoverdistance: isMobile ? 30 : 50,
+        hoverdistance: isMobile ? 40 : 50,
         // Compact hover label styling
         hoverlabel: {
             bgcolor: 'rgba(255,255,255,0.95)',
@@ -657,7 +684,7 @@ function renderMainChart() {
         showlegend: false, // Using custom legend
         // Mobile: tighter margins + 320px height = good horizontal ratio
         margin: isMobile ? { l: 30, r: 5, t: 5, b: 20 } : { l: 60, r: 20, t: 20, b: 80 },
-        height: isMobile ? 320 : 520,
+        height: isMobile ? 290 : 520,
         plot_bgcolor: 'rgba(0,0,0,0)',
         paper_bgcolor: 'rgba(0,0,0,0)',
         font: { family: 'Inter, sans-serif' }

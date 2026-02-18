@@ -1118,3 +1118,34 @@ input[type="radio"]:checked+span {
         /* Prevent infinite height */
     }
 }
+
+/* ===== Legend Special Category Toggles ===== */
+.legend-special-toggles {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding-top: 6px;
+    margin-top: 4px;
+}
+
+.legend-toggle-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--text-secondary);
+    padding: 3px 4px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.15s;
+}
+
+.legend-toggle-item:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.legend-toggle-item input[type="checkbox"] {
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
+    accent-color: var(--primary);
+    flex-shrink: 0;
+}
