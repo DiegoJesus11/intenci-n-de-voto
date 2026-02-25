@@ -28,7 +28,7 @@
     <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="style.css?v=36">
+    <link rel="stylesheet" href="style.css?v=37">
 </head>
 
 <body>
@@ -44,6 +44,13 @@
         </div>
         <div class="header-meta">
             <span class="update-date" id="update-date">Actualizado: Febrero 2026</span>
+            <div class="survey-source-switch" aria-label="Selector de encuestadora">
+                <label class="survey-source-label">Encuestadora</label>
+                <div class="survey-source-options">
+                    <label><input type="radio" name="survey-source" value="ipsos" checked> <span>Ipsos</span></label>
+                    <label><input type="radio" name="survey-source" value="datum"> <span>Datum</span></label>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -67,7 +74,7 @@
         <!-- Demographic Section -->
         <section class="card demographic-section">
             <h2>🔍 Radiografía del Voto</h2>
-            <div class="note-container"
+            <div class="note-container" id="survey-note"
                 style="background: #fff3cd; color: #856404; padding: 0.75rem; border-radius: 6px; margin-bottom: 1rem; font-size: 0.9rem; border: 1px solid #ffeeba; display: flex; align-items: center; gap: 0.5rem;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                     <path
@@ -149,8 +156,8 @@
                         <!-- Candidate checkboxes will be injected here -->
                     </div>
                     <div class="legend-divider"></div>
-                    <div class="legend-section-title">Categorías Especiales</div>
-                    <div class="legend-special-categories">
+                    <div class="legend-section-title" id="compare-special-title">Categorías Especiales</div>
+                    <div class="legend-special-categories" id="compare-special-categories">
                         <label class="legend-item special">
                             <input type="checkbox" id="compare-blanco" value="Blanco/viciado/ninguno">
                             <span class="legend-color" style="background: #95a5a6;"></span>
@@ -173,7 +180,7 @@
 
         <!-- Premium Footer -->
         <footer class="footer">
-            <p>📊 Datos: Encuestas Ipsos Perú • Análisis: Observatorio Electoral</p>
+            <p id="footer-data-source">📊 Datos: Encuestas Ipsos Perú • Análisis: Observatorio Electoral</p>
             <p class="footer-text">
                 Dashboard interactivo desarrollado por <a href="https://www.linkedin.com/in/diego-jesus-data/"
                     target="_blank" style="font-weight: bold; color: inherit; text-decoration: none;">Diego Jesus</a>
@@ -188,7 +195,7 @@
     </main>
 
     <!-- Custom Script -->
-    <script src="script.js?v=47"></script>
+    <script src="script.js?v=50"></script>
 </body>
 
 </html>

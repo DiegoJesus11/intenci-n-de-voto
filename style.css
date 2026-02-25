@@ -191,6 +191,58 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
+.survey-source-switch {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.35rem;
+    padding: 0.35rem 0.5rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-sm);
+    backdrop-filter: blur(4px);
+    min-width: 176px;
+}
+
+.survey-source-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.85;
+    font-weight: 600;
+}
+
+.survey-source-options {
+    display: flex;
+    gap: 0.35rem;
+}
+
+.survey-source-options label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 0.25rem 0.45rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.survey-source-options input[type="radio"] {
+    width: 14px;
+    height: 14px;
+    margin: 0;
+    accent-color: #ffffff;
+}
+
+.survey-source-options input[type="radio"]:checked+span {
+    color: #ffffff;
+    font-weight: 700;
+}
+
 /* ===== Main Container ===== */
 .container {
     max-width: 1500px;
@@ -910,8 +962,31 @@ input[type="radio"]:checked+span {
     }
 
     .header-meta {
+        display: flex;
+        align-items: flex-end;
+        gap: 0.4rem;
+    }
+
+    .header-meta .update-date {
         display: none;
-        /* Hide date on mobile header to save space */
+    }
+
+    .survey-source-switch {
+        min-width: 0;
+        padding: 0.3rem 0.4rem;
+    }
+
+    .survey-source-label {
+        display: none;
+    }
+
+    .survey-source-options {
+        gap: 0.25rem;
+    }
+
+    .survey-source-options label {
+        padding: 0.2rem 0.35rem;
+        font-size: 0.72rem;
     }
 
     .demographic-controls .control-group {

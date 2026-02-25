@@ -1,0 +1,1156 @@
+{
+  "Diciembre 2025": {
+    "metadata": {
+      "pollster": "Datum",
+      "source_sheet": "Datum-Diciembre"
+    },
+    "candidates": [
+      {
+        "name": "Rafael López Aliaga",
+        "total": 10.5,
+        "gender": {
+          "Masculino": 14.3,
+          "Femenino": 6.7
+        },
+        "geography": {
+          "Lima/Callao": 17.7,
+          "Norte": 4.7,
+          "Centro": 8.9,
+          "Sur": 5.3,
+          "Oriente": 9.6,
+          "Urbana": 11.8,
+          "Rural": 4.3
+        }
+      },
+      {
+        "name": "Keiko Fujimori",
+        "total": 7.5,
+        "gender": {
+          "Masculino": 5.7,
+          "Femenino": 9.3
+        },
+        "geography": {
+          "Lima/Callao": 10.1,
+          "Norte": 8.4,
+          "Centro": 6.2,
+          "Sur": 2.4,
+          "Oriente": 6.1,
+          "Urbana": 7.4,
+          "Rural": 8.2
+        }
+      },
+      {
+        "name": "Mario Vizcarra",
+        "total": 6.5,
+        "gender": {
+          "Masculino": 5.2,
+          "Femenino": 7.8
+        },
+        "geography": {
+          "Lima/Callao": 4.1,
+          "Norte": 5.7,
+          "Centro": 13.0,
+          "Sur": 6.3,
+          "Oriente": 9.6,
+          "Urbana": 5.4,
+          "Rural": 11.5
+        }
+      },
+      {
+        "name": "Carlos Álvarez",
+        "total": 4.0,
+        "gender": {
+          "Masculino": 5.5,
+          "Femenino": 2.5
+        },
+        "geography": {
+          "Lima/Callao": 3.9,
+          "Norte": 5.7,
+          "Centro": 3.4,
+          "Sur": 2.4,
+          "Oriente": 3.5,
+          "Urbana": 4.3,
+          "Rural": 2.4
+        }
+      },
+      {
+        "name": "Alfonso López Chau",
+        "total": 2.9,
+        "gender": {
+          "Masculino": 3.8,
+          "Femenino": 2.0
+        },
+        "geography": {
+          "Lima/Callao": 1.4,
+          "Norte": 2.0,
+          "Centro": 4.8,
+          "Sur": 6.7,
+          "Oriente": 1.8,
+          "Urbana": 3.0,
+          "Rural": 2.4
+        }
+      },
+      {
+        "name": "César Acuña",
+        "total": 1.9,
+        "gender": {
+          "Masculino": 2.3,
+          "Femenino": 1.5
+        },
+        "geography": {
+          "Lima/Callao": 0.9,
+          "Norte": 3.7,
+          "Centro": 2.1,
+          "Sur": 0.5,
+          "Oriente": 3.5,
+          "Urbana": 1.9,
+          "Rural": 1.9
+        }
+      },
+      {
+        "name": "Yonhy Lescano",
+        "total": 1.9,
+        "gender": {
+          "Masculino": 2.5,
+          "Femenino": 1.3
+        },
+        "geography": {
+          "Lima/Callao": 0.7,
+          "Norte": 1.0,
+          "Centro": 3.4,
+          "Sur": 3.8,
+          "Oriente": 3.5,
+          "Urbana": 2.2,
+          "Rural": 0.5
+        }
+      },
+      {
+        "name": "Ricardo Belmont",
+        "total": 1.6,
+        "gender": {
+          "Masculino": 2.3,
+          "Femenino": 0.8
+        },
+        "geography": {
+          "Lima/Callao": 1.1,
+          "Norte": 2.0,
+          "Centro": 0.7,
+          "Sur": 1.9,
+          "Oriente": 2.6,
+          "Urbana": 1.6,
+          "Rural": 1.4
+        }
+      },
+      {
+        "name": "José Luna Gálvez",
+        "total": 1.3,
+        "gender": {
+          "Masculino": 1.3,
+          "Femenino": 1.3
+        },
+        "geography": {
+          "Lima/Callao": 1.4,
+          "Norte": 1.3,
+          "Centro": 0.7,
+          "Sur": 1.9,
+          "Oriente": 0.9,
+          "Urbana": 1.1,
+          "Rural": 2.4
+        }
+      },
+      {
+        "name": "Fernando Olivera",
+        "total": 1.2,
+        "gender": {
+          "Masculino": 1.2,
+          "Femenino": 1.2
+        },
+        "geography": {
+          "Lima/Callao": 0.5,
+          "Norte": 2.3,
+          "Centro": 0.7,
+          "Sur": 0.5,
+          "Oriente": 2.6,
+          "Urbana": 1.0,
+          "Rural": 1.9
+        }
+      },
+      {
+        "name": "George Forsyth",
+        "total": 1.2,
+        "gender": {
+          "Masculino": 1.3,
+          "Femenino": 1.2
+        },
+        "geography": {
+          "Lima/Callao": 1.4,
+          "Norte": 1.3,
+          "Centro": 1.4,
+          "Sur": 0.5,
+          "Oriente": 1.8,
+          "Urbana": 1.2,
+          "Rural": 1.4
+        }
+      },
+      {
+        "name": "Roberto Chiabra",
+        "total": 0.9,
+        "gender": {
+          "Masculino": 1.3,
+          "Femenino": 0.5
+        },
+        "geography": {
+          "Lima/Callao": 1.1,
+          "Norte": 1.3,
+          "Centro": 0.7,
+          "Sur": 0.5,
+          "Oriente": 0.0,
+          "Urbana": 1.0,
+          "Rural": 0.5
+        }
+      },
+      {
+        "name": "Candidato de Acción Popular",
+        "total": 0.7,
+        "gender": {
+          "Masculino": 0.7,
+          "Femenino": 0.8
+        },
+        "geography": {
+          "Lima/Callao": 1.4,
+          "Norte": 0.3,
+          "Centro": 0.0,
+          "Sur": 0.0,
+          "Oriente": 1.8,
+          "Urbana": 0.8,
+          "Rural": 0.5
+        }
+      },
+      {
+        "name": "Carlos Espá",
+        "total": 0.7,
+        "gender": {
+          "Masculino": 0.7,
+          "Femenino": 0.8
+        },
+        "geography": {
+          "Lima/Callao": 0.7,
+          "Norte": 1.0,
+          "Centro": 0.0,
+          "Sur": 1.4,
+          "Oriente": 0.0,
+          "Urbana": 0.7,
+          "Rural": 1.0
+        }
+      },
+      {
+        "name": "Jorge Nieto",
+        "total": 0.7,
+        "gender": {
+          "Masculino": 1.2,
+          "Femenino": 0.3
+        },
+        "geography": {
+          "Lima/Callao": 0.5,
+          "Norte": 1.3,
+          "Centro": 1.4,
+          "Sur": 0.0,
+          "Oriente": 0.9,
+          "Urbana": 0.7,
+          "Rural": 1.0
+        }
+      },
+      {
+        "name": "Rafael Belaunde",
+        "total": 0.7,
+        "gender": {
+          "Masculino": 1.2,
+          "Femenino": 0.3
+        },
+        "geography": {
+          "Lima/Callao": 0.7,
+          "Norte": 0.7,
+          "Centro": 0.0,
+          "Sur": 0.5,
+          "Oriente": 2.6,
+          "Urbana": 0.6,
+          "Rural": 1.4
+        }
+      },
+      {
+        "name": "Vladimir Cerrón",
+        "total": 0.7,
+        "gender": {
+          "Masculino": 0.5,
+          "Femenino": 0.8
+        },
+        "geography": {
+          "Lima/Callao": 0.2,
+          "Norte": 1.0,
+          "Centro": 1.4,
+          "Sur": 0.0,
+          "Oriente": 1.8,
+          "Urbana": 0.5,
+          "Rural": 1.4
+        }
+      },
+      {
+        "name": "Blanco/viciado/ninguno",
+        "total": 35.1,
+        "gender": {
+          "Masculino": 31.8,
+          "Femenino": 38.4
+        },
+        "geography": {
+          "Lima/Callao": 32.6,
+          "Norte": 35.6,
+          "Centro": 37.0,
+          "Sur": 42.3,
+          "Oriente": 28.1,
+          "Urbana": 34.8,
+          "Rural": 36.5
+        }
+      },
+      {
+        "name": "No precisa",
+        "total": 14.7,
+        "gender": {
+          "Masculino": 11.3,
+          "Femenino": 18.1
+        },
+        "geography": {
+          "Lima/Callao": 15.9,
+          "Norte": 13.4,
+          "Centro": 9.6,
+          "Sur": 18.3,
+          "Oriente": 14.0,
+          "Urbana": 14.9,
+          "Rural": 13.9
+        }
+      },
+      {
+        "name": "Otros",
+        "total": 4.6,
+        "gender": {
+          "Masculino": 5.6,
+          "Femenino": 3.4
+        },
+        "geography": {
+          "Lima/Callao": 3.5,
+          "Norte": 6.0,
+          "Centro": 3.9,
+          "Sur": 4.8,
+          "Oriente": 3.5,
+          "Urbana": 4.7,
+          "Rural": 3.6
+        }
+      },
+      {
+        "name": "No iría a votar",
+        "total": 0.7,
+        "gender": {
+          "Masculino": 0.3,
+          "Femenino": 1.0
+        },
+        "geography": {
+          "Lima/Callao": 0.2,
+          "Norte": 1.3,
+          "Centro": 0.7,
+          "Sur": 0.0,
+          "Oriente": 1.8,
+          "Urbana": 0.4,
+          "Rural": 1.9
+        }
+      }
+    ]
+  },
+  "Enero (1) 2026": {
+    "metadata": {
+      "pollster": "Datum",
+      "source_sheet": "Datum-Enero 1"
+    },
+    "candidates": [
+      {
+        "name": "Rafael López Aliaga",
+        "total": 12.0,
+        "gender": {
+          "Masculino": 14.2,
+          "Femenino": 9.8
+        },
+        "geography": {
+          "Lima/Callao": 18.4,
+          "Norte": 7.7,
+          "Centro": 10.3,
+          "Sur": 10.6,
+          "Oriente": 3.5,
+          "Urbana": 13.7,
+          "Rural": 3.8
+        }
+      },
+      {
+        "name": "Keiko Fujimori",
+        "total": 8.8,
+        "gender": {
+          "Masculino": 8.0,
+          "Femenino": 9.7
+        },
+        "geography": {
+          "Lima/Callao": 8.5,
+          "Norte": 11.7,
+          "Centro": 10.3,
+          "Sur": 4.8,
+          "Oriente": 7.9,
+          "Urbana": 9.4,
+          "Rural": 6.3
+        }
+      },
+      {
+        "name": "Carlos Álvarez",
+        "total": 6.2,
+        "gender": {
+          "Masculino": 5.7,
+          "Femenino": 6.7
+        },
+        "geography": {
+          "Lima/Callao": 6.7,
+          "Norte": 7.4,
+          "Centro": 4.1,
+          "Sur": 4.3,
+          "Oriente": 7.0,
+          "Urbana": 6.5,
+          "Rural": 4.8
+        }
+      },
+      {
+        "name": "Mario Vizcarra",
+        "total": 5.8,
+        "gender": {
+          "Masculino": 3.3,
+          "Femenino": 8.2
+        },
+        "geography": {
+          "Lima/Callao": 5.3,
+          "Norte": 6.7,
+          "Centro": 6.2,
+          "Sur": 3.4,
+          "Oriente": 8.8,
+          "Urbana": 6.1,
+          "Rural": 3.8
+        }
+      },
+      {
+        "name": "Alfonso López Chau",
+        "total": 3.8,
+        "gender": {
+          "Masculino": 6.0,
+          "Femenino": 1.7
+        },
+        "geography": {
+          "Lima/Callao": 4.1,
+          "Norte": 2.3,
+          "Centro": 6.2,
+          "Sur": 5.3,
+          "Oriente": 0.9,
+          "Urbana": 4.0,
+          "Rural": 2.9
+        }
+      },
+      {
+        "name": "Yonhy Lescano",
+        "total": 3.0,
+        "gender": {
+          "Masculino": 3.7,
+          "Femenino": 2.3
+        },
+        "geography": {
+          "Lima/Callao": 1.4,
+          "Norte": 2.3,
+          "Centro": 2.1,
+          "Sur": 7.2,
+          "Oriente": 4.4,
+          "Urbana": 2.8,
+          "Rural": 3.8
+        }
+      },
+      {
+        "name": "George Forsyth",
+        "total": 2.8,
+        "gender": {
+          "Masculino": 3.2,
+          "Femenino": 2.5
+        },
+        "geography": {
+          "Lima/Callao": 4.8,
+          "Norte": 1.7,
+          "Centro": 2.1,
+          "Sur": 1.0,
+          "Oriente": 2.6,
+          "Urbana": 3.0,
+          "Rural": 1.9
+        }
+      },
+      {
+        "name": "César Acuña",
+        "total": 2.5,
+        "gender": {
+          "Masculino": 3.0,
+          "Femenino": 2.0
+        },
+        "geography": {
+          "Lima/Callao": 1.4,
+          "Norte": 5.7,
+          "Centro": 0.7,
+          "Sur": 1.0,
+          "Oriente": 3.5,
+          "Urbana": 2.5,
+          "Rural": 2.4
+        }
+      },
+      {
+        "name": "Ricardo Belmont",
+        "total": 2.2,
+        "gender": {
+          "Masculino": 3.3,
+          "Femenino": 1.0
+        },
+        "geography": {
+          "Lima/Callao": 2.1,
+          "Norte": 1.3,
+          "Centro": 3.4,
+          "Sur": 0.5,
+          "Oriente": 6.1,
+          "Urbana": 2.2,
+          "Rural": 1.9
+        }
+      },
+      {
+        "name": "Fernando Olivera",
+        "total": 1.3,
+        "gender": {
+          "Masculino": 1.7,
+          "Femenino": 0.8
+        },
+        "geography": {
+          "Lima/Callao": 1.1,
+          "Norte": 1.3,
+          "Centro": 1.4,
+          "Sur": 1.9,
+          "Oriente": 0.0,
+          "Urbana": 1.3,
+          "Rural": 1.0
+        }
+      },
+      {
+        "name": "Vladimir Cerrón",
+        "total": 1.2,
+        "gender": {
+          "Masculino": 1.3,
+          "Femenino": 1.0
+        },
+        "geography": {
+          "Lima/Callao": 0.2,
+          "Norte": 1.3,
+          "Centro": 2.1,
+          "Sur": 2.4,
+          "Oriente": 0.9,
+          "Urbana": 1.2,
+          "Rural": 1.0
+        }
+      },
+      {
+        "name": "Carlos Espá",
+        "total": 1.0,
+        "gender": {
+          "Masculino": 1.0,
+          "Femenino": 1.0
+        },
+        "geography": {
+          "Lima/Callao": 1.6,
+          "Norte": 1.0,
+          "Centro": 0.7,
+          "Sur": 0.5,
+          "Oriente": 0.0,
+          "Urbana": 1.1,
+          "Rural": 0.5
+        }
+      },
+      {
+        "name": "Blanco/viciado/ninguno",
+        "total": 24.5,
+        "gender": {
+          "Masculino": 23.3,
+          "Femenino": 25.7
+        },
+        "geography": {
+          "Lima/Callao": 19.8,
+          "Norte": 28.4,
+          "Centro": 20.0,
+          "Sur": 33.5,
+          "Oriente": 21.9,
+          "Urbana": 22.1,
+          "Rural": 36.1
+        }
+      },
+      {
+        "name": "No precisa",
+        "total": 18.4,
+        "gender": {
+          "Masculino": 16.0,
+          "Femenino": 20.8
+        },
+        "geography": {
+          "Lima/Callao": 18.4,
+          "Norte": 12.8,
+          "Centro": 22.8,
+          "Sur": 20.7,
+          "Oriente": 23.7,
+          "Urbana": 17.8,
+          "Rural": 21.6
+        }
+      },
+      {
+        "name": "Otros",
+        "total": 6.5,
+        "gender": {
+          "Masculino": 6.3,
+          "Femenino": 6.8
+        },
+        "geography": {
+          "Lima/Callao": 6.2,
+          "Norte": 8.4,
+          "Centro": 7.6,
+          "Sur": 2.9,
+          "Oriente": 8.8,
+          "Urbana": 6.3,
+          "Rural": 8.2
+        }
+      }
+    ]
+  },
+  "Enero (2) 2026": {
+    "metadata": {
+      "pollster": "Datum",
+      "source_sheet": "Datum-Enero 2"
+    },
+    "candidates": [
+      {
+        "name": "Rafael López Aliaga",
+        "total": 11.7,
+        "gender": {
+          "Masculino": 16.1,
+          "Femenino": 7.3
+        },
+        "geography": {
+          "Lima/Callao": 15.6,
+          "Norte": 8.4,
+          "Centro": 9.6,
+          "Sur": 12.0,
+          "Oriente": 7.8,
+          "Urbana": 13.1,
+          "Rural": 5.3
+        }
+      },
+      {
+        "name": "Keiko Fujimori",
+        "total": 8.0,
+        "gender": {
+          "Masculino": 6.5,
+          "Femenino": 9.5
+        },
+        "geography": {
+          "Lima/Callao": 10.8,
+          "Norte": 6.2,
+          "Centro": 7.7,
+          "Sur": 3.8,
+          "Oriente": 7.8,
+          "Urbana": 8.6,
+          "Rural": 5.3
+        }
+      },
+      {
+        "name": "Carlos Álvarez",
+        "total": 5.7,
+        "gender": {
+          "Masculino": 6.7,
+          "Femenino": 4.8
+        },
+        "geography": {
+          "Lima/Callao": 6.7,
+          "Norte": 7.1,
+          "Centro": 5.5,
+          "Sur": 3.4,
+          "Oriente": 3.5,
+          "Urbana": 5.9,
+          "Rural": 4.8
+        }
+      },
+      {
+        "name": "Alfonso López Chau",
+        "total": 4.6,
+        "gender": {
+          "Masculino": 5.5,
+          "Femenino": 3.7
+        },
+        "geography": {
+          "Lima/Callao": 4.1,
+          "Norte": 4.4,
+          "Centro": 6.8,
+          "Sur": 6.3,
+          "Oriente": 0.9,
+          "Urbana": 4.6,
+          "Rural": 4.3
+        }
+      },
+      {
+        "name": "Mario Vizcarra",
+        "total": 3.6,
+        "gender": {
+          "Masculino": 3.2,
+          "Femenino": 4.0
+        },
+        "geography": {
+          "Lima/Callao": 2.1,
+          "Norte": 4.1,
+          "Centro": 3.4,
+          "Sur": 2.9,
+          "Oriente": 10.4,
+          "Urbana": 3.4,
+          "Rural": 4.3
+        }
+      },
+      {
+        "name": "César Acuña",
+        "total": 3.0,
+        "gender": {
+          "Masculino": 3.2,
+          "Femenino": 2.8
+        },
+        "geography": {
+          "Lima/Callao": 1.4,
+          "Norte": 5.4,
+          "Centro": 4.1,
+          "Sur": 2.4,
+          "Oriente": 2.6,
+          "Urbana": 2.7,
+          "Rural": 4.3
+        }
+      },
+      {
+        "name": "George Forsyth",
+        "total": 3.0,
+        "gender": {
+          "Masculino": 2.8,
+          "Femenino": 3.2
+        },
+        "geography": {
+          "Lima/Callao": 4.8,
+          "Norte": 0.7,
+          "Centro": 2.0,
+          "Sur": 1.9,
+          "Oriente": 3.5,
+          "Urbana": 3.2,
+          "Rural": 1.9
+        }
+      },
+      {
+        "name": "Yonhy Lescano",
+        "total": 2.5,
+        "gender": {
+          "Masculino": 3.2,
+          "Femenino": 1.8
+        },
+        "geography": {
+          "Lima/Callao": 1.1,
+          "Norte": 1.4,
+          "Centro": 1.3,
+          "Sur": 7.2,
+          "Oriente": 3.5,
+          "Urbana": 2.3,
+          "Rural": 3.4
+        }
+      },
+      {
+        "name": "José Luna Gálvez",
+        "total": 1.6,
+        "gender": {
+          "Masculino": 1.3,
+          "Femenino": 1.8
+        },
+        "geography": {
+          "Lima/Callao": 2.1,
+          "Norte": 2.7,
+          "Centro": 0.3,
+          "Sur": 1.4,
+          "Oriente": 1.7,
+          "Urbana": 1.6,
+          "Rural": 1.4
+        }
+      },
+      {
+        "name": "Ricardo Belmont",
+        "total": 1.5,
+        "gender": {
+          "Masculino": 2.3,
+          "Femenino": 0.7
+        },
+        "geography": {
+          "Lima/Callao": 1.6,
+          "Norte": 1.3,
+          "Centro": 1.4,
+          "Sur": 1.4,
+          "Oriente": 1.7,
+          "Urbana": 1.7,
+          "Rural": 0.5
+        }
+      },
+      {
+        "name": "Carlos Espá",
+        "total": 1.0,
+        "gender": {
+          "Masculino": 0.8,
+          "Femenino": 1.2
+        },
+        "geography": {
+          "Lima/Callao": 2.1,
+          "Norte": 0.0,
+          "Centro": 0.7,
+          "Sur": 0.5,
+          "Oriente": 0.0,
+          "Urbana": 1.1,
+          "Rural": 0.5
+        }
+      },
+      {
+        "name": "Roberto Chiabra",
+        "total": 0.9,
+        "gender": {
+          "Masculino": 0.5,
+          "Femenino": 1.3
+        },
+        "geography": {
+          "Lima/Callao": 1.8,
+          "Norte": 0.0,
+          "Centro": 0.3,
+          "Sur": 0.5,
+          "Oriente": 0.9,
+          "Urbana": 1.0,
+          "Rural": 0.5
+        }
+      },
+      {
+        "name": "Blanco/viciado/ninguno",
+        "total": 25.9,
+        "gender": {
+          "Masculino": 24.6,
+          "Femenino": 27.1
+        },
+        "geography": {
+          "Lima/Callao": 23.2,
+          "Norte": 31.3,
+          "Centro": 18.5,
+          "Sur": 30.3,
+          "Oriente": 23.5,
+          "Urbana": 26.3,
+          "Rural": 24.0
+        }
+      },
+      {
+        "name": "No precisa",
+        "total": 18.4,
+        "gender": {
+          "Masculino": 14.8,
+          "Femenino": 22.0
+        },
+        "geography": {
+          "Lima/Callao": 13.5,
+          "Norte": 18.5,
+          "Centro": 28.1,
+          "Sur": 17.3,
+          "Oriente": 26.1,
+          "Urbana": 16.2,
+          "Rural": 28.8
+        }
+      },
+      {
+        "name": "Otros",
+        "total": 8.6,
+        "gender": {
+          "Masculino": 8.5,
+          "Femenino": 8.8
+        },
+        "geography": {
+          "Lima/Callao": 9.1,
+          "Norte": 7.9,
+          "Centro": 10.9,
+          "Sur": 8.7,
+          "Oriente": 6.1,
+          "Urbana": 8.3,
+          "Rural": 10.7
+        }
+      }
+    ]
+  },
+  "Febrero 2026": {
+    "metadata": {
+      "pollster": "Datum",
+      "source_sheet": "Datum-Febrero"
+    },
+    "candidates": [
+      {
+        "name": "Rafael López Aliaga",
+        "total": 11.9,
+        "gender": {
+          "Masculino": 14.0,
+          "Femenino": 9.8
+        },
+        "geography": {
+          "Lima/Callao": 19.8,
+          "Norte": 7.4,
+          "Centro": 4.1,
+          "Sur": 8.7,
+          "Oriente": 9.6,
+          "Urbana": 13.9,
+          "Rural": 2.4
+        }
+      },
+      {
+        "name": "Keiko Fujimori",
+        "total": 9.2,
+        "gender": {
+          "Masculino": 8.5,
+          "Femenino": 9.8
+        },
+        "geography": {
+          "Lima/Callao": 14.3,
+          "Norte": 7.7,
+          "Centro": 6.2,
+          "Sur": 4.3,
+          "Oriente": 6.1,
+          "Urbana": 10.0,
+          "Rural": 5.3
+        }
+      },
+      {
+        "name": "Carlos Álvarez",
+        "total": 5.8,
+        "gender": {
+          "Masculino": 6.2,
+          "Femenino": 5.3
+        },
+        "geography": {
+          "Lima/Callao": 7.1,
+          "Norte": 5.4,
+          "Centro": 6.9,
+          "Sur": 3.8,
+          "Oriente": 3.5,
+          "Urbana": 6.3,
+          "Rural": 3.4
+        }
+      },
+      {
+        "name": "Alfonso López Chau",
+        "total": 3.8,
+        "gender": {
+          "Masculino": 4.3,
+          "Femenino": 3.3
+        },
+        "geography": {
+          "Lima/Callao": 3.4,
+          "Norte": 2.7,
+          "Centro": 4.8,
+          "Sur": 7.2,
+          "Oriente": 0.9,
+          "Urbana": 4.0,
+          "Rural": 2.9
+        }
+      },
+      {
+        "name": "César Acuña",
+        "total": 3.8,
+        "gender": {
+          "Masculino": 4.2,
+          "Femenino": 3.3
+        },
+        "geography": {
+          "Lima/Callao": 1.4,
+          "Norte": 7.0,
+          "Centro": 3.4,
+          "Sur": 1.9,
+          "Oriente": 7.9,
+          "Urbana": 3.8,
+          "Rural": 3.4
+        }
+      },
+      {
+        "name": "Mario Vizcarra",
+        "total": 3.6,
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 5.2
+        },
+        "geography": {
+          "Lima/Callao": 3.4,
+          "Norte": 2.0,
+          "Centro": 4.1,
+          "Sur": 2.9,
+          "Oriente": 8.8,
+          "Urbana": 3.3,
+          "Rural": 4.8
+        }
+      },
+      {
+        "name": "Yonhy Lescano",
+        "total": 2.3,
+        "gender": {
+          "Masculino": 3.0,
+          "Femenino": 1.5
+        },
+        "geography": {
+          "Lima/Callao": 1.8,
+          "Norte": 0.3,
+          "Centro": 2.1,
+          "Sur": 6.3,
+          "Oriente": 1.8,
+          "Urbana": 2.5,
+          "Rural": 1.0
+        }
+      },
+      {
+        "name": "George Forsyth",
+        "total": 2.2,
+        "gender": {
+          "Masculino": 3.0,
+          "Femenino": 1.3
+        },
+        "geography": {
+          "Lima/Callao": 2.5,
+          "Norte": 2.0,
+          "Centro": 0.7,
+          "Sur": 1.4,
+          "Oriente": 4.4,
+          "Urbana": 2.2,
+          "Rural": 1.9
+        }
+      },
+      {
+        "name": "José Luna Gálvez",
+        "total": 1.9,
+        "gender": {
+          "Masculino": 2.2,
+          "Femenino": 1.7
+        },
+        "geography": {
+          "Lima/Callao": 2.3,
+          "Norte": 1.0,
+          "Centro": 2.8,
+          "Sur": 1.9,
+          "Oriente": 1.8,
+          "Urbana": 2.0,
+          "Rural": 1.4
+        }
+      },
+      {
+        "name": "Ricardo Belmont",
+        "total": 1.5,
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 1.0
+        },
+        "geography": {
+          "Lima/Callao": 2.3,
+          "Norte": 1.3,
+          "Centro": 0.7,
+          "Sur": 1.4,
+          "Oriente": 0.0,
+          "Urbana": 1.7,
+          "Rural": 0.5
+        }
+      },
+      {
+        "name": "Enrique Valderrama",
+        "total": 1.1,
+        "gender": {
+          "Masculino": 1.0,
+          "Femenino": 1.2
+        },
+        "geography": {
+          "Lima/Callao": 0.9,
+          "Norte": 1.3,
+          "Centro": 2.1,
+          "Sur": 1.0,
+          "Oriente": 0.0,
+          "Urbana": 1.1,
+          "Rural": 1.0
+        }
+      },
+      {
+        "name": "Roberto Sánchez",
+        "total": 1.1,
+        "gender": {
+          "Masculino": 1.3,
+          "Femenino": 0.8
+        },
+        "geography": {
+          "Lima/Callao": 0.5,
+          "Norte": 1.3,
+          "Centro": 3.4,
+          "Sur": 1.0,
+          "Oriente": 0.0,
+          "Urbana": 0.9,
+          "Rural": 1.9
+        }
+      },
+      {
+        "name": "Blanco/viciado/ninguno",
+        "total": 27.6,
+        "gender": {
+          "Masculino": 24.2,
+          "Femenino": 30.9
+        },
+        "geography": {
+          "Lima/Callao": 22.1,
+          "Norte": 36.9,
+          "Centro": 18.6,
+          "Sur": 31.3,
+          "Oriente": 28.9,
+          "Urbana": 26.4,
+          "Rural": 33.7
+        }
+      },
+      {
+        "name": "No precisa",
+        "total": 14.9,
+        "gender": {
+          "Masculino": 12.4,
+          "Femenino": 17.6
+        },
+        "geography": {
+          "Lima/Callao": 9.7,
+          "Norte": 14.3,
+          "Centro": 22.2,
+          "Sur": 17.8,
+          "Oriente": 22.8,
+          "Urbana": 12.0,
+          "Rural": 28.7
+        }
+      },
+      {
+        "name": "Otros",
+        "total": 9.3,
+        "gender": {
+          "Masculino": 11.7,
+          "Femenino": 7.3
+        },
+        "geography": {
+          "Lima/Callao": 8.5,
+          "Norte": 9.4,
+          "Centro": 17.9,
+          "Sur": 9.1,
+          "Oriente": 3.5,
+          "Urbana": 9.9,
+          "Rural": 7.7
+        }
+      }
+    ]
+  }
+}
