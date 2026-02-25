@@ -590,12 +590,23 @@ function renderCustomLegend() {
     // Add special category toggle checkboxes at the bottom of the legend
     const specialSection = document.createElement('div');
     specialSection.className = 'legend-special-toggles';
+    const specialToggles = [
+        { id: 'show-excluded', checked: showExcluded, label: 'Fuera de carrera', color: '#555555' },
+        { id: 'show-blanco', checked: showBlanco, label: 'Blanco/viciado', color: '#95a5a6' },
+        { id: 'show-otros', checked: showOtros, label: 'Otros', color: '#8B4513' },
+        { id: 'show-noprecisa', checked: showNoPrecisa, label: 'No precisa', color: '#6c5ce7' }
+    ];
     specialSection.innerHTML = `
-        <div class="legend-category" style="margin-top:8px">Categorías especiales</div>
-        <label class="legend-toggle-item"><input type="checkbox" id="show-excluded" ${showExcluded ? 'checked' : ''}> Fuera de carrera</label>
-        <label class="legend-toggle-item"><input type="checkbox" id="show-blanco" ${showBlanco ? 'checked' : ''}> Blanco/viciado</label>
-        <label class="legend-toggle-item"><input type="checkbox" id="show-otros" ${showOtros ? 'checked' : ''}> Otros</label>
-        <label class="legend-toggle-item"><input type="checkbox" id="show-noprecisa" ${showNoPrecisa ? 'checked' : ''}> No precisa</label>
+        <div class="legend-section-title">Categorias especiales</div>
+        <div class="legend-special-categories">
+            ${specialToggles.map(toggle => `
+                <label class="legend-toggle-item legend-toggle-item-special">
+                    <input type="checkbox" id="${toggle.id}" ${toggle.checked ? 'checked' : ''}>
+                    <span class="legend-color" style="background: ${toggle.color};"></span>
+                    <span class="legend-toggle-label">${toggle.label}</span>
+                </label>
+            `).join('')}
+        </div>
     `;
     container.appendChild(specialSection);
 
@@ -690,7 +701,14 @@ function renderMainChart() {
     const traces = [];
     let colorIndex = 0;
 
-    candidatesToShow.forEach((candidateName) => {
+    const orderedCandidatesToShow = focusedCandidates.length > 0
+        ? [
+            ...candidatesToShow.filter(name => !focusedCandidates.includes(name)),
+            ...candidatesToShow.filter(name => focusedCandidates.includes(name))
+        ]
+        : candidatesToShow;
+
+    orderedCandidatesToShow.forEach((candidateName) => {
         const xValues = [];
         const yValues = [];
 
@@ -724,8 +742,10 @@ function renderMainChart() {
         let tooltipBgColor = color;
         let tooltipFontColor = '#ffffff';
 
+        const isFocusedTrace = focusedCandidates.length === 0 || focusedCandidates.includes(candidateName);
+
         if (focusedCandidates.length > 0) {
-            if (focusedCandidates.includes(candidateName)) {
+            if (isFocusedTrace) {
                 lineWidth = style.width + 2; // Bold focus (same as desktop)
                 // Keep original color for focused candidate
                 tooltipBgColor = color;
@@ -743,12 +763,20 @@ function renderMainChart() {
         // Keep isolated-point candidates clickable, but fully dim/hide them when another candidate is focused.
         const markerColor = lineColor;
         const markerOpacity = dataPoints <= 2
-            ? (focusedCandidates.length > 0 && !focusedCandidates.includes(candidateName) ? 0 : 1)
+            ? (focusedCandidates.length > 0 && !isFocusedTrace ? 0 : 1)
             : 1; // line traces use trace-level opacity instead
         const traceOpacity = dataPoints <= 2 ? 1 : opacity; // keep trace fully opaque for isolated points
-        const markerSize = isMobile
+        const baseMarkerSize = isMobile
             ? (dataPoints <= 2 ? 16 : (type === 'complete' ? 8 : 6))
             : (dataPoints <= 2 ? 18 : (type === 'complete' ? 12 : 10));
+        const edgeMarkerBoost = isMobile ? 3 : 4;
+        const markerSize = xValues.map((_, pointIndex) => {
+            const isEdgePoint = pointIndex === 0 || pointIndex === (xValues.length - 1);
+            return isEdgePoint ? baseMarkerSize + edgeMarkerBoost : baseMarkerSize;
+        });
+        const hoverTemplate = isFocusedTrace
+            ? '<b>%{fullData.name}</b>: %{y:.1f}%<extra></extra>'
+            : null;
 
         traces.push({
             x: xValues,
@@ -761,7 +789,8 @@ function renderMainChart() {
                 dash: style.dash,
                 color: lineColor,
                 shape: 'spline',
-                smoothing: 1.1
+                smoothing: 1.1,
+                simplify: false
             },
             marker: {
                 size: markerSize,
@@ -773,7 +802,9 @@ function renderMainChart() {
             opacity: traceOpacity,
             connectgaps: true,
             cliponaxis: false,
-            hovertemplate: '<b>%{fullData.name}</b>: %{y:.1f}%<extra></extra>',
+            hoveron: 'points',
+            hoverinfo: isFocusedTrace ? undefined : 'skip',
+            hovertemplate: hoverTemplate,
             hoverlabel: {
                 bgcolor: tooltipBgColor,
                 bordercolor: tooltipBgColor,
@@ -811,6 +842,8 @@ function renderMainChart() {
             ticktext: monthOrder.map(m => (responsive.useCompactMonthLabels ? MONTH_LABELS_MOBILE[m] : MONTH_DISPLAY_LABELS[m]) || m),
             tickfont: { size: responsive.xTickFontSize }, // Smaller labels on compact layouts
             automargin: true,
+            // Give breathing room to the first/last categories so edge markers remain easy to tap/click.
+            range: monthOrder.length > 1 ? [-0.35, monthOrder.length - 0.65] : undefined,
             gridcolor: 'rgba(0,0,0,0.03)',
             // Spikeline configuration
             showspikes: true,
@@ -823,8 +856,9 @@ function renderMainChart() {
         yaxis: yAxisConfig,
         // Use point-level hover on all devices so clicks always show a single label.
         hovermode: 'closest',
-        hoverdistance: -1,
-        spikedistance: -1,
+        hoverdistance: isTabletLayout ? 40 : 30,
+        spikedistance: isTabletLayout ? 40 : 30,
+        clickmode: 'event',
         // Compact hover label styling
         hoverlabel: {
             bgcolor: 'rgba(255,255,255,0.95)',
@@ -991,14 +1025,37 @@ function renderProfileChart(containerId, candidateName, demoType, title, layout,
     const responsive = getProfileChartResponsiveSettings();
     const mainAxisSizing = getMainChartResponsiveSettings();
     const { isMobile, isTabletLayout } = responsive;
+    const profileTopMargin = responsive.margin.t + (isTabletLayout ? 22 : 18);
     const profileLayout = {
         ...layout,
-        title: { text: title, font: { size: responsive.titleFontSize, family: 'Inter, sans-serif' } },
-        margin: responsive.margin,
+        title: {
+            text: title,
+            font: { size: responsive.titleFontSize, family: 'Inter, sans-serif' },
+            x: 0.5,
+            xanchor: 'center',
+            y: 0.985,
+            yanchor: 'top',
+            pad: { b: isTabletLayout ? 10 : 8 }
+        },
+        margin: { ...responsive.margin, t: profileTopMargin },
         height: responsive.height,
         hovermode: isTabletLayout ? 'closest' : 'x',
         hoverdistance: isTabletLayout ? 40 : 50,
         font: { family: 'Inter, sans-serif' },
+        legend: {
+            ...(layout.legend || {}),
+            orientation: 'h',
+            x: 0.5,
+            xanchor: 'center',
+            y: 1.06,
+            yanchor: 'bottom',
+            font: {
+                ...(layout.legend?.font || {}),
+                size: isMobile ? 8 : 9,
+                family: 'Inter, sans-serif'
+            },
+            tracegroupgap: 6
+        },
         xaxis: {
             ticktext: monthOrder.map(m => (responsive.useCompactMonthLabels ? MONTH_LABELS_MOBILE[m] : MONTH_DISPLAY_LABELS[m]) || m),
             tickvals: monthOrder,
