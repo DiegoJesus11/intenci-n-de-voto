@@ -517,7 +517,7 @@ function renderCustomLegend() {
 
     // Add Excluded if enabled
     if (showExcluded && candidateData.excluded.length > 0) {
-        categories.push({ title: 'Fuera de carrera', candidates: candidateData.excluded, type: 'excluded' });
+        categories.push({ title: '', candidates: candidateData.excluded, type: 'excluded' });
     }
     // Special categories are handled only by the dedicated toggle section below
     // to avoid duplicate entries in the main legend.
@@ -526,11 +526,13 @@ function renderCustomLegend() {
     categories.forEach(category => {
         if (category.candidates.length === 0) return;
 
-        // Category header
-        const header = document.createElement('div');
-        header.className = 'legend-category';
-        header.textContent = category.title;
-        container.appendChild(header);
+        // Category header (optional for sections like "Fuera de carrera" candidates)
+        if (category.title) {
+            const header = document.createElement('div');
+            header.className = 'legend-category';
+            header.textContent = category.title;
+            container.appendChild(header);
+        }
 
         // Candidate items
         category.candidates.forEach(candidateName => {
@@ -769,11 +771,7 @@ function renderMainChart() {
         const baseMarkerSize = isMobile
             ? (dataPoints <= 2 ? 16 : (type === 'complete' ? 8 : 6))
             : (dataPoints <= 2 ? 18 : (type === 'complete' ? 12 : 10));
-        const edgeMarkerBoost = isMobile ? 3 : 4;
-        const markerSize = xValues.map((_, pointIndex) => {
-            const isEdgePoint = pointIndex === 0 || pointIndex === (xValues.length - 1);
-            return isEdgePoint ? baseMarkerSize + edgeMarkerBoost : baseMarkerSize;
-        });
+        const markerSize = baseMarkerSize;
         const hoverTemplate = isFocusedTrace
             ? '<b>%{fullData.name}</b>: %{y:.1f}%<extra></extra>'
             : null;
