@@ -849,7 +849,9 @@ function renderCustomLegend() {
     specialSection.className = 'legend-special-toggles';
     const specialToggles = getMainSpecialToggleConfigs().map(cfg => ({
         id: cfg.key,
-        checked: document.getElementById(cfg.key)?.checked ?? false,
+        checked: cfg.isExcludedToggle
+            ? mainSpecialState.showExcluded
+            : mainSpecialState.specialValues.includes(cfg.value),
         label: cfg.label,
         color: cfg.color
     }));
