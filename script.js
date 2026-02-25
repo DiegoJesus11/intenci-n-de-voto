@@ -331,6 +331,12 @@ function resizeVisiblePlotlyCharts() {
     });
 }
 
+function getResponsiveXAxisTickAngle({ isMobile, isTabletLayout }) {
+    if (isMobile) return -28;
+    if (isTabletLayout) return -18;
+    return 0;
+}
+
 // =============================================
 // Initialize on page load
 // =============================================
@@ -513,16 +519,8 @@ function renderCustomLegend() {
     if (showExcluded && candidateData.excluded.length > 0) {
         categories.push({ title: 'Fuera de carrera', candidates: candidateData.excluded, type: 'excluded' });
     }
-
-    // Add special categories if enabled
-    const specialToShow = [];
-    if (showBlanco) specialToShow.push('Blanco/viciado');
-    if (showOtros) specialToShow.push('Otros');
-    if (showNoPrecisa) specialToShow.push('No precisa');
-
-    if (specialToShow.length > 0) {
-        categories.push({ title: 'Categorías Especiales', candidates: specialToShow, type: 'special' });
-    }
+    // Special categories are handled only by the dedicated toggle section below
+    // to avoid duplicate entries in the main legend.
 
     let colorIndex = 0;
     categories.forEach(category => {
@@ -806,12 +804,13 @@ function renderMainChart() {
         title: '',
         xaxis: {
             title: '',
-            tickangle: 0,
+            tickangle: getResponsiveXAxisTickAngle(responsive),
             categoryorder: 'array',
             categoryarray: monthOrder,
             tickvals: monthOrder,
             ticktext: monthOrder.map(m => (responsive.useCompactMonthLabels ? MONTH_LABELS_MOBILE[m] : MONTH_DISPLAY_LABELS[m]) || m),
             tickfont: { size: responsive.xTickFontSize }, // Smaller labels on compact layouts
+            automargin: true,
             gridcolor: 'rgba(0,0,0,0.03)',
             // Spikeline configuration
             showspikes: true,
@@ -822,10 +821,10 @@ function renderMainChart() {
             spikedash: 'dot'
         },
         yaxis: yAxisConfig,
-        // On mobile: 'closest' so tapping a point shows only that candidate's value.
-        // On desktop: 'x' shows all candidates at the same X position (unified tooltip).
-        hovermode: isMobile ? 'closest' : 'x',
-        hoverdistance: responsive.hoverdistance,
+        // Use point-level hover on all devices so clicks always show a single label.
+        hovermode: 'closest',
+        hoverdistance: -1,
+        spikedistance: -1,
         // Compact hover label styling
         hoverlabel: {
             bgcolor: 'rgba(255,255,255,0.95)',
@@ -1003,7 +1002,9 @@ function renderProfileChart(containerId, candidateName, demoType, title, layout,
         xaxis: {
             ticktext: monthOrder.map(m => (responsive.useCompactMonthLabels ? MONTH_LABELS_MOBILE[m] : MONTH_DISPLAY_LABELS[m]) || m),
             tickvals: monthOrder,
+            tickangle: getResponsiveXAxisTickAngle(responsive),
             tickfont: { size: mainAxisSizing.xTickFontSize },
+            automargin: true,
             fixedrange: isTabletLayout ? true : false
         },
         yaxis: {
@@ -1129,12 +1130,13 @@ function renderComparativeMode() {
         hovermode: isTabletLayout ? 'closest' : 'x',
         hoverdistance: isTabletLayout ? 40 : 50,
         xaxis: {
-            tickangle: 0,
+            tickangle: getResponsiveXAxisTickAngle(responsive),
             categoryorder: 'array',
             categoryarray: monthOrder,
             tickvals: monthOrder,
             ticktext: monthOrder.map(m => (responsive.useCompactMonthLabels ? MONTH_LABELS_MOBILE[m] : MONTH_DISPLAY_LABELS[m]) || m),
             tickfont: { size: mainAxisSizing.xTickFontSize },
+            automargin: true,
             gridcolor: 'rgba(0,0,0,0.04)',
             showspikes: true,
             spikemode: 'across',
