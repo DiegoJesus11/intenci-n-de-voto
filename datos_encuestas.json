@@ -3448,5 +3448,399 @@
         }
       }
     ]
+  },
+  "Febrero 2026": {
+    "candidates": [
+      {
+        "name": "Rafael López Aliaga",
+        "total": 12.0,
+        "geography": {
+          "Lima": 21.0,
+          "Interior": 7.0,
+          "Interior Urbano": 8.0,
+          "Interior Rural": 3.0,
+          "Norte": 8.0,
+          "Centro": 7.0,
+          "Sur": 6.0,
+          "Oriente": 8.0
+        },
+        "nse": {
+          "A": 43.0,
+          "B": 22.0,
+          "C": 18.0,
+          "D": 6.0,
+          "E": 3.0
+        },
+        "gender": {
+          "Masculino": 16.0,
+          "Femenino": 8.0
+        },
+        "age": {
+          "18-25": 14.0,
+          "26-42": 13.0,
+          "43+": 10.0
+        }
+      },
+      {
+        "name": "Keiko Fujimori",
+        "total": 8.0,
+        "geography": {
+          "Lima": 10.0,
+          "Interior": 7.0,
+          "Interior Urbano": 7.0,
+          "Interior Rural": 9.0,
+          "Norte": 8.0,
+          "Centro": 3.0,
+          "Sur": 2.0,
+          "Oriente": 17.0
+        },
+        "nse": {
+          "A": 21.0,
+          "B": 7.0,
+          "C": 8.0,
+          "D": 9.0,
+          "E": 8.0
+        },
+        "gender": {
+          "Masculino": 6.0,
+          "Femenino": 10.0
+        },
+        "age": {
+          "18-25": 7.0,
+          "26-42": 7.0,
+          "43+": 10.0
+        }
+      },
+      {
+        "name": "César Acuña",
+        "total": 4.0,
+        "geography": {
+          "Lima": 3.0,
+          "Interior": 5.0,
+          "Interior Urbano": 6.0,
+          "Interior Rural": 4.0,
+          "Norte": 10.0,
+          "Centro": 2.0,
+          "Sur": 2.0,
+          "Oriente": 4.0
+        },
+        "nse": {
+          "A": 3.0,
+          "B": 4.0,
+          "C": 2.0,
+          "D": 6.0,
+          "E": 6.0
+        },
+        "gender": {
+          "Masculino": 4.0,
+          "Femenino": 5.0
+        },
+        "age": {
+          "18-25": 8.0,
+          "26-42": 4.0,
+          "43+": 3.0
+        }
+      },
+      {
+        "name": "Mario Vizcarra",
+        "total": 4.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 5.0,
+          "Interior Urbano": 6.0,
+          "Interior Rural": 4.0,
+          "Norte": 4.0,
+          "Centro": 9.0,
+          "Sur": 5.0,
+          "Oriente": 3.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 4.0,
+          "C": 4.0,
+          "D": 4.0,
+          "E": 5.0
+        },
+        "gender": {
+          "Masculino": 3.0,
+          "Femenino": 5.0
+        },
+        "age": {
+          "18-25": 7.0,
+          "26-42": 3.0,
+          "43+": 3.0
+        }
+      },
+      {
+        "name": "Carlos Álvarez",
+        "total": 4.0,
+        "geography": {
+          "Lima": 5.0,
+          "Interior": 4.0,
+          "Interior Urbano": 2.0,
+          "Interior Rural": 5.0,
+          "Norte": 6.0,
+          "Centro": 2.0,
+          "Sur": 0.0,
+          "Oriente": 4.0
+        },
+        "nse": {
+          "A": 4.0,
+          "B": 6.0,
+          "C": 3.0,
+          "D": 3.0,
+          "E": 4.0
+        },
+        "gender": {
+          "Masculino": 4.0,
+          "Femenino": 4.0
+        },
+        "age": {
+          "18-25": 3.0,
+          "26-42": 5.0,
+          "43+": 4.0
+        }
+      },
+      {
+        "name": "Alfonso López Chau",
+        "total": 4.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 4.0,
+          "Interior Urbano": 4.0,
+          "Interior Rural": 6.0,
+          "Norte": 4.0,
+          "Centro": 6.0,
+          "Sur": 5.0,
+          "Oriente": 3.0
+        },
+        "nse": {
+          "A": 3.0,
+          "B": 6.0,
+          "C": 3.0,
+          "D": 3.0,
+          "E": 5.0
+        },
+        "gender": {
+          "Masculino": 6.0,
+          "Femenino": 2.0
+        },
+        "age": {
+          "18-25": 3.0,
+          "26-42": 4.0,
+          "43+": 3.0
+        }
+      },
+      {
+        "name": "George Forsyth",
+        "total": 2.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 3.0,
+          "Interior Urbano": 3.0,
+          "Interior Rural": 2.0,
+          "Norte": 1.0,
+          "Centro": 2.0,
+          "Sur": 2.0,
+          "Oriente": 7.0
+        },
+        "nse": {
+          "A": 3.0,
+          "B": 2.0,
+          "C": 3.0,
+          "D": 1.0,
+          "E": 3.0
+        },
+        "gender": {
+          "Masculino": 3.0,
+          "Femenino": 2.0
+        },
+        "age": {
+          "18-25": 3.0,
+          "26-42": 2.0,
+          "43+": 2.0
+        }
+      },
+      {
+        "name": "José Luna Gálvez",
+        "total": 2.0,
+        "geography": {
+          "Lima": 2.0,
+          "Interior": 2.0,
+          "Interior Urbano": 2.0,
+          "Interior Rural": 1.0,
+          "Norte": 2.0,
+          "Centro": 2.0,
+          "Sur": 1.0,
+          "Oriente": 1.0
+        },
+        "nse": {
+          "A": 3.0,
+          "B": 2.0,
+          "C": 1.0,
+          "D": 3.0,
+          "E": 1.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 1.0
+        },
+        "age": {
+          "18-25": 1.0,
+          "26-42": 3.0,
+          "43+": 1.0
+        }
+      },
+      {
+        "name": "Roberto Sánchez",
+        "total": 2.0,
+        "geography": {
+          "Lima": 1.0,
+          "Interior": 2.0,
+          "Interior Urbano": 1.0,
+          "Interior Rural": 3.0,
+          "Norte": 3.0,
+          "Centro": 0.0,
+          "Sur": 3.0,
+          "Oriente": 2.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 0.0,
+          "C": 1.0,
+          "D": 3.0,
+          "E": 3.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 1.0
+        },
+        "age": {
+          "18-25": 1.0,
+          "26-42": 2.0,
+          "43+": 2.0
+        }
+      },
+      {
+        "name": "José Williams",
+        "total": 2.0,
+        "geography": {
+          "Lima": 1.0,
+          "Interior": 2.0,
+          "Interior Urbano": 2.0,
+          "Interior Rural": 2.0,
+          "Norte": 1.0,
+          "Centro": 1.0,
+          "Sur": 2.0,
+          "Oriente": 3.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 2.0,
+          "C": 2.0,
+          "D": 1.0,
+          "E": 2.0
+        },
+        "gender": {
+          "Masculino": 2.0,
+          "Femenino": 1.0
+        },
+        "age": {
+          "18-25": 4.0,
+          "26-42": 1.0,
+          "43+": 1.0
+        }
+      },
+      {
+        "name": "Otros",
+        "total": 14.0,
+        "geography": {
+          "Lima": 13.0,
+          "Interior": 14.0,
+          "Interior Urbano": 17.0,
+          "Interior Rural": 8.0,
+          "Norte": 15.0,
+          "Centro": 20.0,
+          "Sur": 10.0,
+          "Oriente": 12.0
+        },
+        "nse": {
+          "A": 14.0,
+          "B": 15.0,
+          "C": 16.0,
+          "D": 14.0,
+          "E": 9.0
+        },
+        "gender": {
+          "Masculino": 16.0,
+          "Femenino": 11.0
+        },
+        "age": {
+          "18-25": 14.0,
+          "26-42": 15.0,
+          "43+": 12.0
+        }
+      },
+      {
+        "name": "Blanco/viciado/ninguno",
+        "total": 27.0,
+        "geography": {
+          "Lima": 26.0,
+          "Interior": 28.0,
+          "Interior Urbano": 27.0,
+          "Interior Rural": 32.0,
+          "Norte": 28.0,
+          "Centro": 26.0,
+          "Sur": 32.0,
+          "Oriente": 26.0
+        },
+        "nse": {
+          "A": 6.0,
+          "B": 17.0,
+          "C": 26.0,
+          "D": 33.0,
+          "E": 30.0
+        },
+        "gender": {
+          "Masculino": 23.0,
+          "Femenino": 32.0
+        },
+        "age": {
+          "18-25": 21.0,
+          "26-42": 26.0,
+          "43+": 33.0
+        }
+      },
+      {
+        "name": "No precisa",
+        "total": 15.0,
+        "geography": {
+          "Lima": 12.0,
+          "Interior": 17.0,
+          "Interior Urbano": 15.0,
+          "Interior Rural": 21.0,
+          "Norte": 10.0,
+          "Centro": 20.0,
+          "Sur": 30.0,
+          "Oriente": 10.0
+        },
+        "nse": {
+          "A": 0.0,
+          "B": 13.0,
+          "C": 13.0,
+          "D": 14.0,
+          "E": 21.0
+        },
+        "gender": {
+          "Masculino": 13.0,
+          "Femenino": 18.0
+        },
+        "age": {
+          "18-25": 14.0,
+          "26-42": 15.0,
+          "43+": 16.0
+        }
+      }
+    ]
   }
 }
