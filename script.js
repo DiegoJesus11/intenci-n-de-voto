@@ -12,6 +12,7 @@ let candidateData = {
 };
 let monthOrder = [];
 let focusedCandidates = [];
+let suppressMainChartFocusResetUntil = 0;
 
 // Candidates manually excluded (Fuera de carrera)
 const EXCLUDED_CANDIDATES = [
@@ -37,38 +38,37 @@ const MONTH_ORDER_DEFINED = [
     'Octubre (2) 2025',
     'Noviembre (1) 2025',
     'Noviembre (2) 2025',
-    'Diciembre 2025 (1)',
     'Diciembre 2025 (2)',
-    'Enero 2026'
+    'Enero 2026',
+    'Febrero 2026'
 ];
 
-// Display labels for X-axis (without 2025)
-// Display labels for X-axis (Abbreviated Mmm YY)
+// Display labels for X-axis (Abbreviated Mmm YY, with suffix only for duplicate month polls)
 const MONTH_DISPLAY_LABELS = {
     'Julio 2025': 'Jul 25',
     'Agosto 2025': 'Ago 25',
     'Setiembre 2025': 'Set 25',
-    'Octubre 2025': 'Oct 25',
-    'Octubre (2) 2025': 'Oct (2) 25',
-    'Noviembre (1) 2025': 'Nov (1) 25',
-    'Noviembre (2) 2025': 'Nov (2) 25',
-    'Diciembre 2025 (1)': 'Dic (1) 25',
-    'Diciembre 2025 (2)': 'Dic (2) 25',
-    'Enero 2026': 'Ene 26'
+    'Octubre 2025': 'Oct 25 - 1',
+    'Octubre (2) 2025': 'Oct 25 - 2',
+    'Noviembre (1) 2025': 'Nov 25 - 1',
+    'Noviembre (2) 2025': 'Nov 25 - 2',
+    'Diciembre 2025 (2)': 'Dic 25',
+    'Enero 2026': 'Ene 26',
+    'Febrero 2026': 'Feb 26'
 };
 
-// Mobile labels (No '25' year suffix, except for 2026 change)
+// Compact labels for smaller screens (same duplicate-month suffix rule)
 const MONTH_LABELS_MOBILE = {
-    'Julio 2025': 'Jul',
-    'Agosto 2025': 'Ago',
-    'Setiembre 2025': 'Set',
-    'Octubre 2025': 'Oct',
-    'Octubre (2) 2025': 'Oct (2)',
-    'Noviembre (1) 2025': 'Nov (1)',
-    'Noviembre (2) 2025': 'Nov (2)',
-    'Diciembre 2025 (1)': 'Dic (1)',
-    'Diciembre 2025 (2)': 'Dic (2)',
-    'Enero 2026': 'Ene 26'
+    'Julio 2025': 'Jul 25',
+    'Agosto 2025': 'Ago 25',
+    'Setiembre 2025': 'Set 25',
+    'Octubre 2025': 'Oct 25 - 1',
+    'Octubre (2) 2025': 'Oct 25 - 2',
+    'Noviembre (1) 2025': 'Nov 25 - 1',
+    'Noviembre (2) 2025': 'Nov 25 - 2',
+    'Diciembre 2025 (2)': 'Dic 25',
+    'Enero 2026': 'Ene 26',
+    'Febrero 2026': 'Feb 26'
 };
 
 // Extended color palette (15+ candidates)
@@ -174,6 +174,163 @@ const CANDIDATE_ASSETS = {
 const LOGO_BASE_PATH = "Logos EG 2026/";
 const PHOTO_BASE_PATH = "Fotos candidatos_OECP/";
 
+const BREAKPOINTS = {
+    phone: 480,
+    mobile: 768,
+    tablet: 1024
+};
+
+function getViewportMetrics() {
+    const width = window.innerWidth;
+    const isPhone = width <= BREAKPOINTS.phone;
+    const isMobile = width <= BREAKPOINTS.mobile;
+    const isTabletLayout = width <= BREAKPOINTS.tablet;
+    const tier = isPhone ? 'phone' : isMobile ? 'mobile' : (isTabletLayout ? 'tablet' : 'desktop');
+
+    return { width, isPhone, isMobile, isTabletLayout, tier };
+}
+
+function getMainChartResponsiveSettings() {
+    const viewport = getViewportMetrics();
+
+    const byTier = {
+        phone: {
+            height: 330,
+            margin: { l: 34, r: 8, t: 8, b: 34 },
+            xTickFontSize: 8,
+            yTickFontSize: 9,
+            yTitleFontSize: 9,
+            hoverdistance: 40,
+            useCompactMonthLabels: true
+        },
+        mobile: {
+            height: 360,
+            margin: { l: 38, r: 10, t: 10, b: 40 },
+            xTickFontSize: 9,
+            yTickFontSize: 10,
+            yTitleFontSize: 10,
+            hoverdistance: 42,
+            useCompactMonthLabels: true
+        },
+        tablet: {
+            height: 420,
+            margin: { l: 48, r: 12, t: 12, b: 60 },
+            xTickFontSize: 10,
+            yTickFontSize: 10,
+            yTitleFontSize: 11,
+            hoverdistance: 48,
+            useCompactMonthLabels: true
+        },
+        desktop: {
+            height: 520,
+            margin: { l: 60, r: 20, t: 20, b: 80 },
+            xTickFontSize: 11,
+            yTickFontSize: 11,
+            yTitleFontSize: 12,
+            hoverdistance: 50,
+            useCompactMonthLabels: false
+        }
+    };
+
+    return { ...viewport, ...byTier[viewport.tier] };
+}
+
+function getProfileChartResponsiveSettings() {
+    const viewport = getViewportMetrics();
+
+    const byTier = {
+        phone: {
+            height: 280,
+            margin: { l: 32, r: 12, t: 30, b: 34 },
+            titleFontSize: 11,
+            xTickFontSize: 8,
+            useCompactMonthLabels: true
+        },
+        mobile: {
+            height: 290,
+            margin: { l: 34, r: 14, t: 32, b: 36 },
+            titleFontSize: 12,
+            xTickFontSize: 9,
+            useCompactMonthLabels: true
+        },
+        tablet: {
+            height: 300,
+            margin: { l: 36, r: 16, t: 36, b: 38 },
+            titleFontSize: 12,
+            xTickFontSize: 9,
+            useCompactMonthLabels: true
+        },
+        desktop: {
+            height: 320,
+            margin: { l: 40, r: 20, t: 40, b: 40 },
+            titleFontSize: 13,
+            xTickFontSize: 9,
+            useCompactMonthLabels: false
+        }
+    };
+
+    return { ...viewport, ...byTier[viewport.tier] };
+}
+
+function getComparativeChartResponsiveSettings() {
+    const viewport = getViewportMetrics();
+
+    const byTier = {
+        phone: {
+            height: 380,
+            margin: { l: 40, r: 10, t: 44, b: 58 },
+            titleFontSize: 12,
+            xTickFontSize: 9,
+            yTickFontSize: 10,
+            useCompactMonthLabels: true
+        },
+        mobile: {
+            height: 400,
+            margin: { l: 42, r: 10, t: 44, b: 60 },
+            titleFontSize: 13,
+            xTickFontSize: 10,
+            yTickFontSize: 10,
+            useCompactMonthLabels: true
+        },
+        tablet: {
+            height: 440,
+            margin: { l: 52, r: 16, t: 48, b: 64 },
+            titleFontSize: 14,
+            xTickFontSize: 10,
+            yTickFontSize: 11,
+            useCompactMonthLabels: true
+        },
+        desktop: {
+            height: 500,
+            margin: { l: 60, r: 20, t: 50, b: 70 },
+            titleFontSize: 15,
+            xTickFontSize: 12,
+            yTickFontSize: 11,
+            useCompactMonthLabels: false
+        }
+    };
+
+    return { ...viewport, ...byTier[viewport.tier] };
+}
+
+function resizeVisiblePlotlyCharts() {
+    [
+        'main-chart',
+        'gender-chart',
+        'nse-chart',
+        'age-chart',
+        'geo-ambito-chart',
+        'geo-interior-chart',
+        'geo-region-chart',
+        'comparative-chart'
+    ].forEach(id => {
+        const el = document.getElementById(id);
+        if (el && el.data && el.data.length > 0) {
+            Plotly.Plots.resize(el);
+        }
+    });
+}
+
 // =============================================
 // Initialize on page load
 // =============================================
@@ -188,7 +345,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // On desktop: auto-open the controls accordion (it starts closed by default for mobile)
         const controlsToggle = document.getElementById('chart-controls-toggle');
-        if (controlsToggle && window.innerWidth > 768) {
+        if (controlsToggle && !getViewportMetrics().isTabletLayout) {
             controlsToggle.setAttribute('open', '');
         }
 
@@ -202,7 +359,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Force resize after everything is rendered to ensure correct dimensions
         setTimeout(() => {
-            Plotly.Plots.resize('main-chart');
+            const mainChartEl = document.getElementById('main-chart');
+            if (mainChartEl) Plotly.Plots.resize(mainChartEl);
         }, 100);
 
     } catch (error) {
@@ -216,35 +374,29 @@ document.addEventListener('DOMContentLoaded', async () => {
 // Window Resize Handling
 // =============================================
 let resizeTimeout;
+let lastViewportTier = getViewportMetrics().tier;
 window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
-        const isMobile = window.innerWidth <= 768;
+        const viewport = getViewportMetrics();
+        const tierChanged = viewport.tier !== lastViewportTier;
 
-        // Main chart: fully re-render so all mobile settings (height, fonts, margins) are correct
-        const mainEl = document.getElementById('main-chart');
-        if (mainEl && mainEl.data && mainEl.data.length > 0) {
-            renderMainChart();
+        if (!data || monthOrder.length === 0) {
+            lastViewportTier = viewport.tier;
+            return;
         }
 
-        // Other charts: just relayout with correct mobile values
-        const otherCharts = [
-            'gender-chart', 'nse-chart', 'age-chart',
-            'geo-ambito-chart', 'geo-interior-chart', 'geo-region-chart',
-            'comparative-chart'
-        ];
-
-        otherCharts.forEach(id => {
-            const el = document.getElementById(id);
-            if (el && el.data && el.data.length > 0) {
-                Plotly.relayout(id, {
-                    'xaxis.tickfont.size': isMobile ? 8 : 11,
-                    'margin': isMobile ? { l: 25, r: 10, t: 10, b: 30 } : { l: 40, r: 20, t: 40, b: 40 },
-                    'height': isMobile ? (id.includes('geo-') || id.includes('gender') || id.includes('nse') || id.includes('age') ? 220 : 380) : (id === 'comparative-chart' ? 500 : 320)
-                });
-                Plotly.Plots.resize(el);
+        // Re-render when crossing breakpoints so labels/margins/heights stay in sync with CSS.
+        if (tierChanged) {
+            const mainEl = document.getElementById('main-chart');
+            if (mainEl && mainEl.data && mainEl.data.length > 0) {
+                renderMainChart();
             }
-        });
+            renderDemographicCharts();
+        }
+
+        resizeVisiblePlotlyCharts();
+        lastViewportTier = viewport.tier;
     }, 200);
 });
 
@@ -343,13 +495,12 @@ function getCandidateType(candidateName) {
 // =============================================
 function renderCustomLegend() {
     const container = document.getElementById('legend-container');
-    container.style.display = 'block';
-    container.innerHTML = '';
-
     const showBlanco = document.getElementById('show-blanco')?.checked ?? false;
     const showOtros = document.getElementById('show-otros')?.checked ?? false;
     const showNoPrecisa = document.getElementById('show-noprecisa')?.checked ?? false;
     const showExcluded = document.getElementById('show-excluded')?.checked ?? false;
+    container.style.display = 'block';
+    container.innerHTML = '';
 
     // Build categories
     const categories = [
@@ -442,11 +593,11 @@ function renderCustomLegend() {
     const specialSection = document.createElement('div');
     specialSection.className = 'legend-special-toggles';
     specialSection.innerHTML = `
-        <div class="legend-category" style="margin-top:8px">Mostrar en gráfico</div>
-        <label class="legend-toggle-item"><input type="checkbox" id="show-excluded" ${document.getElementById('show-excluded')?.checked ? 'checked' : ''}> Fuera de carrera</label>
-        <label class="legend-toggle-item"><input type="checkbox" id="show-blanco" ${document.getElementById('show-blanco')?.checked ? 'checked' : ''}> Blanco/viciado</label>
-        <label class="legend-toggle-item"><input type="checkbox" id="show-otros" ${document.getElementById('show-otros')?.checked ? 'checked' : ''}> Otros</label>
-        <label class="legend-toggle-item"><input type="checkbox" id="show-noprecisa" ${document.getElementById('show-noprecisa')?.checked ? 'checked' : ''}> No precisa</label>
+        <div class="legend-category" style="margin-top:8px">Categorías especiales</div>
+        <label class="legend-toggle-item"><input type="checkbox" id="show-excluded" ${showExcluded ? 'checked' : ''}> Fuera de carrera</label>
+        <label class="legend-toggle-item"><input type="checkbox" id="show-blanco" ${showBlanco ? 'checked' : ''}> Blanco/viciado</label>
+        <label class="legend-toggle-item"><input type="checkbox" id="show-otros" ${showOtros ? 'checked' : ''}> Otros</label>
+        <label class="legend-toggle-item"><input type="checkbox" id="show-noprecisa" ${showNoPrecisa ? 'checked' : ''}> No precisa</label>
     `;
     container.appendChild(specialSection);
 
@@ -515,7 +666,8 @@ function toggleCandidateFocus(candidateName) {
 // Main Evolution Chart
 // =============================================
 function renderMainChart() {
-    const isMobile = window.innerWidth <= 768;
+    const responsive = getMainChartResponsiveSettings();
+    const { isMobile, isTabletLayout } = responsive;
     const showBlanco = document.getElementById('show-blanco')?.checked ?? false;
     const showOtros = document.getElementById('show-otros')?.checked ?? false;
     const showNoPrecisa = document.getElementById('show-noprecisa')?.checked ?? false;
@@ -590,11 +742,10 @@ function renderMainChart() {
         }
         // Removed explicit mobile reduction to match desktop thickness as requested
 
-        // For single/double-point candidates: always use original color
-        // Ghosting is done via marker.opacity, not trace opacity, so hit area stays full-size
-        const markerColor = dataPoints <= 2 ? color : lineColor;
+        // Keep isolated-point candidates clickable, but fully dim/hide them when another candidate is focused.
+        const markerColor = lineColor;
         const markerOpacity = dataPoints <= 2
-            ? (focusedCandidates.length > 0 && !focusedCandidates.includes(candidateName) ? 0.35 : 1)
+            ? (focusedCandidates.length > 0 && !focusedCandidates.includes(candidateName) ? 0 : 1)
             : 1; // line traces use trace-level opacity instead
         const traceOpacity = dataPoints <= 2 ? 1 : opacity; // keep trace fully opaque for isolated points
         const markerSize = isMobile
@@ -623,6 +774,7 @@ function renderMainChart() {
             },
             opacity: traceOpacity,
             connectgaps: true,
+            cliponaxis: false,
             hovertemplate: '<b>%{fullData.name}</b>: %{y:.1f}%<extra></extra>',
             hoverlabel: {
                 bgcolor: tooltipBgColor,
@@ -645,8 +797,9 @@ function renderMainChart() {
         gridcolor: 'rgba(0,0,0,0.06)',
         zerolinecolor: 'rgba(0,0,0,0.1)',
         ticksuffix: '%',
-        tickfont: { size: isMobile ? 9 : 11 }
+        tickfont: { size: responsive.yTickFontSize }
     };
+    yAxisConfig.title.font.size = responsive.yTitleFontSize;
 
     // Layout configuration
     const layout = {
@@ -657,8 +810,8 @@ function renderMainChart() {
             categoryorder: 'array',
             categoryarray: monthOrder,
             tickvals: monthOrder,
-            ticktext: monthOrder.map(m => (isMobile ? MONTH_LABELS_MOBILE[m] : MONTH_DISPLAY_LABELS[m]) || m),
-            tickfont: { size: isMobile ? 8 : 11 }, // Smaller labels on mobile
+            ticktext: monthOrder.map(m => (responsive.useCompactMonthLabels ? MONTH_LABELS_MOBILE[m] : MONTH_DISPLAY_LABELS[m]) || m),
+            tickfont: { size: responsive.xTickFontSize }, // Smaller labels on compact layouts
             gridcolor: 'rgba(0,0,0,0.03)',
             // Spikeline configuration
             showspikes: true,
@@ -672,7 +825,7 @@ function renderMainChart() {
         // On mobile: 'closest' so tapping a point shows only that candidate's value.
         // On desktop: 'x' shows all candidates at the same X position (unified tooltip).
         hovermode: isMobile ? 'closest' : 'x',
-        hoverdistance: isMobile ? 40 : 50,
+        hoverdistance: responsive.hoverdistance,
         // Compact hover label styling
         hoverlabel: {
             bgcolor: 'rgba(255,255,255,0.95)',
@@ -682,9 +835,9 @@ function renderMainChart() {
             namelength: 25
         },
         showlegend: false, // Using custom legend
-        // Mobile: tighter margins + 320px height = good horizontal ratio
-        margin: isMobile ? { l: 30, r: 5, t: 5, b: 20 } : { l: 60, r: 20, t: 20, b: 80 },
-        height: isMobile ? 290 : 520,
+        // Calibrated per breakpoint to match CSS layout changes (including tablet stacked layouts)
+        margin: responsive.margin,
+        height: responsive.height,
         plot_bgcolor: 'rgba(0,0,0,0)',
         paper_bgcolor: 'rgba(0,0,0,0)',
         font: { family: 'Inter, sans-serif' }
@@ -698,8 +851,8 @@ function renderMainChart() {
         staticPlot: isMobile ? false : false // Keep tooltips, but disable interaction via layout
     };
 
-    // Disable zoom/pan on mobile to prevent scroll hijacking
-    if (isMobile) {
+    // Disable zoom/pan on tablet/mobile to prevent scroll hijacking in touch layouts
+    if (isTabletLayout) {
         layout.xaxis.fixedrange = true;
         layout.yaxis.fixedrange = true;
         layout.dragmode = false; // Disable box zoom/pan interactions
@@ -824,6 +977,7 @@ function renderProfileChart(containerId, candidateName, demoType, title, layout,
                 line: { width: 2.5, shape: 'spline', smoothing: 1.1, color: color },
                 marker: { size: xValues.length <= 2 ? 10 : 7, color: color, line: { width: 1, color: '#fff' } },
                 connectgaps: true,
+                cliponaxis: false,
                 hovertemplate: `<b>${segment}</b>: %{y:.1f}%<extra></extra>`,
                 hoverlabel: {
                     bgcolor: color,
@@ -835,23 +989,31 @@ function renderProfileChart(containerId, candidateName, demoType, title, layout,
     });
 
     // Update layout to show all tooltips at same X position
-    const isMobile = window.innerWidth <= 768;
+    const responsive = getProfileChartResponsiveSettings();
+    const mainAxisSizing = getMainChartResponsiveSettings();
+    const { isMobile, isTabletLayout } = responsive;
     const profileLayout = {
         ...layout,
-        title: { text: title, font: { size: isMobile ? 12 : 13, family: 'Inter, sans-serif' } },
-        margin: isMobile ? { l: 30, r: 10, t: 30, b: 30 } : { l: 40, r: 20, t: 40, b: 40 },
-        height: isMobile ? 250 : 320,
-        hovermode: 'x',
+        title: { text: title, font: { size: responsive.titleFontSize, family: 'Inter, sans-serif' } },
+        margin: responsive.margin,
+        height: responsive.height,
+        hovermode: isTabletLayout ? 'closest' : 'x',
+        hoverdistance: isTabletLayout ? 40 : 50,
         font: { family: 'Inter, sans-serif' },
         xaxis: {
-            ticktext: monthOrder.map(m => (isMobile ? MONTH_LABELS_MOBILE[m] : MONTH_DISPLAY_LABELS[m]) || m),
+            ticktext: monthOrder.map(m => (responsive.useCompactMonthLabels ? MONTH_LABELS_MOBILE[m] : MONTH_DISPLAY_LABELS[m]) || m),
             tickvals: monthOrder,
-            fixedrange: isMobile ? true : false
+            tickfont: { size: mainAxisSizing.xTickFontSize },
+            fixedrange: isTabletLayout ? true : false
+        },
+        yaxis: {
+            ...(layout.yaxis || {}),
+            tickfont: { size: mainAxisSizing.yTickFontSize }
         }
     };
 
-    // Disable zoom/pan on mobile
-    if (isMobile) {
+    // Disable zoom/pan on tablet/mobile
+    if (isTabletLayout) {
         profileLayout.yaxis.fixedrange = true;
         profileLayout.dragmode = false;
     }
@@ -944,6 +1106,7 @@ function renderComparativeMode() {
                 line: { width: lineStyle.width, dash: lineStyle.dash, shape: 'spline', smoothing: 1.1, color: entity.color },
                 marker: { size: 10, symbol: markerSymbol, line: { width: 1, color: '#fff' }, color: entity.color },
                 connectgaps: true,
+                cliponaxis: false,
                 hovertemplate: `<b>${shortName}</b>: %{y:.1f}%<extra></extra>`,
                 hoverlabel: {
                     bgcolor: entity.color,
@@ -954,22 +1117,24 @@ function renderComparativeMode() {
         }
     });
 
-    const isMobile = window.innerWidth <= 768;
+    const responsive = getComparativeChartResponsiveSettings();
+    const mainAxisSizing = getMainChartResponsiveSettings();
+    const { isMobile, isTabletLayout } = responsive;
     const layout = {
         template: 'plotly_white',
-        title: { text: `${getDimensionLabel(dimension)} - Segmento: ${segment}`, font: { size: isMobile ? 13 : 15, family: 'Inter, sans-serif' } },
-        margin: isMobile ? { l: 40, r: 10, t: 40, b: 60 } : { l: 60, r: 20, t: 50, b: 70 },
-        height: isMobile ? 350 : 500,
+        title: { text: `${getDimensionLabel(dimension)} - Segmento: ${segment}`, font: { size: responsive.titleFontSize, family: 'Inter, sans-serif' } },
+        margin: responsive.margin,
+        height: responsive.height,
         showlegend: false, // Using sidebar legend instead
-        hovermode: 'x',
-        hoverdistance: 50,
+        hovermode: isTabletLayout ? 'closest' : 'x',
+        hoverdistance: isTabletLayout ? 40 : 50,
         xaxis: {
             tickangle: 0,
             categoryorder: 'array',
             categoryarray: monthOrder,
             tickvals: monthOrder,
-            ticktext: monthOrder.map(m => (isMobile ? MONTH_LABELS_MOBILE[m] : MONTH_DISPLAY_LABELS[m]) || m),
-            tickfont: { size: isMobile ? 10 : 12 },
+            ticktext: monthOrder.map(m => (responsive.useCompactMonthLabels ? MONTH_LABELS_MOBILE[m] : MONTH_DISPLAY_LABELS[m]) || m),
+            tickfont: { size: mainAxisSizing.xTickFontSize },
             gridcolor: 'rgba(0,0,0,0.04)',
             showspikes: true,
             spikemode: 'across',
@@ -984,8 +1149,10 @@ function renderComparativeMode() {
         font: { family: 'Inter, sans-serif' }
     };
 
-    // Disable zoom/pan on mobile
-    if (isMobile) {
+    layout.yaxis.tickfont = { size: mainAxisSizing.yTickFontSize };
+
+    // Disable zoom/pan on tablet/mobile
+    if (isTabletLayout) {
         layout.xaxis.fixedrange = true;
         layout.yaxis.fixedrange = true;
         layout.dragmode = false;
@@ -1107,9 +1274,9 @@ function populateCandidateCheckboxes() {
         return header;
     };
 
-    // Render complete trajectory candidates (first 3 checked by default)
+    // Render complete trajectory candidates (unchecked by default)
     candidateData.complete.forEach((name, idx) => {
-        container.appendChild(createCandidateItem(name, idx < 3, 'complete'));
+        container.appendChild(createCandidateItem(name, false, 'complete'));
     });
 
     // Render moderate trajectory with header
@@ -1380,13 +1547,22 @@ function setupEventListeners() {
         }
     });
 
+    const mainChartEl = document.getElementById('main-chart');
+    if (mainChartEl && typeof mainChartEl.on === 'function') {
+        mainChartEl.on('plotly_click', () => {
+            suppressMainChartFocusResetUntil = Date.now() + 250;
+        });
+    }
+
     // Click outside legend to reset focus (main chart)
     // On mobile: do NOT reset on chart click — user taps to see tooltip, not to reset focus.
     // On desktop: clicking the chart area resets focus.
-    document.getElementById('main-chart').addEventListener('click', (e) => {
+    mainChartEl.addEventListener('click', (e) => {
         if (e.target.closest('.legend-item')) return;
-        const isMobile = window.innerWidth <= 768;
-        if (isMobile) return; // On mobile, only legend clicks change focus
+        if (Date.now() < suppressMainChartFocusResetUntil) return;
+        if (e.target.closest('.point, .points, .hoverlayer')) return;
+        const isTouchLayout = getViewportMetrics().isTabletLayout;
+        if (isTouchLayout) return; // On tablet/mobile, only legend clicks change focus
         if (focusedCandidates.length > 0) {
             focusedCandidates = [];
             renderMainChart();
@@ -1394,4 +1570,3 @@ function setupEventListeners() {
         }
     });
 }
-
