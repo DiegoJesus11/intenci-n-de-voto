@@ -103,6 +103,7 @@ const SURVEY_SOURCE_CONFIGS = {
         key: 'ipsos',
         label: 'Ipsos',
         dataUrl: 'datos_encuestas.json',
+        excludedCandidates: EXCLUDED_CANDIDATES,
         monthOrderDefined: MONTH_ORDER_DEFINED,
         monthDisplayLabels: MONTH_DISPLAY_LABELS,
         monthLabelsMobile: MONTH_LABELS_MOBILE,
@@ -135,6 +136,7 @@ const SURVEY_SOURCE_CONFIGS = {
         key: 'datum',
         label: 'Datum',
         dataUrl: 'datos_datum.json',
+        excludedCandidates: ['Candidato de Acción Popular'],
         monthOrderDefined: DATUM_MONTH_ORDER_DEFINED,
         monthDisplayLabels: DATUM_MONTH_DISPLAY_LABELS,
         monthLabelsMobile: DATUM_MONTH_LABELS_MOBILE,
@@ -164,6 +166,11 @@ const SURVEY_SOURCE_CONFIGS = {
 
 function getActiveSourceConfig() {
     return SURVEY_SOURCE_CONFIGS[activeSource] || SURVEY_SOURCE_CONFIGS.ipsos;
+}
+
+function getActiveExcludedCandidates() {
+    const sourceExcluded = getActiveSourceConfig().excludedCandidates;
+    return Array.isArray(sourceExcluded) ? sourceExcluded : EXCLUDED_CANDIDATES;
 }
 
 function syncActiveMonthConfig() {
@@ -659,6 +666,7 @@ window.addEventListener('resize', () => {
 // =============================================
 function processData() {
     const availableMonths = Object.keys(data);
+    const excludedCandidates = getActiveExcludedCandidates();
     monthOrder = activeMonthOrderDefined.filter(m => availableMonths.includes(m));
     console.log('Available in JSON:', availableMonths);
     console.log('Processed Months:', monthOrder);
@@ -689,10 +697,10 @@ function processData() {
         .sort((a, b) => b.avgVote - a.avgVote);
 
     // Filter excluded first
-    candidateData.excluded = sorted.filter(c => EXCLUDED_CANDIDATES.includes(c.name)).map(c => c.name);
+    candidateData.excluded = sorted.filter(c => excludedCandidates.includes(c.name)).map(c => c.name);
 
     // Filter active candidates
-    const activeCandidates = sorted.filter(c => !EXCLUDED_CANDIDATES.includes(c.name));
+    const activeCandidates = sorted.filter(c => !excludedCandidates.includes(c.name));
 
     candidateData.complete = activeCandidates.filter(c => c.appearances >= 4).map(c => c.name);
     candidateData.moderate = activeCandidates.filter(c => c.appearances === 3).map(c => c.name);
@@ -727,7 +735,7 @@ function getCandidateColor(candidateName, index = 0) {
     if (SPECIAL_COLORS[candidateName]) {
         return SPECIAL_COLORS[candidateName];
     }
-    if (EXCLUDED_CANDIDATES.includes(candidateName)) {
+    if (getActiveExcludedCandidates().includes(candidateName)) {
         return '#555555'; // Dark Gray for excluded (more visible)
     }
     if (CANDIDATE_COLORS[candidateName]) {
@@ -1421,6 +1429,7 @@ function renderComparativeMode() {
                 marker: { size: 10, symbol: markerSymbol, line: { width: 1, color: '#fff' }, color: entity.color },
                 connectgaps: true,
                 cliponaxis: false,
+                hoveron: 'points',
                 hovertemplate: `<b>${shortName}</b>: %{y:.1f}%<extra></extra>`,
                 hoverlabel: {
                     bgcolor: entity.color,
@@ -1440,8 +1449,10 @@ function renderComparativeMode() {
         margin: responsive.margin,
         height: responsive.height,
         showlegend: false, // Using sidebar legend instead
-        hovermode: isTabletLayout ? 'closest' : 'x',
-        hoverdistance: isTabletLayout ? 40 : 50,
+        hovermode: 'closest',
+        hoverdistance: isTabletLayout ? 40 : 30,
+        spikedistance: isTabletLayout ? 40 : 30,
+        clickmode: 'event',
         xaxis: {
             tickangle: getResponsiveXAxisTickAngle(responsive),
             categoryorder: 'array',
@@ -1553,7 +1564,7 @@ function populateCandidateCheckboxes() {
         const label = document.createElement('label');
         label.className = 'legend-item';
         const color = getCandidateColor(candidateName, colorIndex);
-        if (!CANDIDATE_COLORS[candidateName] && !SPECIAL_COLORS[candidateName] && !EXCLUDED_CANDIDATES.includes(candidateName)) {
+        if (!CANDIDATE_COLORS[candidateName] && !SPECIAL_COLORS[candidateName] && !getActiveExcludedCandidates().includes(candidateName)) {
             colorIndex++;
         }
 
