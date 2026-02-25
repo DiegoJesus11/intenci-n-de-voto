@@ -4,6 +4,11 @@
 // =============================================
 
 let data = null;
+let datasets = {
+    ipsos: null,
+    datum: null
+};
+let activeSource = 'ipsos';
 let candidateData = {
     complete: [],    // ≥4 appearances
     moderate: [],    // 3 appearances
@@ -26,8 +31,8 @@ const EXCLUDED_CANDIDATES = [
     'Victor Andrés García Belaunde'
 ];
 
-// Special categories
-const SPECIAL_CATEGORIES = ['Blanco/viciado/ninguno', 'Otros', 'No precisa'];
+// Special categories (canonical internal names across pollsters)
+const SPECIAL_CATEGORIES = ['Blanco/viciado/ninguno', 'Otros', 'No precisa', 'No iría a votar'];
 
 // Explicit chronological order of months (internal keys)
 const MONTH_ORDER_DEFINED = [
@@ -71,6 +76,108 @@ const MONTH_LABELS_MOBILE = {
     'Febrero 2026': 'Feb 26'
 };
 
+const DATUM_MONTH_ORDER_DEFINED = [
+    'Diciembre 2025',
+    'Enero (1) 2026',
+    'Enero (2) 2026',
+    'Febrero 2026'
+];
+
+const DATUM_MONTH_DISPLAY_LABELS = {
+    'Diciembre 2025': 'Dic 25',
+    'Enero (1) 2026': 'Ene 26 - 1',
+    'Enero (2) 2026': 'Ene 26 - 2',
+    'Febrero 2026': 'Feb 26'
+};
+
+const DATUM_MONTH_LABELS_MOBILE = {
+    ...DATUM_MONTH_DISPLAY_LABELS
+};
+
+let activeMonthOrderDefined = MONTH_ORDER_DEFINED;
+let activeMonthDisplayLabels = MONTH_DISPLAY_LABELS;
+let activeMonthLabelsMobile = MONTH_LABELS_MOBILE;
+
+const SURVEY_SOURCE_CONFIGS = {
+    ipsos: {
+        key: 'ipsos',
+        label: 'Ipsos',
+        dataUrl: 'datos_encuestas.json',
+        monthOrderDefined: MONTH_ORDER_DEFINED,
+        monthDisplayLabels: MONTH_DISPLAY_LABELS,
+        monthLabelsMobile: MONTH_LABELS_MOBILE,
+        footerText: '📊 Datos: Encuestas Ipsos Perú • Análisis: Observatorio Electoral',
+        showSurveyNote: true,
+        dimensionOptions: [
+            { value: 'nse', label: 'NSE (A, B, C, D, E)' },
+            { value: 'gender', label: 'Género' },
+            { value: 'age', label: 'Edad' },
+            { value: 'ambito', label: 'Ámbito (Lima vs Interior)' },
+            { value: 'interior', label: 'Interior (Urbano vs Rural)' },
+            { value: 'region', label: 'Regiones' }
+        ],
+        profileCharts: [
+            { containerId: 'gender-chart', demoType: 'gender', title: 'Género' },
+            { containerId: 'nse-chart', demoType: 'nse', title: 'NSE' },
+            { containerId: 'age-chart', demoType: 'age', title: 'Edad' },
+            { containerId: 'geo-ambito-chart', demoType: 'geography', title: 'Ámbito (Lima vs Interior)', filterSegments: ['Lima', 'Interior'] },
+            { containerId: 'geo-interior-chart', demoType: 'geography', title: 'Interior (Urbano vs Rural)', filterSegments: ['Interior Urbano', 'Interior Rural'] },
+            { containerId: 'geo-region-chart', demoType: 'geography', title: 'Regiones', filterSegments: ['Norte', 'Centro', 'Sur', 'Oriente'] }
+        ],
+        specialCategories: [
+            { key: 'show-excluded', compareKey: null, value: '__excluded__', label: 'Fuera de carrera', color: '#555555', isExcludedToggle: true },
+            { key: 'show-blanco', compareKey: 'compare-blanco', value: 'Blanco/viciado/ninguno', label: 'Blanco/viciado', color: '#95a5a6' },
+            { key: 'show-otros', compareKey: 'compare-otros', value: 'Otros', label: 'Otros', color: '#8B4513' },
+            { key: 'show-noprecisa', compareKey: 'compare-noprecisa', value: 'No precisa', label: 'No precisa', color: '#6c5ce7' }
+        ]
+    },
+    datum: {
+        key: 'datum',
+        label: 'Datum',
+        dataUrl: 'datos_datum.json',
+        monthOrderDefined: DATUM_MONTH_ORDER_DEFINED,
+        monthDisplayLabels: DATUM_MONTH_DISPLAY_LABELS,
+        monthLabelsMobile: DATUM_MONTH_LABELS_MOBILE,
+        footerText: '📊 Datos: Encuestas Datum • Análisis: Observatorio Electoral',
+        showSurveyNote: false,
+        dimensionOptions: [
+            { value: 'gender', label: 'Sexo' },
+            { value: 'lima_callao', label: 'Lima/Callao' },
+            { value: 'zona', label: 'Zona (Urbana vs Rural)' },
+            { value: 'region', label: 'Regiones' }
+        ],
+        profileCharts: [
+            { containerId: 'gender-chart', demoType: 'gender', title: 'Sexo' },
+            { containerId: 'geo-ambito-chart', demoType: 'geography', title: 'Lima/Callao', filterSegments: ['Lima/Callao'] },
+            { containerId: 'geo-interior-chart', demoType: 'geography', title: 'Zona (Urbana vs Rural)', filterSegments: ['Urbana', 'Rural'] },
+            { containerId: 'geo-region-chart', demoType: 'geography', title: 'Región', filterSegments: ['Norte', 'Centro', 'Sur', 'Oriente'] }
+        ],
+        specialCategories: [
+            { key: 'show-excluded', compareKey: null, value: '__excluded__', label: 'Fuera de carrera', color: '#555555', isExcludedToggle: true },
+            { key: 'show-blanco', compareKey: 'compare-blanco', value: 'Blanco/viciado/ninguno', label: 'Ninguno/Blanco/Viciado', color: '#95a5a6' },
+            { key: 'show-otros', compareKey: 'compare-otros', value: 'Otros', label: 'Otros candidatos', color: '#8B4513' },
+            { key: 'show-noprecisa', compareKey: 'compare-noprecisa', value: 'No precisa', label: 'No sabe', color: '#6c5ce7' },
+            { key: 'show-noira', compareKey: 'compare-noira', value: 'No iría a votar', label: 'No iría a votar', color: '#607d8b' }
+        ]
+    }
+};
+
+function getActiveSourceConfig() {
+    return SURVEY_SOURCE_CONFIGS[activeSource] || SURVEY_SOURCE_CONFIGS.ipsos;
+}
+
+function syncActiveMonthConfig() {
+    const sourceConfig = getActiveSourceConfig();
+    activeMonthOrderDefined = sourceConfig.monthOrderDefined;
+    activeMonthDisplayLabels = sourceConfig.monthDisplayLabels;
+    activeMonthLabelsMobile = sourceConfig.monthLabelsMobile;
+}
+
+function getMonthLabel(monthKey, useCompact = false) {
+    const labelMap = useCompact ? activeMonthLabelsMobile : activeMonthDisplayLabels;
+    return labelMap[monthKey] || monthKey;
+}
+
 // Extended color palette (15+ candidates)
 // Specific colors for candidates (2026)
 const CANDIDATE_COLORS = {
@@ -107,7 +214,8 @@ const SPECIAL_COLORS = {
     'Blanco/viciado/ninguno': '#95a5a6',  // Gray
     'Blanco/viciado': '#95a5a6',          // Alias for display
     'Otros': '#8B4513',                   // Brown (SaddleBrown) - distinct
-    'No precisa': '#6c5ce7'                // Purple - distinct
+    'No precisa': '#6c5ce7',              // Purple - distinct
+    'No iría a votar': '#607d8b'
 };
 
 // Marker symbols by trajectory type
@@ -337,17 +445,161 @@ function getResponsiveXAxisTickAngle({ isMobile, isTabletLayout }) {
     return 0;
 }
 
+function getMainSpecialToggleConfigs() {
+    return getActiveSourceConfig().specialCategories || [];
+}
+
+function getComparativeSpecialToggleConfigs() {
+    return getMainSpecialToggleConfigs().filter(cfg => !!cfg.compareKey);
+}
+
+function getCurrentMainSpecialToggleState() {
+    const states = {
+        showExcluded: false,
+        specialValues: []
+    };
+
+    getMainSpecialToggleConfigs().forEach(cfg => {
+        const checked = document.getElementById(cfg.key)?.checked ?? false;
+        if (cfg.isExcludedToggle) {
+            states.showExcluded = checked;
+        } else if (checked) {
+            states.specialValues.push(cfg.value);
+        }
+    });
+
+    return states;
+}
+
+function renderComparativeSpecialCategories() {
+    const titleEl = document.getElementById('compare-special-title');
+    const container = document.getElementById('compare-special-categories');
+    if (!container) return;
+
+    if (titleEl) titleEl.textContent = 'Categorías Especiales';
+
+    const configs = getComparativeSpecialToggleConfigs();
+    container.innerHTML = configs.map(cfg => `
+        <label class="legend-item special">
+            <input type="checkbox" id="${cfg.compareKey}" value="${cfg.value}">
+            <span class="legend-color" style="background: ${cfg.color};"></span>
+            <span class="legend-name">${cfg.label}</span>
+        </label>
+    `).join('');
+}
+
+function populateDimensionOptions() {
+    const select = document.getElementById('dimension-select');
+    if (!select) return;
+
+    const sourceConfig = getActiveSourceConfig();
+    const previous = select.value;
+    const options = sourceConfig.dimensionOptions || [];
+
+    select.innerHTML = '';
+    options.forEach(opt => {
+        const option = document.createElement('option');
+        option.value = opt.value;
+        option.textContent = opt.label;
+        select.appendChild(option);
+    });
+
+    if (options.some(opt => opt.value === previous)) {
+        select.value = previous;
+    } else if (options.length > 0) {
+        select.value = options[0].value;
+    }
+
+    updateSegmentSelector();
+}
+
+function updateSourceSpecificUI() {
+    const sourceConfig = getActiveSourceConfig();
+
+    const note = document.getElementById('survey-note');
+    if (note) {
+        note.style.display = sourceConfig.showSurveyNote ? 'flex' : 'none';
+    }
+
+    const footer = document.getElementById('footer-data-source');
+    if (footer && sourceConfig.footerText) {
+        footer.textContent = sourceConfig.footerText;
+    }
+}
+
+function applySourceData(sourceKey) {
+    const sourceConfig = SURVEY_SOURCE_CONFIGS[sourceKey];
+    if (!sourceConfig || !datasets[sourceKey]) return false;
+
+    activeSource = sourceKey;
+    data = datasets[sourceKey];
+    focusedCandidates = [];
+    syncActiveMonthConfig();
+
+    processData();
+    updateDateDisplay();
+    updateSourceSpecificUI();
+    populateCandidateDropdown();
+    populateDimensionOptions();
+    renderComparativeSpecialCategories();
+    populateCandidateCheckboxes();
+
+    // Keep legend visible and re-render everything with the active dataset.
+    const legendContainer = document.getElementById('legend-container');
+    if (legendContainer) legendContainer.style.display = 'block';
+
+    renderMainChart();
+    renderCustomLegend();
+    renderDemographicCharts();
+    return true;
+}
+
+async function loadDatasetBySource(sourceKey) {
+    const sourceConfig = SURVEY_SOURCE_CONFIGS[sourceKey];
+    if (!sourceConfig) throw new Error(`Fuente desconocida: ${sourceKey}`);
+
+    const response = await fetch(`${sourceConfig.dataUrl}?v=${Date.now()}`);
+    if (!response.ok) {
+        throw new Error(`No se pudo cargar ${sourceConfig.label} (${response.status})`);
+    }
+
+    datasets[sourceKey] = await response.json();
+    return datasets[sourceKey];
+}
+
+async function ensureDatasetLoaded(sourceKey) {
+    if (datasets[sourceKey]) return true;
+    await loadDatasetBySource(sourceKey);
+    return true;
+}
+
+async function loadSurveyDatasets() {
+    // Ipsos is required for initial render.
+    await loadDatasetBySource('ipsos');
+
+    // Datum is optional at startup (e.g., if not yet deployed). It will be retried on demand.
+    try {
+        await loadDatasetBySource('datum');
+    } catch (error) {
+        console.warn('DATUM no disponible en carga inicial:', error);
+    }
+}
+
+function getLoadErrorMessage(error) {
+    const raw = error?.message || String(error);
+    const isFileProtocol = typeof window !== 'undefined' && window.location?.protocol === 'file:';
+    if (isFileProtocol || /Failed to fetch/i.test(raw)) {
+        return 'Failed to fetch. Abre el proyecto desde un servidor local (por ejemplo Live Server) o GitHub Pages.';
+    }
+    return raw;
+}
+
 // =============================================
 // Initialize on page load
 // =============================================
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const response = await fetch(`datos_encuestas.json?v=${new Date().getTime()}`);
-        data = await response.json();
-
-        processData();
-        updateDateDisplay();
-        populateCandidateDropdown();
+        await loadSurveyDatasets();
 
         // On desktop: auto-open the controls accordion (it starts closed by default for mobile)
         const controlsToggle = document.getElementById('chart-controls-toggle');
@@ -355,12 +607,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             controlsToggle.setAttribute('open', '');
         }
 
-        // Show legend container BEFORE rendering chart to get correct dimensions
-        document.getElementById('legend-container').style.display = 'block';
-
-        renderMainChart();
-        renderCustomLegend();
-        renderDemographicCharts();
+        applySourceData(activeSource);
         setupEventListeners();
 
         // Force resize after everything is rendered to ensure correct dimensions
@@ -372,7 +619,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     } catch (error) {
         console.error('Error loading data:', error);
         document.getElementById('main-chart').innerHTML =
-            `<div class="loading" style="color: #e74c3c;"><span>Error: ${error.message}</span></div>`;
+            `<div class="loading" style="color: #e74c3c;"><span>Error: ${getLoadErrorMessage(error)}</span></div>`;
     }
 });
 
@@ -412,7 +659,7 @@ window.addEventListener('resize', () => {
 // =============================================
 function processData() {
     const availableMonths = Object.keys(data);
-    monthOrder = MONTH_ORDER_DEFINED.filter(m => availableMonths.includes(m));
+    monthOrder = activeMonthOrderDefined.filter(m => availableMonths.includes(m));
     console.log('Available in JSON:', availableMonths);
     console.log('Processed Months:', monthOrder);
 
@@ -459,6 +706,8 @@ function updateDateDisplay() {
 
 function populateCandidateDropdown() {
     const select = document.getElementById('candidate-select');
+    if (!select) return;
+    select.innerHTML = '';
     // For dropdown, we generally only show active candidates
     const allCandidates = [...candidateData.complete, ...candidateData.moderate, ...candidateData.sporadic];
 
@@ -501,10 +750,8 @@ function getCandidateType(candidateName) {
 // =============================================
 function renderCustomLegend() {
     const container = document.getElementById('legend-container');
-    const showBlanco = document.getElementById('show-blanco')?.checked ?? false;
-    const showOtros = document.getElementById('show-otros')?.checked ?? false;
-    const showNoPrecisa = document.getElementById('show-noprecisa')?.checked ?? false;
-    const showExcluded = document.getElementById('show-excluded')?.checked ?? false;
+    const mainSpecialState = getCurrentMainSpecialToggleState();
+    const showExcluded = mainSpecialState.showExcluded;
     container.style.display = 'block';
     container.innerHTML = '';
 
@@ -592,12 +839,12 @@ function renderCustomLegend() {
     // Add special category toggle checkboxes at the bottom of the legend
     const specialSection = document.createElement('div');
     specialSection.className = 'legend-special-toggles';
-    const specialToggles = [
-        { id: 'show-excluded', checked: showExcluded, label: 'Fuera de carrera', color: '#555555' },
-        { id: 'show-blanco', checked: showBlanco, label: 'Blanco/viciado', color: '#95a5a6' },
-        { id: 'show-otros', checked: showOtros, label: 'Otros', color: '#8B4513' },
-        { id: 'show-noprecisa', checked: showNoPrecisa, label: 'No precisa', color: '#6c5ce7' }
-    ];
+    const specialToggles = getMainSpecialToggleConfigs().map(cfg => ({
+        id: cfg.key,
+        checked: document.getElementById(cfg.key)?.checked ?? false,
+        label: cfg.label,
+        color: cfg.color
+    }));
     specialSection.innerHTML = `
         <div class="legend-section-title">Categorias especiales</div>
         <div class="legend-special-categories">
@@ -613,7 +860,7 @@ function renderCustomLegend() {
     container.appendChild(specialSection);
 
     // Wire up the newly injected checkboxes
-    ['show-excluded', 'show-blanco', 'show-otros', 'show-noprecisa'].forEach(id => {
+    specialToggles.map(t => t.id).forEach(id => {
         const el = document.getElementById(id);
         if (el) {
             el.addEventListener('change', () => {
@@ -679,10 +926,8 @@ function toggleCandidateFocus(candidateName) {
 function renderMainChart() {
     const responsive = getMainChartResponsiveSettings();
     const { isMobile, isTabletLayout } = responsive;
-    const showBlanco = document.getElementById('show-blanco')?.checked ?? false;
-    const showOtros = document.getElementById('show-otros')?.checked ?? false;
-    const showNoPrecisa = document.getElementById('show-noprecisa')?.checked ?? false;
-    const showExcluded = document.getElementById('show-excluded')?.checked ?? false;
+    const mainSpecialState = getCurrentMainSpecialToggleState();
+    const showExcluded = mainSpecialState.showExcluded;
 
     // Build candidate list in order
     let candidatesToShow = [
@@ -695,9 +940,13 @@ function renderMainChart() {
         candidatesToShow.push(...candidateData.excluded);
     }
 
-    if (showBlanco) candidatesToShow.push('Blanco/viciado');
-    if (showOtros) candidatesToShow.push('Otros');
-    if (showNoPrecisa) candidatesToShow.push('No precisa');
+    mainSpecialState.specialValues.forEach(value => {
+        if (value === 'Blanco/viciado/ninguno') {
+            candidatesToShow.push('Blanco/viciado');
+        } else {
+            candidatesToShow.push(value);
+        }
+    });
 
     // Build traces
     const traces = [];
@@ -837,7 +1086,7 @@ function renderMainChart() {
             categoryorder: 'array',
             categoryarray: monthOrder,
             tickvals: monthOrder,
-            ticktext: monthOrder.map(m => (responsive.useCompactMonthLabels ? MONTH_LABELS_MOBILE[m] : MONTH_DISPLAY_LABELS[m]) || m),
+            ticktext: monthOrder.map(m => getMonthLabel(m, responsive.useCompactMonthLabels)),
             tickfont: { size: responsive.xTickFontSize }, // Smaller labels on compact layouts
             automargin: true,
             // Give breathing room to the first/last categories so edge markers remain easy to tap/click.
@@ -903,7 +1152,9 @@ const SEGMENTS = {
     age: ['18-25', '26-42', '43+'],
     ambito: ['Lima', 'Interior'],
     interior: ['Interior Urbano', 'Interior Rural'],
-    region: ['Norte', 'Centro', 'Sur', 'Oriente']
+    region: ['Norte', 'Centro', 'Sur', 'Oriente'],
+    lima_callao: ['Lima/Callao'],
+    zona: ['Urbana', 'Rural']
 };
 
 // Map UI dimension to JSON data key
@@ -913,7 +1164,9 @@ const DIMENSION_DATA_MAP = {
     age: 'age',
     ambito: 'geography',
     interior: 'geography',
-    region: 'geography'
+    region: 'geography',
+    lima_callao: 'geography',
+    zona: 'geography'
 };
 
 // Colors for segments (consistent across dimensions)
@@ -944,6 +1197,7 @@ function renderProfileMode() {
     document.getElementById('comparative-chart-container').style.display = 'none';
 
     const selectedCandidate = document.getElementById('candidate-select').value;
+    const sourceConfig = getActiveSourceConfig();
 
     const commonLayout = {
         template: 'plotly_white',
@@ -962,7 +1216,7 @@ function renderProfileMode() {
             categoryorder: 'array',
             categoryarray: monthOrder,
             tickvals: monthOrder,
-            ticktext: monthOrder.map(m => MONTH_DISPLAY_LABELS[m] || m),
+            ticktext: monthOrder.map(m => getMonthLabel(m, false)),
             tickfont: { size: 9 },
             gridcolor: 'rgba(0,0,0,0.04)'
         },
@@ -972,13 +1226,18 @@ function renderProfileMode() {
         font: { family: 'Inter, sans-serif' }
     };
 
-    // Render each demographic chart for the selected candidate only
-    renderProfileChart('gender-chart', selectedCandidate, 'gender', 'Género', commonLayout);
-    renderProfileChart('nse-chart', selectedCandidate, 'nse', 'NSE', commonLayout);
-    renderProfileChart('age-chart', selectedCandidate, 'age', 'Edad', commonLayout);
-    renderProfileChart('geo-ambito-chart', selectedCandidate, 'geography', 'Ámbito (Lima vs Interior)', commonLayout, ['Lima', 'Interior']);
-    renderProfileChart('geo-interior-chart', selectedCandidate, 'geography', 'Interior (Urbano vs Rural)', commonLayout, ['Interior Urbano', 'Interior Rural']);
-    renderProfileChart('geo-region-chart', selectedCandidate, 'geography', 'Regiones', commonLayout, ['Norte', 'Centro', 'Sur', 'Oriente']);
+    const allProfileContainers = ['gender-chart', 'nse-chart', 'age-chart', 'geo-ambito-chart', 'geo-interior-chart', 'geo-region-chart'];
+    allProfileContainers.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = 'none';
+    });
+
+    const profileCharts = sourceConfig.profileCharts || [];
+    profileCharts.forEach(spec => {
+        const el = document.getElementById(spec.containerId);
+        if (el) el.style.display = 'block';
+        renderProfileChart(spec.containerId, selectedCandidate, spec.demoType, spec.title, commonLayout, spec.filterSegments || null);
+    });
 }
 
 function renderProfileChart(containerId, candidateName, demoType, title, layout, filterSegments = null) {
@@ -1055,7 +1314,7 @@ function renderProfileChart(containerId, candidateName, demoType, title, layout,
             tracegroupgap: 6
         },
         xaxis: {
-            ticktext: monthOrder.map(m => (responsive.useCompactMonthLabels ? MONTH_LABELS_MOBILE[m] : MONTH_DISPLAY_LABELS[m]) || m),
+            ticktext: monthOrder.map(m => getMonthLabel(m, responsive.useCompactMonthLabels)),
             tickvals: monthOrder,
             tickangle: getResponsiveXAxisTickAngle(responsive),
             tickfont: { size: mainAxisSizing.xTickFontSize },
@@ -1095,15 +1354,12 @@ function renderComparativeMode() {
 
     // Add special categories if checked
     const entitiesToShow = [...selectedCandidates];
-    if (document.getElementById('compare-blanco')?.checked) {
-        entitiesToShow.push({ name: 'Blanco/viciado', color: '#95a5a6', isSpecial: true, trajectory: 'special' });
-    }
-    if (document.getElementById('compare-otros')?.checked) {
-        entitiesToShow.push({ name: 'Otros', color: '#8B4513', isSpecial: true, trajectory: 'special' });
-    }
-    if (document.getElementById('compare-noprecisa')?.checked) {
-        entitiesToShow.push({ name: 'No precisa', color: '#6c5ce7', isSpecial: true, trajectory: 'special' });
-    }
+    getComparativeSpecialToggleConfigs().forEach(cfg => {
+        if (document.getElementById(cfg.compareKey)?.checked) {
+            const displayName = cfg.value === 'Blanco/viciado/ninguno' ? 'Blanco/viciado' : cfg.value;
+            entitiesToShow.push({ name: displayName, color: cfg.color, isSpecial: true, trajectory: 'special' });
+        }
+    });
 
     // Map trajectory type to Plotly marker symbol
     const getMarkerSymbol = (trajectory) => {
@@ -1151,7 +1407,9 @@ function renderComparativeMode() {
         if (xValues.length > 0) {
             const lineStyle = getLineStyle(entity.trajectory, isSpecial);
             const markerSymbol = getMarkerSymbol(entity.trajectory);
-            const shortName = entity.name.split(' ').slice(0, 2).join(' ').replace('/viciado/ninguno', '');
+            const shortName = isSpecial
+                ? entity.name.replace('/viciado/ninguno', '')
+                : entity.name.split(' ').slice(0, 2).join(' ').replace('/viciado/ninguno', '');
 
             traces.push({
                 x: xValues,
@@ -1189,7 +1447,7 @@ function renderComparativeMode() {
             categoryorder: 'array',
             categoryarray: monthOrder,
             tickvals: monthOrder,
-            ticktext: monthOrder.map(m => (responsive.useCompactMonthLabels ? MONTH_LABELS_MOBILE[m] : MONTH_DISPLAY_LABELS[m]) || m),
+            ticktext: monthOrder.map(m => getMonthLabel(m, responsive.useCompactMonthLabels)),
             tickfont: { size: mainAxisSizing.xTickFontSize },
             automargin: true,
             gridcolor: 'rgba(0,0,0,0.04)',
@@ -1219,13 +1477,18 @@ function renderComparativeMode() {
 }
 
 function getDimensionLabel(dim) {
+    const sourceLabel = (getActiveSourceConfig().dimensionOptions || []).find(opt => opt.value === dim)?.label;
+    if (sourceLabel) return sourceLabel;
+
     const labels = {
         nse: 'NSE',
-        gender: 'Género',
+        gender: 'Genero',
         age: 'Edad',
-        ambito: 'Ámbito',
+        ambito: 'Ambito',
         interior: 'Interior',
-        region: 'Región'
+        region: 'Region',
+        lima_callao: 'Lima/Callao',
+        zona: 'Zona'
     };
     return labels[dim] || dim;
 }
@@ -1233,9 +1496,11 @@ function getDimensionLabel(dim) {
 function updateSegmentSelector() {
     const dimension = document.getElementById('dimension-select').value;
     const segmentSelect = document.getElementById('segment-select');
+    if (!segmentSelect) return;
     segmentSelect.innerHTML = '';
 
-    SEGMENTS[dimension].forEach(seg => {
+    const segments = SEGMENTS[dimension] || [];
+    segments.forEach(seg => {
         const option = document.createElement('option');
         option.value = seg;
         option.textContent = seg;
@@ -1535,7 +1800,7 @@ function renderGeoRegionChart(candidatesToShow, layout) {
 // =============================================
 function setupEventListeners() {
     // Main chart controls (guarded: checkboxes may not exist in DOM)
-    ['show-blanco', 'show-otros', 'show-noprecisa', 'show-excluded'].forEach(id => {
+    ['show-blanco', 'show-otros', 'show-noprecisa', 'show-noira', 'show-excluded'].forEach(id => {
         const el = document.getElementById(id);
         if (el) {
             el.addEventListener('change', () => {
@@ -1544,6 +1809,24 @@ function setupEventListeners() {
                 renderCustomLegend();
             });
         }
+    });
+
+    // Pollster/source switch
+    document.querySelectorAll('input[name="survey-source"]').forEach(radio => {
+        radio.addEventListener('change', async (e) => {
+            if (!e.target.checked) return;
+            const nextSource = e.target.value;
+            try {
+                await ensureDatasetLoaded(nextSource);
+                applySourceData(nextSource);
+            } catch (error) {
+                console.error(`Error loading source ${nextSource}:`, error);
+                e.target.checked = false;
+                const currentRadio = document.querySelector(`input[name="survey-source"][value="${activeSource}"]`);
+                if (currentRadio) currentRadio.checked = true;
+                alert(`No se pudo cargar ${SURVEY_SOURCE_CONFIGS[nextSource]?.label || nextSource}. ${getLoadErrorMessage(error)}`);
+            }
+        });
     });
 
     // Demographic chart controls
@@ -1596,13 +1879,15 @@ function setupEventListeners() {
         });
     }
 
-    // Compare special categories checkboxes (in sidebar)
-    ['compare-blanco', 'compare-otros', 'compare-noprecisa'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) {
-            el.addEventListener('change', renderDemographicCharts);
-        }
-    });
+    // Compare special categories (in sidebar) are injected dynamically, so use delegation.
+    const compareSpecialCategories = document.getElementById('compare-special-categories');
+    if (compareSpecialCategories) {
+        compareSpecialCategories.addEventListener('change', (e) => {
+            if (e.target && e.target.matches('input[type="checkbox"]')) {
+                renderDemographicCharts();
+            }
+        });
+    }
 
     const mainChartEl = document.getElementById('main-chart');
     if (mainChartEl && typeof mainChartEl.on === 'function') {
